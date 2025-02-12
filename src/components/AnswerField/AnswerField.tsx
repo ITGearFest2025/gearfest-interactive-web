@@ -18,7 +18,7 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
   className = "",
 }) => {
   return (
-    <div className="flex flex-col space-y-2">
+    <div className={`flex flex-col h-full space-y-2`}>
       <textarea
         id={id}
         value={value}
