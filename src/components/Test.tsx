@@ -33,10 +33,7 @@ function Test() {
       <section>
         <h3>Long text input</h3>
         <div className="bg-gray h-[400px] w-full">
-          <Answerfield
-            value={text}
-            onChange={handleTextChange}
-          />
+          <Answerfield value={text} onChange={handleTextChange} />
           {clicked && <p>Clicked</p>}
         </div>
         <hr></hr>

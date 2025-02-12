@@ -1,12 +1,12 @@
-import type React from "react"
+import type React from "react";
 
 interface LongTextInputProps {
-  value: string
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
-  placeholder?: string
-  id?: string
-  rows?: number
-  className?: string
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  placeholder?: string;
+  id?: string;
+  rows?: number;
+  className?: string;
 }
 
 const LongTextInput: React.FC<LongTextInputProps> = ({
@@ -25,11 +25,10 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
         onChange={onChange}
         placeholder={placeholder}
         rows={rows}
-        className={`w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500 ${className}`}
+        className={`w-full rounded-lg border px-3 py-2 text-gray-700 focus:border-blue-500 focus:outline-none ${className}`}
       />
     </div>
-  )
-}
+  );
+};
 
-export default LongTextInput
-
+export default LongTextInput;
