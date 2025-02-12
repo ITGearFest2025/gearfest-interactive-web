@@ -2,6 +2,20 @@
 
 ## Prerequisites
 
+This project uses `pnpm` as the Node package manager.
+
+## Project Structure
+
+```
+/
+├── public/
+└── src/
+    ├── components/
+    ├── layouts/
+    ├── pages/
+    └── stores/
+```
+
 ## Getting Started
 
 1. Clone this repository
