@@ -1,5 +1,5 @@
 ---
-import { ClientRouter, fade, slide } from "astro:transitions";
+import { ClientRouter, fade } from "astro:transitions";
 import "@/styles/global.css";
 interface Props {
   title?: string;
@@ -16,7 +16,7 @@ const { title = "Astro App" } = Astro.props;
   </head>
   <body>
     <main
-      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-red-100"
+      class="relative mx-auto min-h-dvh w-full max-w-[430px] bg-gray-100"
       transition:animate={fade({ duration: "0.4s" })}
     >
       <slot />
