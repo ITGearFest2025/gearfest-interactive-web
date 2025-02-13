@@ -26,8 +26,10 @@ function Test() {
 
       <section>
         <h3 className="mb-2 text-lg font-bold">Tap to continue button</h3>
-        <div className="flex h-[400px] w-full items-center justify-center bg-blue-100">
-          <ContinueButton word="Tap to Continue" onClick={handleClick} />
+        <div className="flex relative h-[400px] w-full items-center justify-center bg-blue-100">
+          <ContinueButton position="center" word="Tap to Continue" onClick={handleClick} />
+          <ContinueButton position="top" word="Tap to Continue" onClick={handleClick} />
+          <ContinueButton position="bottom" word="Tap to Continue" onClick={handleClick} />
           {clicked && <p className="text-green-500">Clicked</p>}
         </div>
         <hr className="my-4" />
