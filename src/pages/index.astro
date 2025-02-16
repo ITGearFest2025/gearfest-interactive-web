@@ -1,10 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Test from "@/components/Test";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <Test client:only="react" />
+  <div class="flex h-screen w-full items-center justify-center bg-gray-100">
+    <a
+      href="/story/01-01-01"
+      class="h-fit w-fit rounded-md bg-red-300 px-4 py-2 text-2xl"
+    >
+      Start Story
+    </a>
+  </div>
 </Layout>
