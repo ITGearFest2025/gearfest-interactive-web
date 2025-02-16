@@ -1,15 +1,18 @@
 import type React from "react";
+import { useEffect, useState } from "react";
 
 interface ContinueButtonProps {
   word: string;
-  onClick: () => void;
+  delay: number;
+  redirectUrl: string;
   position: "top" | "bottom" | "center";
   className?: string;
 }
 
 const ContinueButton: React.FC<ContinueButtonProps> = ({
-  word,
-  onClick,
+  word = "tap to continue",
+  delay,
+  redirectUrl,
   position,
   className = "",
 }) => {
@@ -21,15 +24,29 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
     center: "absolute left-1/2 bottom-[30%] -translate-x-1/2",
   };
 
+  const [showTap, setShowTap] = useState<boolean>(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowTap(true);
+    }, delay * 1000);
+
+    return () => clearInterval(interval);
+  });
+
   return (
-    <div
-      className={`${baseClasses} ${positionClasses[position]} ${className}`}
-      onClick={onClick}
-    >
-      <p className="bg-opacity-50 rounded bg-transparent px-3 py-2 text-black">
-        {word}
-      </p>
-    </div>
+    <>
+      {showTap && (
+        <a
+          className={`${baseClasses} ${positionClasses[position]} ${className}`}
+          href={redirectUrl}
+        >
+          <p className="bg-opacity-50 rounded bg-transparent px-3 py-2 text-black">
+            {word}
+          </p>
+        </a>
+      )}
+    </>
   );
 };
 
