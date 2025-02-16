@@ -1,0 +1,14 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import BackgroundImage from "@/assets/story/scene1/1-01.webp";
+import ContinueButton from "@/components/ContinueButton/ContinueButton";
+---
+
+<ImagePageLayout title="The Story of the First Image" image={BackgroundImage}>
+  <ContinueButton
+    delay={0.5}
+    redirectUrl="/story/1-02"
+    position="center"
+    client:load
+  />
+</ImagePageLayout>
