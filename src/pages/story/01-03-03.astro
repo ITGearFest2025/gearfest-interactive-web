@@ -1,14 +1,15 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import BackgroundImage from "@/assets/story/scene1/1-01.webp";
+import BackgroundImage from "@/assets/story/scene1/01-03-02.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import TextBox from "@/components/StoryText/StoryText";
 ---
 
 <ImagePageLayout title="The Story of the First Image" image={BackgroundImage}>
   <ContinueButton
     delay={0.5}
-    redirectUrl="/story/1-02"
-    position="center"
+    redirectUrl="/story/02-01"
+    position="right"
     client:load
   />
 </ImagePageLayout>
