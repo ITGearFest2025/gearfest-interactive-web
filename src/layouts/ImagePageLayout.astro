@@ -1,0 +1,34 @@
+---
+import Layout from "./Layout.astro";
+
+import { Image } from "astro:assets";
+
+interface Props {
+  title?: string;
+  image: ImageMetadata;
+  imageLowRes?: ImageMetadata;
+}
+
+const { title, image, imageLowRes } = Astro.props;
+---
+
+<Layout title={title}>
+  {
+    imageLowRes && (
+      <link
+        rel="preload"
+        href={imageLowRes.src}
+        as="image"
+        fetchpriority="high"
+        slot="head"
+      />
+    )
+  }
+  <div
+    class="absolute z-10 h-full w-full bg-cover bg-center"
+    style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
+  >
+    <Image src={image} alt="background" class="h-full w-full object-cover" />
+    <slot />
+  </div>
+</Layout>
