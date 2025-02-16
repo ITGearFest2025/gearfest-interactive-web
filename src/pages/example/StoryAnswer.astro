@@ -1,10 +1,14 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import BackgroundImage from "@/assets/example/ExampleImage.webp";
+import BackgroundImage from "@/assets/example/ExampleImage2.webp";
 import AnswerComponent from "@/components/Inputs/AnswerComponent";
+import TextBox from "@/components/StoryText/StoryText";
 ---
 
 <ImagePageLayout title="Story" image={BackgroundImage}>
+  <TextBox type="top">
+    <p>เรื่องราวของภาพที่สอง</p>
+  </TextBox>
   <AnswerComponent
     answers={[
       { text: "มีเรื่องราวลึกลับ น่าค้นหา", attribute: "type1" },
