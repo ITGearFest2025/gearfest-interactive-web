@@ -5,12 +5,21 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="flex h-screen w-full items-center justify-center bg-gray-100">
+  <div
+    class="flex h-screen w-full flex-col items-center justify-center gap-4 bg-gray-100"
+  >
     <a
       href="/story/01-01-01"
       class="h-fit w-fit rounded-md bg-red-300 px-4 py-2 text-2xl"
     >
       Start Story
     </a>
+    <a
+      href="/starboard"
+      class="h-fit w-fit rounded-md bg-blue-300 px-4 py-2 text-2xl"
+    >
+      Star Board
+    </a>
+    <p>(dev in progress)</p>
   </div>
 </Layout>
