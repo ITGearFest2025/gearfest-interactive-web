@@ -1,0 +1,35 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import BackgroundImage from "@/assets/story/scene2/02-05.webp";
+import TextBox from "@/components/StoryText/StoryText";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout title="from Scar to Star" image={BackgroundImage}>
+  <TextBox type="top">
+    <p class="rounded-md border-2 border-black bg-white px-4 py-2">
+      Q:คุณพบดาวที่แหลกสลาย คุณจะ
+    </p>
+  </TextBox>
+
+  <AnswerComponent
+    center={true}
+    redirectUrl="/story/02-06"
+    answers={[
+      {
+        text: "รีบเข้าไปช่วยเหลือโดยไม่ลังเล",
+        attribute: "",
+      },
+      {
+        text: "เข้าไปช่วยแต่ในขณะเดียวกันก็คิดถึงภาพลักษณ์ของตัวเองที่อาจได้รับการยกย่องจากการช่วยเหลือ",
+        attribute: "",
+      },
+      {
+        text: "ใช้เวลาสังเกตและวิเคราะห์สถานการณ์ก่อนลงมือช่วย",
+        attribute: "",
+      },
+      { text: "มองดูอยู่ห่างๆ โดยไม่เข้าไปยุ่งเกี่ยว", attribute: "" },
+    ]}
+    client:load
+  />
+</ImagePageLayout>

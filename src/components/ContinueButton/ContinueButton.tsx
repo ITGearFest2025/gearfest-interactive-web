@@ -6,6 +6,7 @@ interface ContinueButtonProps {
   delay: number;
   redirectUrl: string;
   position?: "right" | "bottom" | "center";
+  color?: "black" | "white";
   className?: string;
 }
 
@@ -14,6 +15,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
   delay,
   redirectUrl,
   position = "right",
+  color = "black",
   className = "",
 }) => {
   const baseClasses = "absolute z-50 inset-0 bg-transparent cursor-pointer";
@@ -39,7 +41,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
       {showTap && (
         <a className={`${baseClasses} ${className}`} href={redirectUrl}>
           <p
-            className={`${positionClasses[position]} bg-opacity-70 absolute animate-pulse rounded bg-transparent px-3 py-2 text-2xl text-black`}
+            className={`${positionClasses[position]} bg-opacity-70 absolute animate-pulse rounded bg-transparent px-3 py-2 text-2xl ${color === "black" ? "text-black" : "text-white"}`}
           >
             {word}
           </p>
