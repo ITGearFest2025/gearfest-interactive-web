@@ -6,24 +6,13 @@ import StoryText from "./StoryText/StoryText";
 import { DraggablePiece, DropZone, PlacedPiece, StarOutline } from "./jigsaw/jigsaw";
 import { type PuzzlePiece } from "../lib/interface/puzzlepiece";
 import { puzzlePieces } from "../stores/puzzlepiece";
+import { motion } from "framer-motion"
 
 function Test() {
   const [clicked, setClicked] = useState(false);
   const [text, setText] = useState("");
-  const [items, setItems] = useState([
-    { id: "1", content: "Item 1" },
-    { id: "2", content: "Item 2" },
-    { id: "3", content: "Item 3" },
-  ]);
-  const [droppedItems, setDroppedItems] = useState<{ [key: string]: string[] }>(
-    {
-      "1": [],
-      "2": [],
-      "3": [],
-    },
-  );
   const [placedPieces, setPlacedPieces] = useState<string[]>([]);
-  const [isStarComplete, setIsStarComplete] = useState(false);
+  const [isComplete, setIsStarComplete] = useState(false);
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -37,32 +26,12 @@ function Test() {
     console.log("Clicked", clicked);
   }, [clicked]);
 
-  function handleStarDragEnd(event: { delta: any; active: any; over: any }) {
-    const { active, over } = event;
+  function handleDragEnd(event: { active: any; over: any }) {
+    const { active, over } = event
 
     if (over && over.id === `dropzone-${active.id}`) {
-      const piece = puzzlePieces.find((p) => p.id === active.id);
-      if (piece) {
-        // ตรวจสอบว่าตำแหน่งที่วางใกล้เคียงกับ dropZoneX และ dropZoneY หรือไม่
-        const tolerance = 10; // ความคลาดเคลื่อนที่ยอมรับได้
-        const dx = Math.abs(event.delta.x - piece.dropZoneX);
-        const dy = Math.abs(event.delta.y - piece.dropZoneY);
-        if (dx <= tolerance && dy <= tolerance) {
-          setPlacedPieces((prev) => [...prev, active.id]);
-        }
-      }
+      setPlacedPieces((prev) => [...prev, active.id])
     }
-  }
-
-  function checkPosition(
-    piece: PuzzlePiece,
-    event: { active: any; over: any },
-  ): boolean {
-    const { active, over } = event;
-    const tolerance = 10;
-    const dx = Math.abs(active.rect.current.translated.left - piece.dropZoneX);
-    const dy = Math.abs(active.rect.current.translated.top - piece.dropZoneY);
-    return dx <= tolerance && dy <= tolerance;
   }
 
   useEffect(() => {
@@ -164,21 +133,40 @@ function Test() {
         <hr className="my-4" />
       </div>
 
-      <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8 aspect-video">
-  <DndContext onDragEnd={handleStarDragEnd}>
-    <StarOutline />
-    {puzzlePieces.map((piece) => (
-      <DropZone key={piece.id} piece={piece}>
-        {placedPieces.includes(piece.id) && <PlacedPiece piece={piece} />}
-      </DropZone>
-    ))}
-    <div className="flex flex-wrap gap-8 justify-center items-center mt-8">
-      {puzzlePieces.map((piece) => (
-        <DraggablePiece key={piece.id} piece={piece} isPlaced={placedPieces.includes(piece.id)} />
-      ))}
-    </div>
-  </DndContext>
-</div>
+      <DndContext onDragEnd={handleDragEnd}>
+          {/* Puzzle area with fixed aspect ratio */}
+          <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl flex justify-center items-center  shadow-xl p-20 sm:p-8 mb-8">
+            <div className="relative w-1/2 flex justify-center items-center " style={{ paddingBottom: "75%" }}>
+              <div className="absolute  top-0 left-0 w-full h-full">
+                <StarOutline />
+                {puzzlePieces.map((piece) => (
+                  <DropZone key={piece.id} piece={piece}>
+                    {placedPieces.includes(piece.id) && <PlacedPiece piece={piece} />}
+                  </DropZone>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Pieces area */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-8">
+            <div className="flex flex-wrap gap-4 sm:gap-8 justify-center items-center min-h-[100px]">
+              {puzzlePieces.map((piece) => (
+                <DraggablePiece key={piece.id} piece={piece} isPlaced={placedPieces.includes(piece.id)} />
+              ))}
+            </div>
+          </div>
+        </DndContext>
+
+        {isComplete && (
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-8 text-center">
+            <div className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl shadow-lg px-4 sm:px-8 py-3 sm:py-4">
+              <p className="text-xl sm:text-3xl font-bold text-white">
+                ✨ Congratulations! The Perfect Star is Complete! ⭐
+              </p>
+            </div>
+          </motion.div>
+        )}
     </main>
   );
 }
