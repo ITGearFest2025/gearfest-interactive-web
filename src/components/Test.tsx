@@ -135,10 +135,9 @@ function Test() {
 
       <DndContext onDragEnd={handleDragEnd}>
           {/* Puzzle area with fixed aspect ratio */}
-          <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl flex justify-center items-center  shadow-xl p-20 sm:p-8 mb-8">
-            <div className="relative w-1/2 flex justify-center items-center " style={{ paddingBottom: "75%" }}>
+          <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl flex justify-center items-center  shadow-xl p-5 sm:p-8 mb-8">
+            <div className="relative w-1/2 flex justify-center items-center h-1/2 " style={{ paddingBottom: "75%" }}>
               <div className="absolute  top-0 left-0 w-full h-full">
-                <StarOutline />
                 {puzzlePieces.map((piece) => (
                   <DropZone key={piece.id} piece={piece}>
                     {placedPieces.includes(piece.id) && <PlacedPiece piece={piece} />}

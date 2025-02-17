@@ -40,12 +40,12 @@ export function DraggablePiece({ piece, isPlaced }: { piece: PuzzlePiece; isPlac
 export function DropZone({ piece, children }: { piece: PuzzlePiece; children?: React.ReactNode }) {
   const { setNodeRef } = useDroppable({
     id: `dropzone-${piece.id}`,
-  })
+  });
 
   return (
     <div
       ref={setNodeRef}
-      className="absolute w-[clamp(60px,15vw,120px)] h-[clamp(60px,15vw,120px)] flex items-center justify-center"
+      className="absolute w-[clamp(40px,10vw,80px)] h-[clamp(40px,10vw,80px)] flex items-center justify-center z-10" // ปรับขนาดให้เล็กลง
       style={{
         left: `${piece.dropZoneX}%`,
         top: `${piece.dropZoneY}%`,
@@ -66,7 +66,7 @@ export function DropZone({ piece, children }: { piece: PuzzlePiece; children?: R
       )}
       {children}
     </div>
-  )
+  );
 }
   
 export function  PlacedPiece({ piece }: { piece: PuzzlePiece }) {
