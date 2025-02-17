@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContinueButton from "./ContinueButton/ContinueButton";
-import Answerfield from "./AnswerField/AnswerField";
+import Answerfield from "./Inputs/AnswerField";
 import StoryText from "./StoryText/StoryText";
 
 function Test() {
@@ -26,10 +26,25 @@ function Test() {
 
       <section>
         <h3 className="mb-2 text-lg font-bold">Tap to continue button</h3>
-        <div className="flex relative h-[400px] w-full items-center justify-center bg-blue-100">
-          <ContinueButton position="center" word="Tap to Continue" onClick={handleClick} />
-          <ContinueButton position="top" word="Tap to Continue" onClick={handleClick} />
-          <ContinueButton position="bottom" word="Tap to Continue" onClick={handleClick} />
+        <div className="relative flex h-[400px] w-full items-center justify-center bg-blue-100">
+          <ContinueButton
+            delay={0.5}
+            position="center"
+            word="Tap to Continue"
+            redirectUrl="/"
+          />
+          <ContinueButton
+            delay={0.5}
+            position="top"
+            word="Tap to Continue"
+            redirectUrl="/"
+          />
+          <ContinueButton
+            delay={0.5}
+            position="bottom"
+            word="Tap to Continue"
+            redirectUrl="/"
+          />
           {clicked && <p className="text-green-500">Clicked</p>}
         </div>
         <hr className="my-4" />
