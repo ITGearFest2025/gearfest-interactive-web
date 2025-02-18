@@ -3,4 +3,4 @@ export interface PuzzlePiece {
     path: string;
     dropZoneX: number;
     dropZoneY: number;
-  }
+}

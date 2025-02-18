@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { type PuzzlePiece } from "../../lib/interface/puzzlepiece";
+import { type PuzzlePiece } from "../../types/puzzlepiece";
 import {  useDraggable, useDroppable } from "@dnd-kit/core";
 
 export function DraggablePiece({ piece, isPlaced }: { piece: PuzzlePiece; isPlaced: boolean }) {

@@ -1,4 +1,4 @@
-import { type PuzzlePiece } from "../lib/interface/puzzlepiece";
+import { type PuzzlePiece } from "../types/puzzlepiece";
 
 export const puzzlePieces: PuzzlePiece[] = [
   {

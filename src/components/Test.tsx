@@ -4,7 +4,7 @@ import ContinueButton from "./ContinueButton/ContinueButton";
 import Answerfield from "./Inputs/AnswerField";
 import StoryText from "./StoryText/StoryText";
 import { DraggablePiece, DropZone, PlacedPiece, StarOutline } from "./jigsaw/jigsaw";
-import { type PuzzlePiece } from "../lib/interface/puzzlepiece";
+import type { PuzzlePiece } from "../types/puzzlepiece";
 import { puzzlePieces } from "../constant/puzzlepiece";
 import { motion } from "framer-motion"
 
