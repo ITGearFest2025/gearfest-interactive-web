@@ -22,10 +22,6 @@ function Test() {
     setText(event.target.value);
   };
 
-  useEffect(() => {
-    console.log("Clicked", clicked);
-  }, [clicked]);
-
   function handleDragEnd(event: { active: any; over: any }) {
     const { active, over } = event
 
