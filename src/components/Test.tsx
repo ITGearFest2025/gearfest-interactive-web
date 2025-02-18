@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { DndContext } from "@dnd-kit/core";
 import ContinueButton from "./ContinueButton/ContinueButton";
-import Answerfield from "./AnswerField/AnswerField";
+import Answerfield from "./Inputs/AnswerField";
 import StoryText from "./StoryText/StoryText";
 import { DraggablePiece, DropZone, PlacedPiece, StarOutline } from "./jigsaw/jigsaw";
 import { type PuzzlePiece } from "../lib/interface/puzzlepiece";
-import { puzzlePieces } from "../stores/puzzlepiece";
+import { puzzlePieces } from "../constant/puzzlepiece";
 import { motion } from "framer-motion"
 
 function Test() {
@@ -51,16 +51,25 @@ function Test() {
           <ContinueButton
             position="center"
             word="Tap to Continue"
+            color="white"
+            delay={5}
+            redirectUrl="/"
             onClick={handleClick}
           />
           <ContinueButton
-            position="top"
+            position="right"
             word="Tap to Continue"
+            color="white"
+            delay={5}
+            redirectUrl="/"
             onClick={handleClick}
           />
           <ContinueButton
             position="bottom"
             word="Tap to Continue"
+            color="white"
+            delay={5}
+            redirectUrl="/"
             onClick={handleClick}
           />
           {clicked && <p className="text-green-500">Clicked</p>}
