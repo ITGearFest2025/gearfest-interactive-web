@@ -8,6 +8,7 @@ interface ContinueButtonProps {
   position?: "right" | "bottom" | "center";
   color?: "black" | "white";
   className?: string;
+  onClick?: () => void; // Added onClick property
 }
 
 const ContinueButton: React.FC<ContinueButtonProps> = ({
@@ -17,6 +18,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
   position = "right",
   color = "black",
   className = "",
+  onClick, // Destructure onClick
 }) => {
   const baseClasses = "absolute z-50 inset-0 bg-transparent cursor-pointer";
 
@@ -34,12 +36,12 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
     }, delay * 1000);
 
     return () => clearInterval(interval);
-  });
+  }, [delay]);
 
   return (
     <>
       {showTap && (
-        <a className={`${baseClasses} ${className}`} href={redirectUrl}>
+        <a className={`${baseClasses} ${className}`} href={redirectUrl} onClick={onClick}>
           <p
             className={`${positionClasses[position]} bg-opacity-70 absolute animate-pulse rounded bg-transparent px-3 py-2 text-2xl ${color === "black" ? "text-black" : "text-white"}`}
           >
