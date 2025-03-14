@@ -16,7 +16,8 @@
     "strict": true, // Enforce strict type checking
     "esModuleInterop": true, // Enable ES module interoperability
     "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
-    "skipLibCheck": true // Skip type checking of declaration files for faster builds
+    "skipLibCheck": true, // Skip type checking of declaration files for faster builds
+    "lib": ["es2016"] // Set the target library to es2016 or later
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]
