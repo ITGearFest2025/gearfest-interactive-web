@@ -2,7 +2,6 @@ import type React from "react";
 import { useEffect, useState } from "react";
 
 interface ContinueButtonProps {
-  word?: string;
   delay: number;
   redirectUrl: string;
   position?: "right" | "bottom" | "center";
@@ -11,21 +10,12 @@ interface ContinueButtonProps {
 }
 
 const ContinueButton: React.FC<ContinueButtonProps> = ({
-  word = "Tap to continue",
   delay,
   redirectUrl,
   position = "right",
   color = "black",
   className = "",
 }) => {
-  const baseClasses = "absolute z-50 inset-0 bg-transparent cursor-pointer";
-
-  const positionClasses = {
-    right: "bottom-[20%] right-4",
-    bottom: "bottom-4 right-4",
-    center: "bottom-[15%] left-[50%] transform -translate-x-1/2",
-  };
-
   const [showTap, setShowTap] = useState<boolean>(false);
 
   useEffect(() => {
@@ -39,11 +29,10 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
   return (
     <>
       {showTap && (
-        <a className={`${baseClasses} ${className}`} href={redirectUrl}>
-          <p
-            className={`${positionClasses[position]} bg-opacity-70 absolute animate-pulse rounded bg-transparent px-3 py-2 text-2xl ${color === "black" ? "text-black" : "text-white"}`}
-          >
-            {word}
+        <a className="absolute inset-0 z-50 cursor-pointer bg-transparent">
+          <p className="bg-opacity-70 font-italiana absolute right-4 bottom-[20%] animate-pulse rounded bg-transparent px-3 py-2 text-2xl text-white">
+            Tap to <br />
+            Continue
           </p>
         </a>
       )}
