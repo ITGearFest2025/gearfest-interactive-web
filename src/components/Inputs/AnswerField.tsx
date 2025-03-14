@@ -1,6 +1,8 @@
 import StarbarDark from "@/assets/tool/starbar-dark";
 import StarbarLight from "@/assets/tool/starbar-light";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { userLongAnswer } from "@/stores/userLongAnswer"; // Persistent Store
+import { navigate } from "astro:transitions/client";
 
 interface LongTextInputProps {
   placeholder?: string;
@@ -17,14 +19,28 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
   id = "long-text-input",
   rows = 8,
   className = "",
-  redirectUrl,
+  redirectUrl = "",
   theme = "dark",
   question,
 }) => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState(userLongAnswer.get()); // Get stored value
+
+  useEffect(() => {
+    // Subscribe to store updates
+    const unsubscribe = userLongAnswer.subscribe((value) => {
+      setText(value);
+    });
+
+    return () => unsubscribe(); // Cleanup on unmount
+  }, []);
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value);
+    userLongAnswer.set(e.target.value); // Update persistent store
+  };
+  const handleClick = () => {
+    setTimeout(() => {
+      navigate(redirectUrl);
+    }, 300);
   };
 
   return (
@@ -61,9 +77,13 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
                 onChange={onChange}
                 placeholder={placeholder}
                 rows={rows}
-                className={`w-full border-2 px-3 py-2 ${className} text-sm font-light transition-colors duration-300 ${theme === "light" ? "border-t-[#fff3e2] border-r-[#94694c] border-b-[#94694c] border-l-[#fff3e2] bg-[#ffecc7] text-[#763c0d]" : "border-t-[#f0e1d4] border-r-[#0a0030] border-b-[#0a0030] border-l-[#f0e1d4] bg-[#42427a] text-[#F6ECFF]"}`}
+                className={`w-full border-2 px-3 py-2 placeholder:text-[#F6ECFF] ${className} text-sm font-light transition-colors duration-300 ${
+                  theme === "light"
+                    ? "border-t-[#fff3e2] border-r-[#94694c] border-b-[#94694c] border-l-[#fff3e2] bg-[#ffecc7] text-[#763c0d]"
+                    : "border-t-[#f0e1d4] border-r-[#0a0030] border-b-[#0a0030] border-l-[#f0e1d4] bg-[#42427a] text-[#F6ECFF]"
+                }`}
               />
-              <button className="font-italiana broder-l-[#f0e1d4] h-16 w-full cursor-pointer border-2 border-t-[#f0e1d4] border-r-[#0a0030] border-b-[#0a0030] bg-[#7b6088] text-white hover:bg-[#7b6088]/70 active:bg-[#7b6088]/50">
+              <button className="font-italiana broder-l-[#f0e1d4] h-16 w-full cursor-pointer border-2 border-t-[#f0e1d4] border-r-[#0a0030] border-b-[#0a0030] bg-[#7b6088] text-lg text-white hover:bg-[#7b6088]/70 active:bg-[#7b6088]/50">
                 Done
               </button>
             </div>
