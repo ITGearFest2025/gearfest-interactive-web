@@ -1,0 +1,28 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import Ios1 from "@/assets/story/scene0/ios1.webp";
+import Ios2 from "@/assets/story/scene0/ios2.webp";
+import { Image } from "astro:assets";
+---
+
+<Layout title="from Scar to Star">
+  <div class="fixed inset-0 -z-50 bg-black"></div>
+  <div
+    class="font-mitr flex w-full flex-col items-center justify-center gap-4 px-10 text-white"
+  >
+    <p class="text-xl">คำแนะนำสำหรับผู้ใช้งาน IOS</p>
+    <p class="text-center">
+      เปิดใช้งานเว็บไซต์ผ่าน Safari และซ่อนแถบเครื่องมือ
+      เปิดเสียงเพื่อประสบการณ์ที่ดีขึ้น
+    </p>
+    <Image src={Ios1} alt="recommand for ios" />
+    <Image src={Ios2} alt="recommand for ios" />
+  </div>
+  <ContinueButton
+    delay={0.5}
+    redirectUrl="/story/scene1/1-0"
+    position="right"
+    client:load
+  />
+</Layout>
