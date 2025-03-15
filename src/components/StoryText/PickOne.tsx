@@ -11,7 +11,7 @@ type PickOneProps = {
 };
 
 const PickOne: React.FC<PickOneProps> = ({
-  type,
+  type = "top",
   children,
   word,
   theme = "light",
@@ -20,7 +20,9 @@ const PickOne: React.FC<PickOneProps> = ({
   const baseClasses = "absolute flex items-center justify-center w-full";
 
   return (
-    <div className={`${baseClasses} top-[10%] ${className}`}>
+    <div
+      className={`${baseClasses} ${type === "top" ? "top-[10%]" : "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"} ${className}`}
+    >
       {/* Image Container */}
       <div className="relative">
         <img
