@@ -1,0 +1,34 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene1/2_2OneShot.webp";
+import ImageLowRes from "@/assets/story/scene1/2_2OneShot_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="ดูเหมือนจะมีฝนดาวตกเกิดขึ้นนะ คุณจะ...?"
+    redirectUrl="/story/scene1/1-8-1"
+    answers={[
+      {
+        text: "ยืนมองเงียบๆ ชื่นชมความงามและคิดถึงความหมายที่อยู่เบื้องหลัง",
+        attribute: "",
+      },
+      {
+        text: "หยิบโทรศัพท์ขึ้นมาถ่ายรูป บันทึกภาพเผื่อนำไปค้นหาเพิ่มเติม",
+        attribute: "",
+      },
+      { text: "รีบทักหาคนที่คุณรักเพื่อแบ่งปันช่วงเวลานี้", attribute: "" },
+      {
+        text: "เดินผ่านไปโดยไม่ได้สนใจอะไรมาก",
+        attribute: "",
+        redirectUrl: "/story/scene1/1-8-2",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>
