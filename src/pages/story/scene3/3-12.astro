@@ -1,7 +1,7 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import Image from "@/assets/story/scene2/5เจอทางเดิน_oneshot_hd.webp";
-import ImageLowRes from "@/assets/story/scene2/5เจอทางเดิน_LowRes.webp";
+import Image from "@/assets/story/scene3/6_hd.webp";
+import ImageLowRes from "@/assets/story/scene3/6_LowRes.webp";
 import TextBox from "@/components/StoryText/StoryText";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
 ---
@@ -11,9 +11,10 @@ import ContinueButton from "@/components/ContinueButton/ContinueButton";
   image={Image}
   imageLowRes={ImageLowRes}
 >
+  <TextBox type="top" word="พี่ใจดีจัง" theme="light" />
   <ContinueButton
-    delay={2}
-    redirectUrl="/story/scene2/2-18"
+    delay={0.5}
+    redirectUrl="/story/scene3/3-13"
     position="right"
     client:load
   />
