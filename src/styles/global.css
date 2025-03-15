@@ -16,3 +16,16 @@
   --font-mitr: "Mitr", serif;
   --font-italiana: "Italiana", serif;
 }
+
+@theme {
+  --animate-bounce: bounce 3s ease-in-out infinite;
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+    }
+    50% {
+      transform: none;
+    }
+  }
+}
