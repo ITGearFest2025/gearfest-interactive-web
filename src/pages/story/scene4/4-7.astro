@@ -1,0 +1,31 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene4/5_hd.webp";
+import ImageLowRes from "@/assets/story/scene4/5_Image_LowRes.webp";
+import PickOne from "@/components/StoryText/PickOne";
+import ArrowDown from "@/assets/story/scene3/arrowdown.svg";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <PickOne type="center" word="PICK ONE" theme="dark" />
+  <div class="absolute top-1/2 right-10 size-auto animate-bounce">
+    <ArrowDown width={77} height={120} />
+  </div>
+  <a
+    href="4-8-1"
+    class="absolute top-0 h-screen w-full -translate-y-1/2"
+    aria-label="pick top"></a>
+  <div
+    class="absolute top-1/2 left-10 -translate-y-1/2 rotate-180 animate-bounce"
+  >
+    <ArrowDown width={77} height={120} />
+  </div>
+  <a
+    href="4-8-2"
+    class="absolute bottom-0 h-screen w-full translate-y-1/2"
+    aria-label="pick down"></a>
+</ImagePageLayout>

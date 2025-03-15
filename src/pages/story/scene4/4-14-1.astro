@@ -1,0 +1,37 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene4/7_hd.webp";
+import ImageLowRes from "@/assets/story/scene4/7_Image_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="เธอดูกลัดกลุ้มเรื่องเพื่อนๆ คุณจะพูดปลอบเธออย่างไร?"
+    redirectUrl="/story/scene4/4-15-1"
+    theme="light"
+    answers={[
+      {
+        text: "ตอนนี้ยังไม่มีเพื่อนก็ไม่เป็นไรหรอก เดี๋ยวสักวันเธอก็จะเจอเพื่อนสนิทของเธอเอง",
+        attribute: "",
+      },
+      {
+        text: "เธอลองชวนเพื่อนของเธอดูก่อนก็ได้นะ บางทีเขาอาจจะอยากมาอ่านหนังสือกับเธอก็ได้",
+        attribute: "",
+      },
+      {
+        text: "เธออาจจะแค่ยังไม่เจอคนที่คลิ๊กก็ได้ ลองไปคุยกับเพื่อนกลุ่มใหม่ๆ ดูดีไหม",
+        attribute: "",
+      },
+      {
+        text: "ค่อยๆ เป็น ค่อยๆ ไป ก็ได้ เธอยังมีเวลาสนิทกับเพื่อนๆ อีกเยอะหน่า",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>

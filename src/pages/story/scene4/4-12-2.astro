@@ -1,0 +1,37 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene4/7_hd.webp";
+import ImageLowRes from "@/assets/story/scene4/7_Image_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="เธอดูกลัดกลุ้มเรื่องการเรียน คุณจะพูดปลอบเธออย่างไร?"
+    redirectUrl="/story/scene4/4-13-2"
+    theme="light"
+    answers={[
+      {
+        text: "แต่อย่างน้อยเธอก็พยายามมามากแล้วใช่ไหมล่ะ แค่ทำให้เต็มที่ที่สุดก็พอแล้ว",
+        attribute: "",
+      },
+      {
+        text: "ลองปรับวิธีการเรียนใหม่ไหม? เผื่อมันอาจจะทำให้เธอเรียนเข้าใจมากขึ้น",
+        attribute: "",
+      },
+      {
+        text: "มองให้เป็นเรื่องท้าทายแล้วตั้งเป้าหมายเอาชนะพวกเขาดูก่อน อย่าเพิ่งยอมแพ้นะ!",
+        attribute: "",
+      },
+      {
+        text: "การเรียนไม่ใช่ทุกอย่างหน่า เธออาจจะมีเรื่องอื่นที่เก่งกว่าพวกเขาเยอะแยะก็ได้",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>
