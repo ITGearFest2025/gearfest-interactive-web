@@ -11,10 +11,14 @@ import ContinueButton from "@/components/ContinueButton/ContinueButton";
   image={Image}
   imageLowRes={ImageLowRes}
 >
-  <TextBox type="top" word="เหมือนทำอะไรหล่นหายไป" theme="light" />
+  <TextBox
+    type="top"
+    word={["คุณช่วยเราตามหา", "สิ่งนั้นหน่อยได้ไหม"]}
+    theme="light"
+  />
   <ContinueButton
     delay={0.5}
-    redirectUrl="/story/scene2/2-11-1"
+    redirectUrl="/story/scene2/2-11"
     position="right"
     client:load
   />
