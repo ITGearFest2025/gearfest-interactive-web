@@ -13,7 +13,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
   delay,
   redirectUrl,
   position = "right",
-  color = "black",
+  color = "white",
   className = "",
 }) => {
   const [showTap, setShowTap] = useState<boolean>(false);
@@ -43,7 +43,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
           className="absolute inset-0 z-50 cursor-pointer bg-transparent"
         >
           <p
-            className={`bg-opacity-70 font-italiana absolute right-4 bottom-[10%] animate-pulse rounded bg-transparent px-3 py-2 text-2xl text-white opacity-0 transition-opacity duration-700 ease-in ${showAnimate ? "opacity-100" : ""}`}
+            className={`bg-opacity-70 font-italiana absolute right-4 bottom-[10%] animate-pulse rounded bg-transparent px-3 py-2 text-2xl ${color === "black" ? "text-black" : "text-white"} opacity-0 transition-opacity duration-700 ease-in ${showAnimate ? "opacity-100" : ""}`}
           >
             Tap to <br />
             Continue
