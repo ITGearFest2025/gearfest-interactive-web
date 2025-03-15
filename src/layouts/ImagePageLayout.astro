@@ -5,30 +5,52 @@ import { Image } from "astro:assets";
 
 interface Props {
   title?: string;
+  redirectUrl?: string;
+  redirectInterval?: number;
   image: ImageMetadata;
   imageLowRes?: ImageMetadata;
+  backgroundColor?: string;
 }
 
-const { title, image, imageLowRes } = Astro.props;
+const {
+  title,
+  redirectUrl,
+  redirectInterval,
+  image,
+  imageLowRes,
+  backgroundColor = "#000",
+} = Astro.props;
 ---
 
 <Layout title={title}>
-  {
-    imageLowRes && (
-      <link
-        rel="preload"
-        href={imageLowRes.src}
-        as="image"
-        fetchpriority="high"
-        slot="head"
-      />
-    )
-  }
   <div
     class="absolute z-10 h-full w-full bg-cover bg-center"
     style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
   >
     <Image src={image} alt="background" class="h-full w-full object-cover" />
     <slot />
+  </div>
+  {
+    imageLowRes && (
+      <>
+        <link
+          rel="preload"
+          href={imageLowRes.src}
+          as="image"
+          fetchpriority="high"
+          slot="head"
+        />
+        <img
+          src={imageLowRes.src}
+          class="h-full w-full object-cover"
+          alt="Preload low-res"
+        />
+      </>
+    )
+  }
+  <div
+    class="fixed inset-0 -z-50"
+    style={`background-color: ${backgroundColor};`}
+  >
   </div>
 </Layout>
