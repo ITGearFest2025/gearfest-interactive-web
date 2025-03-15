@@ -1,0 +1,36 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene2/2เจอดาว_loop_hd.webp";
+import ImageLowRes from "@/assets/story/scene2/2เจอดาว_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="คุณได้พบกับดวงดาวที่แตกสลาย เขาขอความช่วยเหลือจากคุณ คุณจะ..."
+    redirectUrl="/story/scene2/2-7"
+    answers={[
+      {
+        text: "รีบเข้าไปช่วยเหลือโดยไม่ลังเล",
+        attribute: "",
+      },
+      {
+        text: "มองดูรอบๆ ว่ามีคนอื่นอยู่อีกไหมค่อยเข้าไปช่วย",
+        attribute: "",
+      },
+      {
+        text: "ใช้เวลาสังเกตและวิเคราะห์สถานการณ์ก่อนลงมือช่วย",
+        attribute: "",
+      },
+      {
+        text: "กังวลกับสิ่งที่จะเกิดขึ้น แต่ก็เข้าไปช่วย",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>
