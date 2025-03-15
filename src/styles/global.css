@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&family=Judson:ital,wght@0,400;0,700;1,400&family=Mitr:wght@200;300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-
 /* Hide scrollbar  */
-.scrollbar-none::-webkit-scrollbar {
+/* .scrollbar-none::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .scrollbar-none {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;  
-
+  -ms-overflow-style: none;
+  overflow-y: hidden;
+  /* scrollbar-width: none; */
+}
 @theme {
   --font-judson: "Judson", serif;
   --font-mitr: "Mitr", serif;
