@@ -12,12 +12,12 @@ const AnswerComponent = ({
   question,
   answers,
   redirectUrl,
-  theme = "light",
+  theme = "dark",
 }: {
   answers: IAnswer[];
   question: string;
   redirectUrl?: string;
-  theme: "light" | "dark";
+  theme?: "light" | "dark";
 }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center">
