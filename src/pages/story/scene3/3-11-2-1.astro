@@ -1,0 +1,37 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene3/4_hd.webp";
+import ImageLowRes from "@/assets/story/scene3/4_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="เด็กคนนี้ดูเศร้าที่ต้องทิ้งความชอบของตัวเอง คุณอยากพูดอะไร?"
+    redirectUrl="/story/scene3/3-11-2-2"
+    theme="light"
+    answers={[
+      {
+        text: "เธอก็เรียนให้เก่งที่สุดไปเลย แล้วก็เอาการวาดรูปไปเป็นงานอดิเรกสิ",
+        attribute: "",
+      },
+      {
+        text: "เรียนเอาไว้เยอะๆ ก็ไม่เสียหายนี่ จะได้มีความรู้เอาไปใช้ตอนโตไง",
+        attribute: "",
+      },
+      {
+        text: "ไม่ต้องคิดมากนะ ยังไงเธอก็ทำมันได้ดีทั้งคู่แน่นอน!",
+        attribute: "",
+      },
+      {
+        text: "งั้นก็ไปวาดรูปสิ! ทำในสิ่งที่ตัวเองสนุกไม่ดีกว่าหรอ",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>
