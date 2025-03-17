@@ -1,0 +1,25 @@
+---
+import Image from "@/assets/story/scene3_5/5ประตูเปิด_oneshot_hd.webp";
+import ImageLowRes from "@/assets/story/scene3_5/5ประตูเปิด_LowRes.webp";
+import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import PreloadImage from "@/assets/story/scene4/0Intro_oneshot_hd.webp";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="from Scar to Star">
+  <link
+    rel="preload"
+    href={PreloadImage.src}
+    as="image"
+    fetchpriority="high"
+    slot="head"
+  />
+  <ContinueButton
+    delay={3}
+    color="black"
+    redirectUrl="/story/scene4/4-1"
+    position="right"
+    client:load
+  />
+  <div class="fixed inset-0 -z-50 bg-white"></div>
+</Layout>

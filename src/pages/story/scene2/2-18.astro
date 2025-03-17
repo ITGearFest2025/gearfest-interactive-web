@@ -1,0 +1,36 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene2/5ทางเดิน_hd.webp";
+import ImageLowRes from "@/assets/story/scene2/5ทางเดิน_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="คุณเจอทางเดินปริศนา เหมือนมันจะเกี่ยวข้องกับการช่วยเหลือดาวดวงนั้น คุณจะ..."
+    redirectUrl="/story/scene2/2-19"
+    answers={[
+      {
+        text: "ตรวจสอบเส้นทางให้มั่นใจว่าไม่มีอันตรายก่อนเริ่มเดิน",
+        attribute: "",
+      },
+      {
+        text: "รีบเดินและสนุกไปกับเส้นทางที่เกิดขึ้นตรงหน้า",
+        attribute: "",
+      },
+      {
+        text: "พยายามมองหาคำอธิบายของทางเดินที่เกิดขึ้นตรงหน้าระหว่างเดินเข้าไป",
+        attribute: "",
+      },
+      {
+        text: "เดินเข้าไปเพราะไม่เห็นเส้นทางอื่น",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>

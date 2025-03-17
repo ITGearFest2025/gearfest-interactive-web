@@ -1,0 +1,37 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene4/1_hd.webp";
+import ImageLowRes from "@/assets/story/scene4/1_Image_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="คุณเห็นเธอนั่งเงียบๆ อยู่เพียงคนเดียว คุณจึง..."
+    redirectUrl="/story/scene4/4-4"
+    theme="light"
+    answers={[
+      {
+        text: "เดินเข้าไปหาเพื่อขอนั่งลงที่ที่ว่างตรงข้าม พร้อมยิ้มทักทายอย่างเป็นมิตร",
+        attribute: "",
+      },
+      {
+        text: "สอบถามว่าที่นั่งตรงข้ามมีคนนั่งไหม และขอนั่งตรงข้ามอย่างเงียบๆ",
+        attribute: "",
+      },
+      {
+        text: "สังเกตสีหน้าและอารมณ์ของคนตรงหน้า ก่อนจะหาจังหวะขอนั่งลงตรงข้าม",
+        attribute: "",
+      },
+      {
+        text: "นั่งลงที่ที่นั่งว่างฝั่งตรงข้าม",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>
