@@ -10,6 +10,7 @@ import Tiktok from "@/assets/landing/tiktok.svg";
 import Instagram from "@/assets/landing/ig.svg";
 import { Image } from "astro:assets";
 import ArrowDown from "@/assets/landing/arrowdown.svg";
+import MenuTab from '../../components/MenuTab/Menutab.tsx';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -24,6 +25,7 @@ import ArrowDown from "@/assets/landing/arrowdown.svg";
     class="absolute inset-0 flex flex-col items-center justify-between"
     style={"background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%);"}
   >
+    <MenuTab client:load/>
     <div class="mt-16 flex w-auto items-center justify-center gap-1.5">
       <ESC width={43} height={69} />
       <GearFest width={136} height={136} />
