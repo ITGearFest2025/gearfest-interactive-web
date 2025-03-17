@@ -1,0 +1,37 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene5/7_hd.webp";
+import ImageLowRes from "@/assets/story/scene5/7_Image_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="เธอดูกดดันกับการสัมภาษณ์งาน คุณจะพูดปลอบเธออย่างไร?"
+    redirectUrl="/story/scene5/5-13-1"
+    theme="light"
+    answers={[
+      {
+        text: "ถ้าเขาเรียกไปสัมภาษณ์ แสดงว่าเขาสนใจในตัวคุณแล้ว กล้าๆ เข้าไว้",
+        attribute: "",
+      },
+      {
+        text: "ลองฝึกพูดกับเตรียมตัวไปเยอะๆ ดีไหม มันจะช่วยทำให้ไม่ตื่นเต้นได้นะ",
+        attribute: "",
+      },
+      {
+        text: "ก็ถือว่าเป็นหนึ่งในด่านที่ต้องผ่านไปให้ได้! เธอทำได้อยู่แล้ว สู้ๆ!",
+        attribute: "",
+      },
+      {
+        text: "ไม่ว่าผลลัพธ์จะออกมาเป็นยังไง ทำให้เต็มที่ที่สุดก็พอ เป็นกำลังใจให้นะ",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>
