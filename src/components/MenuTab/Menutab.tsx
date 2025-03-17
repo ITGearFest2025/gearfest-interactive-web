@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import navbar from "../../assets/navbar.png";
-import line from "../../assets/line.svg";
-import linewhite from "../../assets/linewhite.svg";
+import navbar from "../../assets/navbar/navbar.png";
+import line from "../../assets/navbar/line.svg";
+import linewhite from "../../assets/navbar/linewhite.svg";
 
 const MenuIcon = ({ className }: { className?: string }) => (
   <svg className={className} width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,7 +9,11 @@ const MenuIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-const Navbar = () => {
+interface NavbarProps {
+  className?: string;
+}
+
+const Navbar = ({ className = "" }: NavbarProps) => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
   
@@ -39,9 +43,9 @@ const Navbar = () => {
   };
  
   return (
-    <>
+    <div className={className}>
       {/* Menu Button */}
-      <div className="absolute top-4 right-4 z-50">
+      <div className="top-0 left-0 z-50">
         <button onClick={toggleNavbar} className="p-2 focus:outline-none">
           <MenuIcon className="h-8 w-8" />
         </button>
@@ -49,7 +53,7 @@ const Navbar = () => {
  
       {/* Navbar Overlay */}
       {isNavbarVisible && (
-        <div className="absolute w-full z-50 flex items-center justify-center">
+        <div className="absolute top-0 left-0 w-full z-50 flex items-center justify-center">
           <div className="relative w-full">
             <img src={navbar.src} alt="Navigation Menu" className="w-full h-auto" />
             <button
@@ -101,7 +105,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
  
