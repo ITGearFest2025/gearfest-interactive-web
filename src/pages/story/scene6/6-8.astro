@@ -1,0 +1,28 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene6/3_loop_hd.webp";
+import ImageLowRes from "@/assets/story/scene6/3_LowRes.webp";
+import ArrowDown from "@/assets/story/scene3/arrowdown.svg";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <div class="absolute top-[35%] left-1/2 size-auto -translate-x-1/2">
+    <div class="animate-bounce">
+      <ArrowDown width={77} height={120} />
+    </div>
+  </div>
+  <p
+    class="font-italiana absolute top-1/2 left-1/2 -translate-x-1/2 text-4xl text-white"
+    style={"text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);"}
+  >
+    Click here
+  </p>
+  <a
+    href="/story/scene6/6-9"
+    class="absolute top-[40%] left-1/2 size-60 -translate-x-1/2"
+    aria-label="click here"></a>
+</ImagePageLayout>
