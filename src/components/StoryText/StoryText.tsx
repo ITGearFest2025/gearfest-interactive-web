@@ -3,7 +3,7 @@ import BubbleWhite from "@/assets/tool/bubble-white.webp";
 import BubbleDark from "@/assets/tool/bubble-dark.webp";
 
 type TextBoxProps = {
-  type: "top" | "bottom" | "center" | "box" | "high-top";
+  type: "top" | "bottom" | "center" | "high-top" | "low-bottom";
   children?: React.ReactNode;
   word?: string | string[];
   theme?: "light" | "dark";
@@ -22,10 +22,10 @@ const TextBox: React.FC<TextBoxProps> = ({
   const typeClasses = {
     "high-top": "top-[0%]",
     top: "top-[10%]",
+    "low-bottom": "bottom-[10%]",
     bottom: "bottom-[20%]",
     center:
       "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
-    box: "relative",
   };
 
   return (
