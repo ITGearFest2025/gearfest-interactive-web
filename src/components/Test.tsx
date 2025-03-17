@@ -3,10 +3,15 @@ import { DndContext } from "@dnd-kit/core";
 import ContinueButton from "./ContinueButton/ContinueButton";
 import Answerfield from "./Inputs/AnswerField";
 import StoryText from "./StoryText/StoryText";
-import { DraggablePiece, DropZone, PlacedPiece, StarOutline } from "./jigsaw/jigsaw";
+import {
+  DraggablePiece,
+  DropZone,
+  PlacedPiece,
+  StarOutline,
+} from "./jigsaw/jigsaw";
 import type { PuzzlePiece } from "../types/puzzlepiece";
 import { puzzlePieces } from "../constant/puzzlepiece";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 function Test() {
   const [clicked, setClicked] = useState(false);
@@ -23,10 +28,10 @@ function Test() {
   };
 
   function handleDragEnd(event: { active: any; over: any }) {
-    const { active, over } = event
+    const { active, over } = event;
 
     if (over && over.id === `dropzone-${active.id}`) {
-      setPlacedPieces((prev) => [...prev, active.id])
+      setPlacedPieces((prev) => [...prev, active.id]);
     }
   }
 
@@ -139,38 +144,51 @@ function Test() {
       </div>
 
       <DndContext onDragEnd={handleDragEnd}>
-          {/* Puzzle area with fixed aspect ratio */}
-          <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl flex justify-center items-center  shadow-xl p-5 sm:p-8 mb-8">
-            <div className="relative w-1/2 flex justify-center items-center h-1/2 " style={{ paddingBottom: "75%" }}>
-              <div className="absolute  top-0 left-0 w-full h-full">
-                {puzzlePieces.map((piece) => (
-                  <DropZone key={piece.id} piece={piece}>
-                    {placedPieces.includes(piece.id) && <PlacedPiece piece={piece} />}
-                  </DropZone>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Pieces area */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-8">
-            <div className="flex flex-wrap gap-4 sm:gap-8 justify-center items-center min-h-[100px]">
+        {/* Puzzle area with fixed aspect ratio */}
+        <div className="relative mb-8 flex items-center justify-center rounded-2xl bg-white/80 p-5 shadow-xl backdrop-blur-sm sm:p-8">
+          <div
+            className="relative flex h-1/2 w-1/2 items-center justify-center"
+            style={{ paddingBottom: "75%" }}
+          >
+            <div className="absolute top-0 left-0 h-full w-full">
               {puzzlePieces.map((piece) => (
-                <DraggablePiece key={piece.id} piece={piece} isPlaced={placedPieces.includes(piece.id)} />
+                <DropZone key={piece.id} piece={piece}>
+                  {placedPieces.includes(piece.id) && (
+                    <PlacedPiece piece={piece} />
+                  )}
+                </DropZone>
               ))}
             </div>
           </div>
-        </DndContext>
+        </div>
 
-        {isComplete && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-8 text-center">
-            <div className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl shadow-lg px-4 sm:px-8 py-3 sm:py-4">
-              <p className="text-xl sm:text-3xl font-bold text-white">
-                ✨ Congratulations! The Perfect Star is Complete! ⭐
-              </p>
-            </div>
-          </motion.div>
-        )}
+        {/* Pieces area */}
+        <div className="rounded-2xl bg-white/80 p-4 shadow-xl backdrop-blur-sm sm:p-8">
+          <div className="flex min-h-[100px] flex-wrap items-center justify-center gap-4 sm:gap-8">
+            {puzzlePieces.map((piece) => (
+              <DraggablePiece
+                key={piece.id}
+                piece={piece}
+                isPlaced={placedPieces.includes(piece.id)}
+              />
+            ))}
+          </div>
+        </div>
+      </DndContext>
+
+      {isComplete && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-8 text-center"
+        >
+          <div className="inline-block rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-600 px-4 py-3 shadow-lg sm:px-8 sm:py-4">
+            <p className="text-xl font-bold text-white sm:text-3xl">
+              ✨ Congratulations! The Perfect Star is Complete! ⭐
+            </p>
+          </div>
+        </motion.div>
+      )}
     </main>
   );
 }
