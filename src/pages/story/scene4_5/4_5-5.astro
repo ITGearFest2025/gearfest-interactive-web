@@ -1,0 +1,19 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene4_5/4ประตูใหม่_hd.webp";
+import ImageLowRes from "@/assets/story/scene4_5/4ประตูใหม่_Image_LowRes.webp";
+import ContinueButton from "@/components/ContinueButton/ContinueButton";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <ContinueButton
+    delay={0.5}
+    redirectUrl="/story/scene4_5/4_5-6"
+    position="right"
+    client:load
+  />
+</ImagePageLayout>
