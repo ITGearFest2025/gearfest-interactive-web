@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import navbar from "../../assets/navbar.png";
+import line from "../../assets/line.svg";
+import linewhite from "../../assets/linewhite.svg";
 
 const MenuIcon = ({ className }: { className?: string }) => (
   <svg className={className} width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,6 +11,12 @@ const MenuIcon = ({ className }: { className?: string }) => (
 
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
+  
+  // Set current path when component mounts
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
  
   const toggleNavbar = () => {
     setIsNavbarVisible(!isNavbarVisible);
@@ -16,6 +24,18 @@ const Navbar = () => {
  
   const closeNavbar = () => {
     setIsNavbarVisible(false);
+  };
+  
+  // Helper function to determine text color based on current path
+  const getLinkClassName = (path: string) => {
+    return `transition-colors duration-300 hover:text-[#FDB515] ${
+      currentPath === path ? "text-[#FDB515]" : ""
+    }`;
+  };
+
+  // Helper function to determine which line image to use
+  const getLineImage = (adjacentPath: string) => {
+    return currentPath === adjacentPath ? line.src : linewhite.src;
   };
  
   return (
@@ -34,52 +54,48 @@ const Navbar = () => {
             <img src={navbar.src} alt="Navigation Menu" className="w-full h-auto" />
             <button
               onClick={closeNavbar}
-              className="absolute top-4 right-4 text-3xl text-white"
+              className="absolute top-5 right-6 text-5xl text-white"
             >
               ×
             </button>
-            <nav className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white">
-              <ul className="flex flex-col items-center gap-6">
+            <nav className="absolute top-1/2 left-1/2 w-4/5 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white">
+              <ul className="flex flex-col items-center gap-4">
                 <li>
                   <a
                     href="/"
-                    className="transition-colors duration-300 hover:text-[#FDB515]"
+                    className={getLinkClassName("/")}
                   >
                     Home
                   </a>
                 </li>
+                <img src={getLineImage("/")} alt="Divider" className="w-full h-auto opacity-90" />
                 <li>
                 <a
-                    href="/about"
-                    className="transition-colors duration-300 hover:text-[#FDB515]"
+                    href="/what-is-gearfest"
+                    className={getLinkClassName("/what-is-gearfest")}
                   >
-                    About
+                    What is Gear Festival?
                   </a>
                 </li>
+                <img src={getLineImage("/what-is-gearfest")} alt="Divider" className="w-full h-auto opacity-90" />
                 <li>
                 <a
                     href="/exhibition"
-                    className="transition-colors duration-300 hover:text-[#FDB515]"
+                    className={getLinkClassName("/exhibition")}
                   >
-                    Exhibition
+                    Donation
                   </a>
                 </li>
+                <img src={getLineImage("/exhibition")} alt="Divider" className="w-full h-auto opacity-90" />
                 <li>
                 <a
                     href="/story"
-                    className="transition-colors duration-300 hover:text-[#FDB515]"
+                    className={getLinkClassName("/story")}
                   >
-                    Story
+                    Star Board
                   </a>
                 </li>
-                <li>
-                <a
-                    href="/contact"
-                    className="transition-colors duration-300 hover:text-[#FDB515]"
-                  >
-                    Contact
-                  </a>
-                </li>
+                <img src={getLineImage("/story")} alt="Divider" className="w-full h-auto opacity-90" />
               </ul>
             </nav>
           </div>
