@@ -1,19 +1,25 @@
 import { motion } from "framer-motion";
 import { type PuzzlePiece } from "../../types/puzzlepiece";
-import {  useDraggable, useDroppable } from "@dnd-kit/core";
+import { useDraggable, useDroppable } from "@dnd-kit/core";
 
-export function DraggablePiece({ piece, isPlaced }: { piece: PuzzlePiece; isPlaced: boolean }) {
+export function DraggablePiece({
+  piece,
+  isPlaced,
+}: {
+  piece: PuzzlePiece;
+  isPlaced: boolean;
+}) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: piece.id,
-  })
+  });
 
   const style = transform
     ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
       }
-    : undefined
+    : undefined;
 
-  if (isPlaced) return null
+  if (isPlaced) return null;
 
   return (
     <div
@@ -21,23 +27,35 @@ export function DraggablePiece({ piece, isPlaced }: { piece: PuzzlePiece; isPlac
       style={style}
       {...listeners}
       {...attributes}
-      className="touch-none cursor-grab active:cursor-grabbing"
+      className="cursor-grab touch-none active:cursor-grabbing"
     >
       <motion.svg
         width="100%"
         height="100%"
         viewBox="0 0 100 100"
-        className="w-[clamp(60px,15vw,120px)] h-[clamp(60px,15vw,120px)] drop-shadow-lg"
+        className="h-[clamp(60px,15vw,120px)] w-[clamp(60px,15vw,120px)] drop-shadow-lg"
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.05 }}
       >
-        <path d={piece.path} fill="#FFD700" stroke="#FFA500" strokeWidth="0.5" className="filter drop-shadow-md" />
+        <path
+          d={piece.path}
+          fill="#FFD700"
+          stroke="#FFA500"
+          strokeWidth="0.5"
+          className="drop-shadow-md filter"
+        />
       </motion.svg>
     </div>
-  )
+  );
 }
-  
-export function DropZone({ piece, children }: { piece: PuzzlePiece; children?: React.ReactNode }) {
+
+export function DropZone({
+  piece,
+  children,
+}: {
+  piece: PuzzlePiece;
+  children?: React.ReactNode;
+}) {
   const { setNodeRef } = useDroppable({
     id: `dropzone-${piece.id}`,
   });
@@ -45,7 +63,7 @@ export function DropZone({ piece, children }: { piece: PuzzlePiece; children?: R
   return (
     <div
       ref={setNodeRef}
-      className="absolute w-[clamp(40px,10vw,80px)] h-[clamp(40px,10vw,80px)] flex items-center justify-center z-10" // ปรับขนาดให้เล็กลง
+      className="absolute z-10 flex h-[clamp(40px,10vw,80px)] w-[clamp(40px,10vw,80px)] items-center justify-center" // ปรับขนาดให้เล็กลง
       style={{
         left: `${piece.dropZoneX}%`,
         top: `${piece.dropZoneY}%`,
@@ -53,7 +71,12 @@ export function DropZone({ piece, children }: { piece: PuzzlePiece; children?: R
       }}
     >
       {!children && (
-        <svg width="100%" height="100%" viewBox="0 0 100 100" className="absolute top-0 left-0 pointer-events-none">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          className="pointer-events-none absolute top-0 left-0"
+        >
           <path
             d={piece.path}
             fill="none"
@@ -68,27 +91,33 @@ export function DropZone({ piece, children }: { piece: PuzzlePiece; children?: R
     </div>
   );
 }
-  
-export function  PlacedPiece({ piece }: { piece: PuzzlePiece }) {
+
+export function PlacedPiece({ piece }: { piece: PuzzlePiece }) {
   return (
     <motion.svg
       width="100%"
       height="100%"
       viewBox="0 0 100 100"
-      className="w-[clamp(60px,15vw,120px)] h-[clamp(60px,15vw,120px)] drop-shadow-lg"
+      className="h-[clamp(60px,15vw,120px)] w-[clamp(60px,15vw,120px)] drop-shadow-lg"
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
     >
-      <path d={piece.path} fill="#FFD700" stroke="#00000" strokeWidth="0.5" className="filter drop-shadow-md" />
+      <path
+        d={piece.path}
+        fill="#FFD700"
+        stroke="#00000"
+        strokeWidth="0.5"
+        className="drop-shadow-md filter"
+      />
     </motion.svg>
-  )
+  );
 }
 
 export function StarOutline() {
   return (
     <svg
       viewBox="0 0 100 100"
-      className="w-full h-full absolute top-0 left-0 pointer-events-none"
+      className="pointer-events-none absolute top-0 left-0 h-full w-full"
       preserveAspectRatio="xMidYMid meet"
     >
       <path
@@ -100,8 +129,5 @@ export function StarOutline() {
         className="opacity-30"
       />
     </svg>
-  )
+  );
 }
-  
-
-  

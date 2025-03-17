@@ -1,12 +1,11 @@
-import StarbarDark from "@/assets/tool/starbar-dark";
-import StarbarLight from "@/assets/tool/starbar-light";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useStore } from "@nanostores/react";
 import { userLongAnswer } from "@/stores/userLongAnswer"; // Persistent Store
 import { navigate } from "astro:transitions/client";
 
 interface LongTextInputProps {
   placeholder?: string;
-  id?: string;
+  id: "userAnswer" | "tellUs" | "wish"; // Required ID to track multiple inputs
   rows?: number;
   className?: string;
   redirectUrl?: string;
@@ -16,27 +15,20 @@ interface LongTextInputProps {
 
 const LongTextInput: React.FC<LongTextInputProps> = ({
   placeholder = "Write something...",
-  id = "long-text-input",
+  id,
   rows = 8,
   className = "",
   redirectUrl = "",
   theme = "dark",
   question,
 }) => {
-  const [text, setText] = useState(userLongAnswer.get()); // Get stored value
-
-  useEffect(() => {
-    // Subscribe to store updates
-    const unsubscribe = userLongAnswer.subscribe((value) => {
-      setText(value);
-    });
-
-    return () => unsubscribe(); // Cleanup on unmount
-  }, []);
+  const answers = useStore(userLongAnswer); // ✅ Watch the entire store
+  const text = answers[id] || ""; // ✅ Extract only the relevant field
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    userLongAnswer.set(e.target.value); // Update persistent store
+    userLongAnswer.setKey(id, e.target.value); // ✅ Update only one field
   };
+
   const handleClick = () => {
     setTimeout(() => {
       navigate(redirectUrl);
@@ -46,7 +38,6 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
   return (
     <div className="fixed inset-0 flex items-center justify-center">
       <div className="relative w-[334px] px-3 py-4">
-        {/* Background with 90% opacity */}
         <div
           className={`absolute inset-0 bg-gradient-to-b ${
             theme === "light"
@@ -54,8 +45,6 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
               : "from-[#1a1635] to-[#1a1622]"
           } opacity-95`}
         />
-
-        {/* Everything else remains unchanged */}
         <div className="relative">
           <div
             className={`border-[3px] ${
@@ -70,10 +59,9 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
               <p className="mb-6 px-2 text-center text-lg text-white">
                 {question}
               </p>
-              {theme === "light" ? <StarbarLight /> : <StarbarDark />}
               <textarea
                 id={id}
-                value={text}
+                value={text} // ✅ Watches only this field
                 onChange={onChange}
                 placeholder={placeholder}
                 rows={rows}
@@ -83,7 +71,10 @@ const LongTextInput: React.FC<LongTextInputProps> = ({
                     : "border-t-[#f0e1d4] border-r-[#0a0030] border-b-[#0a0030] border-l-[#f0e1d4] bg-[#42427a] text-[#F6ECFF]"
                 }`}
               />
-              <button className="font-italiana broder-l-[#f0e1d4] h-16 w-full cursor-pointer border-2 border-t-[#f0e1d4] border-r-[#0a0030] border-b-[#0a0030] bg-[#7b6088] text-lg text-white hover:bg-[#7b6088]/70 active:bg-[#7b6088]/50">
+              <button
+                onClick={handleClick}
+                className="font-italiana broder-l-[#f0e1d4] h-12 w-full cursor-pointer border-2 border-t-[#f0e1d4] border-r-[#0a0030] border-b-[#0a0030] bg-[#7b6088] text-lg text-white hover:bg-[#7b6088]/70 active:bg-[#7b6088]/50"
+              >
                 Done
               </button>
             </div>

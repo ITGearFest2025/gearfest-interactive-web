@@ -31,5 +31,4 @@ export const puzzlePieces: PuzzlePiece[] = [
     dropZoneX: 25,
     dropZoneY: 50,
   },
- 
 ];
