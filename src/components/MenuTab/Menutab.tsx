@@ -9,11 +9,11 @@ const MenuIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-interface NavbarProps {
+interface MenuTabProps {
   className?: string;
 }
 
-const Navbar = ({ className = "" }: NavbarProps) => {
+const MenuTab = ({ className = "" }: MenuTabProps) => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
   
@@ -45,63 +45,72 @@ const Navbar = ({ className = "" }: NavbarProps) => {
   return (
     <div className={className}>
       {/* Menu Button */}
-      <div className="top-0 left-0 z-50">
+      <div className="z-40">
         <button onClick={toggleNavbar} className="p-2 focus:outline-none">
           <MenuIcon className="h-8 w-8" />
         </button>
       </div>
  
-      {/* Navbar Overlay */}
+      {/* Navbar Overlay - Portal to body */}
       {isNavbarVisible && (
-        <div className="absolute top-0 left-0 w-full z-50 flex items-center justify-center">
-          <div className="relative w-full">
-            <img src={navbar.src} alt="Navigation Menu" className="w-full h-auto" />
-            <button
-              onClick={closeNavbar}
-              className="absolute top-5 right-6 text-5xl text-white"
-            >
-              ×
-            </button>
-            <nav className="absolute top-1/2 left-1/2 w-4/5 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white">
-              <ul className="flex flex-col items-center gap-4">
-                <li>
+        <div 
+          id="menu-overlay" 
+          className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
+        >
+          <div className="w-full max-w-sm h-[80vh] max-h-[600px] pointer-events-auto">
+            <div className="relative w-full h-full">
+              <img src={navbar.src} alt="Navigation Menu" className="w-full h-full object-cover" />
+              <button
+                onClick={closeNavbar}
+                className="absolute top-5 right-6 text-5xl text-white"
+              >
+                ×
+              </button>
+              <nav className="absolute top-1/2 left-1/2 w-4/5 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white">
+                <ul className="flex flex-col items-center gap-4">
+                  <li>
+                    <a
+                      href="/"
+                      className={getLinkClassName("/")}
+                      onClick={closeNavbar}
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <img src={getLineImage("/")} alt="Divider" className="w-full h-auto opacity-90" />
+                  <li>
                   <a
-                    href="/"
-                    className={getLinkClassName("/")}
-                  >
-                    Home
-                  </a>
-                </li>
-                <img src={getLineImage("/")} alt="Divider" className="w-full h-auto opacity-90" />
-                <li>
-                <a
-                    href="/what-is-gearfest"
-                    className={getLinkClassName("/what-is-gearfest")}
-                  >
-                    What is Gear Festival?
-                  </a>
-                </li>
-                <img src={getLineImage("/what-is-gearfest")} alt="Divider" className="w-full h-auto opacity-90" />
-                <li>
-                <a
-                    href="/exhibition"
-                    className={getLinkClassName("/exhibition")}
-                  >
-                    Donation
-                  </a>
-                </li>
-                <img src={getLineImage("/exhibition")} alt="Divider" className="w-full h-auto opacity-90" />
-                <li>
-                <a
-                    href="/story"
-                    className={getLinkClassName("/story")}
-                  >
-                    Star Board
-                  </a>
-                </li>
-                <img src={getLineImage("/story")} alt="Divider" className="w-full h-auto opacity-90" />
-              </ul>
-            </nav>
+                      href="/what-is-gearfest"
+                      className={getLinkClassName("/what-is-gearfest")}
+                      onClick={closeNavbar}
+                    >
+                      What is Gear Festival?
+                    </a>
+                  </li>
+                  <img src={getLineImage("/what-is-gearfest")} alt="Divider" className="w-full h-auto opacity-90" />
+                  <li>
+                  <a
+                      href="/exhibition"
+                      className={getLinkClassName("/exhibition")}
+                      onClick={closeNavbar}
+                    >
+                      Donation
+                    </a>
+                  </li>
+                  <img src={getLineImage("/exhibition")} alt="Divider" className="w-full h-auto opacity-90" />
+                  <li>
+                  <a
+                      href="/story"
+                      className={getLinkClassName("/story")}
+                      onClick={closeNavbar}
+                    >
+                      Star Board
+                    </a>
+                  </li>
+                  <img src={getLineImage("/story")} alt="Divider" className="w-full h-auto opacity-90" />
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       )}
@@ -109,4 +118,4 @@ const Navbar = ({ className = "" }: NavbarProps) => {
   );
 };
  
-export default Navbar;
+export default MenuTab;

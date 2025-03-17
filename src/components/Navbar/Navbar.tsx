@@ -18,26 +18,31 @@ const Navbar = ({ className = "" }: NavbarProps) => {
 
   return (
     <nav className={`w-full px-6 py-4 flex justify-between items-center ${className}`}>
-      <div className="flex-shrink-0 flex items-center justify-center">
-        <MenuTab className="relative " />
+      {/* Left side with menu icon */}
+      <div className="flex-shrink-0">
+        <MenuTab />
+      </div>
+      
+      {/* Center with logo */}
+      <div className="flex-shrink-0">
         <img 
           src={gearfest.src} 
           alt="Gear Festival" 
-          className=""
+          className="h-10"
         />
       </div>
       
-
-      <div className="flex-shrink-0 flex ">
+      {/* Right side with icons */}
+      <div className="flex-shrink-0 flex items-center space-x-4">
         <img 
           src={esc.src} 
-          alt="Gear Festival" 
-          className=""
+          alt="ESC" 
+          className="h-8"
         />
         <img 
           src={idk.src} 
-          alt="Gear Festival" 
-          className=""
+          alt="IDK" 
+          className="h-8"
         />
       </div>
     </nav>
