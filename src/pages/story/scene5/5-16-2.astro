@@ -1,0 +1,37 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene5/7_hd.webp";
+import ImageLowRes from "@/assets/story/scene5/7_Image_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="เธอดูหมดไฟกับการหางาน คุณจะพูดปลอบเธออย่างไร?"
+    redirectUrl="/story/scene5/5-17-1"
+    theme="light"
+    answers={[
+      {
+        text: "ถึงไม่ได้ที่นี่ ก็ไม่ได้แปลว่าจะไม่มีที่ไหนติดต่อมาอีกแล้วสักหน่อย ยังเร็วเกินไปที่จะยอมแพ้นะ!",
+        attribute: "",
+      },
+      {
+        text: "ลองยื่นสมัครงานในสายงานที่ใกล้เคียง เพิ่มดูไหม บางทีเธออาจจะเจอสิ่งที่ชอบมากกว่าก็ได้นะ",
+        attribute: "",
+      },
+      {
+        text: "ใจเย็นๆ ค่อยๆ เป็นค่อยๆ ไปก็ได้ แต่ละคนมีจังหวะชีวิตไม่เหมือนกัน เดินไปตามจังหวะชีวิตของตัวเองก็พอ",
+        attribute: "",
+      },
+      {
+        text: "ลองเตรียมตัว ลองหาข้อมูลให้เต็มที่ที่สุดไปก่อน ถ้าไม่ได้ที่นี่จริงๆ อย่างน้อยก็ถือว่าได้ประสบการณ์นะ",
+        attribute: "",
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>

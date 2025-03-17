@@ -1,0 +1,21 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene5/9_hd.webp";
+import ImageLowRes from "@/assets/story/scene5/9_Image_LowRes.webp";
+import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import TextBox from "@/components/StoryText/StoryText";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <TextBox type="bottom" word="คำพูดของคุณช่วยไว้ได้เยอะเลยค่ะ" theme="light" />
+  <ContinueButton
+    delay={0.5}
+    redirectUrl="/story/scene5/5-21"
+    position="right"
+    client:load
+  />
+</ImagePageLayout>
