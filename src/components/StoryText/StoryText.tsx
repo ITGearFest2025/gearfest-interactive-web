@@ -3,7 +3,7 @@ import BubbleWhite from "@/assets/tool/bubble-white.webp";
 import BubbleDark from "@/assets/tool/bubble-dark.webp";
 
 type TextBoxProps = {
-  type: "top" | "bottom" | "center" | "box";
+  type: "top" | "bottom" | "center" | "box" | "high-top";
   children?: React.ReactNode;
   word?: string | string[];
   theme?: "light" | "dark";
@@ -20,6 +20,7 @@ const TextBox: React.FC<TextBoxProps> = ({
   const baseClasses = "absolute flex items-center justify-center w-full";
 
   const typeClasses = {
+    "high-top": "top-[0%]",
     top: "top-[10%]",
     bottom: "bottom-[20%]",
     center:
