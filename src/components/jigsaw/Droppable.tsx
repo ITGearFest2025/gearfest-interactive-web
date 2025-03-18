@@ -52,7 +52,7 @@ export function Droppable({
       <img
         src={getBgImage().src}
         style={{ ...style }}
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 left-1/2 -translate-x-1/2 bg-cover bg-center object-cover"
         alt="star image"
       />
     </>
