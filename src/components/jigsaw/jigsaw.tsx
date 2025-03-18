@@ -1,133 +1,80 @@
-import { motion } from "framer-motion";
-import { type PuzzlePiece } from "../../types/puzzlepiece";
-import { useDraggable, useDroppable } from "@dnd-kit/core";
+import React, { useState } from "react";
+import { DndContext } from "@dnd-kit/core";
+import { Draggable } from "./Draggable";
+import { Droppable } from "./Droppable";
+import Image1 from "@/assets/story/scene6/puzzle_0000_สี-(1)_hd.webp";
+import Image2 from "@/assets/story/scene6/puzzle_0001_IMG_1715_hd.webp";
+import Image3 from "@/assets/story/scene6/puzzle_0002_Layer-1_hd.webp";
 
-export function DraggablePiece({
-  piece,
-  isPlaced,
-}: {
-  piece: PuzzlePiece;
-  isPlaced: boolean;
-}) {
-  const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: piece.id,
-  });
+export default function Jigsaw() {
+  const [droppedItems, setDroppedItems] = useState<number>(0);
+  const [draggedItems, setDraggedItems] = useState<Set<string>>(new Set());
 
-  const style = transform
-    ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-      }
-    : undefined;
-
-  if (isPlaced) return null;
-
+  const handleDragEnd = ({ over, active }: { over: any; active: any }) => {
+    if (over && over.id === "droppable") {
+      setDroppedItems((prev) => prev + 1);
+      setDraggedItems((prev) => new Set(prev.add(active.id))); // Mark the item as dropped
+    }
+  };
   return (
-    <div
-      ref={setNodeRef}
-      style={style}
-      {...listeners}
-      {...attributes}
-      className="cursor-grab touch-none active:cursor-grabbing"
-    >
-      <motion.svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 100 100"
-        className="h-[clamp(60px,15vw,120px)] w-[clamp(60px,15vw,120px)] drop-shadow-lg"
-        initial={{ scale: 1 }}
-        whileHover={{ scale: 1.05 }}
-      >
-        <path
-          d={piece.path}
-          fill="#FFD700"
-          stroke="#FFA500"
-          strokeWidth="0.5"
-          className="drop-shadow-md filter"
-        />
-      </motion.svg>
-    </div>
-  );
-}
+    <div>
+      <DndContext onDragEnd={handleDragEnd}>
+        <div>
+          {!draggedItems.has("draggable-2") && (
+            <div className="absolute top-[65%] left-[40%]">
+              <Draggable
+                id="draggable-2"
+                className="relative z-40 size-auto cursor-pointer"
+              >
+                <img
+                  src={Image2.src}
+                  alt="jigsaw second puzzle"
+                  width={126}
+                  height={120}
+                />
+              </Draggable>
+            </div>
+          )}
 
-export function DropZone({
-  piece,
-  children,
-}: {
-  piece: PuzzlePiece;
-  children?: React.ReactNode;
-}) {
-  const { setNodeRef } = useDroppable({
-    id: `dropzone-${piece.id}`,
-  });
-
-  return (
-    <div
-      ref={setNodeRef}
-      className="absolute z-10 flex h-[clamp(40px,10vw,80px)] w-[clamp(40px,10vw,80px)] items-center justify-center" // ปรับขนาดให้เล็กลง
-      style={{
-        left: `${piece.dropZoneX}%`,
-        top: `${piece.dropZoneY}%`,
-        transform: "translate(-50%, -50%)",
-      }}
-    >
-      {!children && (
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          className="pointer-events-none absolute top-0 left-0"
+          {!draggedItems.has("draggable-3") && (
+            <div className="absolute top-[70%] right-[8%]">
+              <Draggable
+                id="draggable-3"
+                className="relative z-30 size-auto cursor-pointer"
+              >
+                <img
+                  src={Image3.src}
+                  alt="jigsaw third puzzle"
+                  width={173}
+                  height={143}
+                />
+              </Draggable>
+            </div>
+          )}
+          {!draggedItems.has("draggable-1") && (
+            <div className="absolute top-[70%] left-[8%]">
+              <Draggable
+                id="draggable-1"
+                className="relative z-20 size-auto cursor-pointer"
+              >
+                <img
+                  src={Image1.src}
+                  alt="jigsaw first puzzle"
+                  width={202}
+                  height={171}
+                />
+              </Draggable>
+            </div>
+          )}
+        </div>
+        <Droppable
+          redirectUrl="/story/scene6/6-10"
+          id="droppable"
+          droppedItems={droppedItems}
         >
-          <path
-            d={piece.path}
-            fill="none"
-            stroke="#000000"
-            strokeWidth="0.5"
-            strokeDasharray="4 2"
-            className="opacity-50"
-          />
-        </svg>
-      )}
-      {children}
+          <></>
+        </Droppable>
+      </DndContext>
     </div>
-  );
-}
-
-export function PlacedPiece({ piece }: { piece: PuzzlePiece }) {
-  return (
-    <motion.svg
-      width="100%"
-      height="100%"
-      viewBox="0 0 100 100"
-      className="h-[clamp(60px,15vw,120px)] w-[clamp(60px,15vw,120px)] drop-shadow-lg"
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-    >
-      <path
-        d={piece.path}
-        fill="#FFD700"
-        stroke="#00000"
-        strokeWidth="0.5"
-        className="drop-shadow-md filter"
-      />
-    </motion.svg>
-  );
-}
-
-export function StarOutline() {
-  return (
-    <svg
-      viewBox="0 0 100 100"
-      className="pointer-events-none absolute top-0 left-0 h-full w-full"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <path
-        d="M50 0L100 50L50 100L0 50L50 0"
-        fill="none"
-        stroke="#000000"
-        strokeWidth="0.5"
-        strokeDasharray="4 4"
-        className="opacity-30"
-      />
-    </svg>
   );
 }
