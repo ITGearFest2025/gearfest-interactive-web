@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Judson:ital,wght@0,400;0,700;1,400&family=Mitr:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Baskervville:ital@0;1&family=Judson:ital,wght@0,400;0,700;1,400&family=Petit+Formal+Script&family=Taviraj:ital,wght@0,400;1,500&family=Mitr:wght@200;300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 /* Hide scrollbar  */
@@ -15,6 +15,9 @@
   --font-judson: "Judson", serif;
   --font-mitr: "Mitr", serif;
   --font-italiana: "Italiana", serif;
+  --font-petit: "Petit Formal Script", serif;
+  --font-taviraj: "Taviraj", serif;
+  --font-baskervville: "Baskervville", serif;
 }
 
 @theme {
