@@ -4,7 +4,7 @@ import StarBarLight from "@/assets/tool/starbar-light.tsx";
 
 interface IAnswer {
   text: string;
-  attribute: string;
+  attribute: number[];
   redirectUrl?: string;
 }
 

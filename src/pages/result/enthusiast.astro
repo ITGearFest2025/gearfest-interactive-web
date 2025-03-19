@@ -1,0 +1,91 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/result/EnthusiastBG_hd.webp";
+import ImageLowRes from "@/assets/result/EnthusiastBG_Image_LowRes.webp";
+import Orb from "@/assets/result/Enthusiast.png";
+import GearFest from "@/assets/landing/gearfest.svg";
+import ESC from "@/assets/landing/esc.svg";
+import KNEng from "@/assets/landing/kneng.svg";
+import { Image } from "astro:assets";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+>
+  <div
+    class="absolute top-0 right-0 left-0 flex flex-col items-center"
+    style={{ backgroundImage: `url(${ImageHd.src})` }}
+  >
+    <GearFest width={100} height={100} />
+    <Image src={Orb} alt="Achiever Orb" />
+    <div class="font-petit max-w-[366px] text-center text-sm text-white">
+      <p class="mb-5">
+        " Joy is not in things; it is in us." <br /> — Richard Wagner
+      </p>
+      <div
+        style={{
+          textShadow: "0px 4px 4px rgba(0, 0, 0, 0.35)",
+          background: "rgba(255, 255, 255, 0.1)",
+        }}
+        class="font-taviraj relative mb-6 flex h-[313px] w-[366px] flex-col items-center justify-center gap-[14px] rounded-xl bg-white text-[12px] font-medium text-white"
+      >
+        <p class="italic">
+          คุณได้รับโหลดาวที่ถูกบรรจุด้วยคณะละครรื่นเริง<br />
+          คณะละครคึกคักที่แต่งเติมไปด้วยเสียงหัวเราะและสีสัน <br />
+          แห่งความสนุกสนาน ผู้ใดที่เข้ามาเพลิดเพลินต่างก็ได้รับ <br />
+          ประสบการณ์แปลกใหม่ไม่มีวันเบื่อ
+        </p>
+        <p>
+          ตัวตนของคุณเปรียบเสมือนคณะละครนี้ คุณชอบที่จะหาประสบการณ์<br />
+          ไม่ซ้ำใคร คุณคิดเร็ว ทำเร็ว และมีไอเดียพลุ่งพล่านอยู่ในหัวตลอดเวลา <br
+          />
+          คุณรักความสนุกสนานและชอบที่จะเป็นศูนย์กลางของความรื่นเริงนั้น<br />
+          แต่บางครั้งคุณอาจจะเพลิดเพลินไปกับความสนุกมากเสียจน<br />
+          ลืมบางสิ่งที่สำคัญในชีวิตไป
+        </p>
+        <p class="text-[11.5px]">
+          ดวงดาวดวงนี้จึงอยากจะฝากข้อความถึงคุณว่า ใจเย็นๆ ค่อยๆ เป็นค่อยๆ ไป <br
+          />
+          กับชีวิตก็ได้ คุณยังมีเวลาอีกมากมายในการทำสิ่งที่คุณอยากทำ ลองอยู่กับ<br
+          />
+          ปัจจุบันและค่อยๆ คิดไตร่ตรองถึงสิ่งที่คุณควรจะเผชิญหน้าเป็นสิ่งต่อไป<br
+          />
+          <span class="font-semibold"
+            >เพราะฉะนั้นอย่าลืมหยุดพักหายใจ ก่อนออกไปโลดแล่นอีกครั้งนะ</span
+          >
+        </p>
+      </div>
+      <div class="font-baskervville mb-6 flex w-full max-w-[366px] gap-2">
+        <a
+          download
+          href="/src/assets/result_save/Enthusiast.png"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#faf8f5] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#807E8E",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 0px 24px -4px rgba(255, 255, 255, 0.48)",
+            borderRadius: "8px",
+          }}
+          >Save picture
+        </a>
+        <a
+          href="/starboard"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#17153b] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#FAF8F5",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 16px 32px -4px rgba(12, 12, 13, 0.1)",
+            borderRadius: "8px",
+          }}>Visit Star Board</a
+        >
+      </div>
+      <p class="font-baskervville mb-3 text-base">gearfest2025.com</p>
+      <div class="flex w-full items-center justify-center gap-2">
+        <ESC width={37} height={44} />
+        <KNEng width={37} height={37} />
+      </div>
+    </div>
+  </div>
+</ImagePageLayout>

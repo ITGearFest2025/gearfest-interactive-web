@@ -1,0 +1,91 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/result/InvestigatorBG_hd.webp";
+import ImageLowRes from "@/assets/result/InvestigatorBG_Image_LowRes.webp";
+import Orb from "@/assets/result/Investigator.png";
+import GearFest from "@/assets/landing/gearfest.svg";
+import ESC from "@/assets/landing/esc.svg";
+import KNEng from "@/assets/landing/kneng.svg";
+import { Image } from "astro:assets";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+>
+  <div
+    class="absolute top-0 right-0 left-0 flex flex-col items-center"
+    style={{ backgroundImage: `url(${ImageHd.src})` }}
+  >
+    <GearFest width={100} height={100} />
+    <Image src={Orb} alt="Achiever Orb" />
+    <div class="font-petit max-w-[366px] text-center text-sm text-white">
+      <p class="mb-5 text-[12px]">
+        " The important thing is not to stop questioning. <br />
+        Curiosity has its own reason for existing." <br />
+        - Albert Einstein
+      </p>
+      <div
+        style={{
+          textShadow: "0px 4px 4px rgba(0, 0, 0, 0.35)",
+          background: "rgba(255, 255, 255, 0.1)",
+        }}
+        class="font-taviraj relative mb-6 flex h-[313px] w-[366px] flex-col items-center justify-center gap-[14px] rounded-xl bg-white text-[12px] font-medium text-white"
+      >
+        <p class="italic">
+          คุณได้รับโหลดาวที่ถูกบรรจุด้วยหอสังเกตการณ์แห่งปราชญ์ <br />
+          หอสังเกตุการณ์ขนาดใหญ่ภายใต้ท้องฟ้าที่ประดับไปด้วยดวงดาว <br />
+          ปรากฏกล้องโทรทรรศน์ที่กำลังส่องหาคำตอบของจักรวาลอันยิ่งใหญ่ <br />
+          และปราถนาที่จะค้นคว้าหาความรู้อยู่เสมอ
+        </p>
+        <p>
+          ตัวตนของคุณเปรียบเสมือนกล้องโทรทรรศน์กล้องนี้ <br />
+          คุณเป็นคนชอบเรียนรู้ในเรื่องที่ตนเองสนใจอย่างลึกซึ้ง และชอบค้นหา <br
+          />
+          คำตอบของโลกผ่านการศึกษาข้อมูลรอบตัว คุณหลงใหลในการ <br /> แสวงหาความรู้
+          จนบางทีคุณอาจเผลอหลงลืมโลกภายนอกไป
+        </p>
+        <p>
+          ดวงดาวดวงนี้จึงอยากจะฝากข้อความถึงคุณว่า <br /><span
+            class="font-semibold"
+            >คุณไม่ได้อยู่เพียงลำพัง
+          </span><br />
+          บนเส้นทางแห่งการเรียนรู้ยังมีผู้คนมากมายที่พร้อมจะเดินเคียงข้างคุณ <br
+          />
+          ความรู้ที่คุณสั่งสมไม่เพียงเป็นแสงนำทางให้ตัวเอง <br />
+          แต่ยังสามารถจุดประกายความเข้าใจและช่วยเหลือผู้อื่นได้เช่นกัน
+        </p>
+      </div>
+      <div class="font-baskervville mb-6 flex w-full max-w-[366px] gap-2">
+        <a
+          download
+          href="/src/assets/result_save/Investigator.png"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#faf8f5] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#807E8E",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 0px 24px -4px rgba(255, 255, 255, 0.48)",
+            borderRadius: "8px",
+          }}
+          >Save picture
+        </a>
+        <a
+          href="/starboard"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#17153b] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#FAF8F5",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 16px 32px -4px rgba(12, 12, 13, 0.1)",
+            borderRadius: "8px",
+          }}>Visit Star Board</a
+        >
+      </div>
+      <p class="font-baskervville mb-3 text-base">gearfest2025.com</p>
+      <div class="flex w-full items-center justify-center gap-2">
+        <ESC width={37} height={44} />
+        <KNEng width={37} height={37} />
+      </div>
+    </div>
+  </div>
+</ImagePageLayout>
