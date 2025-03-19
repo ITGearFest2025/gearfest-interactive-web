@@ -67,7 +67,7 @@ const mapType = [
   "achiever",
   "individualist",
   "investigator",
-  "guaedian",
+  "loyalist",
   "enthusiast",
   "challenger",
   "peacemaker",

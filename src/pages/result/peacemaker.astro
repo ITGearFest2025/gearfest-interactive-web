@@ -1,0 +1,88 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/result/PeacemakerBG_hd.webp";
+import ImageLowRes from "@/assets/result/PeacemakerBG_Image_LowRes.webp";
+import Orb from "@/assets/result/Peacemaker.png";
+import GearFest from "@/assets/landing/gearfest.svg";
+import ESC from "@/assets/landing/esc.svg";
+import KNEng from "@/assets/landing/kneng.svg";
+import { Image } from "astro:assets";
+---
+
+<ImagePageLayout
+  title="from Scar to Star"
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+>
+  <div
+    class="absolute top-0 right-0 left-0 flex flex-col items-center"
+    style={{ backgroundImage: `url(${ImageHd.src})` }}
+  >
+    <GearFest width={100} height={100} />
+    <Image src={Orb} alt="Achiever Orb" />
+    <div class="font-petit max-w-[366px] text-center text-sm text-white">
+      <p class="mb-5 text-[13px]">
+        " The only way to make peace with others is <br /> to make peace with yourself."
+        — Dalai Lama
+      </p>
+      <div
+        style={{
+          textShadow: "0px 4px 4px rgba(0, 0, 0, 0.35)",
+          background: "rgba(255, 255, 255, 0.1)",
+        }}
+        class="font-taviraj relative mb-6 flex h-[313px] w-[366px] flex-col items-center justify-center gap-[14px] rounded-xl bg-white text-[12px] font-medium text-white"
+      >
+        <p class="italic">
+          คุณได้รับโหลดาวที่ถูกบรรจุด้วยสระบัวแห่งสันติ<br />
+          ดอกบัวผลิบานในสระน้ำใสกระจ่าง<br />
+          ท่ามกลางกลีบดอกซากุระที่โปรยปรายมากับสายลม <br /> แห่งความอ่อนโยน ในศาลเจ้าอันเงียบสงบ
+        </p>
+        <p>
+          ตัวตนของคุณเปรียบเสมือนสระบัวแห่งนี้ คุณเป็นผู้ที่มีความสงบ<br />
+          และเข้าถึงได้กับทุกคน คุณรักการปรองดองกับผู้อื่น<br />
+          และพร้อมที่จะช่วยไกล่เกลี่ยปัญหาที่เกิดขึ้น คุณไม่ชอบความขัดแย้ง<br />
+          และหวังให้ทุกอย่างสามารถดำเนินไปได้อย่างราบรื่น<br />
+          จนบางทีคุณอาจจะเผลอลืมให้น้ำหนักกับความคิดเห็นของตนเอง
+        </p>
+        <p>
+          ดวงดาวดวงนี้จึงอยากจะฝากข้อความถึงคุณว่า<br />
+          คุณสามารถที่จะบอกความต้องการของตัวเองได้นะ<br />
+          อย่าลืมให้คุณค่ากับความคิดของตัวเอง คุณเป็นคนที่มีมุมมอง<br /> อันลึกซึ้ง
+          และความคิดเห็นของคุณก็สำคัญไม่แพ้ใคร<br />
+          <span class="font-semibold"
+            >จงอย่ากลัวที่จะแสดงสิ่งที่คุณรู้สึกออกมานะ</span
+          >
+        </p>
+      </div>
+      <div class="font-baskervville mb-6 flex w-full max-w-[366px] gap-2">
+        <a
+          download
+          href="/src/assets/result_save/Peacemaker.png"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#faf8f5] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#807E8E",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 0px 24px -4px rgba(255, 255, 255, 0.48)",
+            borderRadius: "8px",
+          }}
+          >Save picture
+        </a>
+        <a
+          href="/starboard"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#17153b] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#FAF8F5",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 16px 32px -4px rgba(12, 12, 13, 0.1)",
+            borderRadius: "8px",
+          }}>Visit Star Board</a
+        >
+      </div>
+      <p class="font-baskervville mb-3 text-base">gearfest2025.com</p>
+      <div class="flex w-full items-center justify-center gap-2">
+        <ESC width={37} height={44} />
+        <KNEng width={37} height={37} />
+      </div>
+    </div>
+  </div>
+</ImagePageLayout>
