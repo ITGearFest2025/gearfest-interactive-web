@@ -1,10 +1,11 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
+import BGM from "@/components/Music/BGM";
 interface Props {
   title?: string;
 }
-const { title = "Astro App" } = Astro.props;
+const { title = "from Scar to Star" } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,5 +23,7 @@ const { title = "Astro App" } = Astro.props;
     >
       <slot />
     </main>
+
+    <BGM client:only="react" />
   </body>
 </html>
