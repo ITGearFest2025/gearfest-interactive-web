@@ -2,14 +2,7 @@
 import BGstar from "@/assets/landing/bg.webp";
 import BGstarAnimated from "@/assets/landing/bg-animate.webp";
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import ESC from "@/assets/landing/esc.svg";
-import GearFest from "@/assets/landing/gearfest.svg";
-import KNEng from "@/assets/landing/kneng.svg";
-import Logo from "@/assets/landing/logo.webp";
-import Tiktok from "@/assets/landing/tiktok.svg";
-import Instagram from "@/assets/landing/ig.svg";
-import { Image } from "astro:assets";
-import ArrowDown from "@/assets/landing/arrowdown.svg";
+import LandingPage from "@/components/Landing/LandingPage";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -20,49 +13,5 @@ import ArrowDown from "@/assets/landing/arrowdown.svg";
   image={BGstarAnimated}
   backgroundColor="#fff"
 >
-  <div
-    class="absolute inset-0 flex flex-col items-center justify-between"
-    style={"background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%);"}
-  >
-    <div class="mt-16 flex w-auto items-center justify-center gap-1.5">
-      <ESC width={43} height={69} />
-      <GearFest width={136} height={136} />
-      <KNEng width={53} height={53} />
-    </div>
-    <div class="flex flex-col items-center justify-center">
-      <Image
-        src={Logo}
-        alt="from Scars to Star logo"
-        class="h-full min-h-[100px] w-full max-w-[404px] min-w-[200px] px-6"
-      />
-      <a
-        href="/story/scene0/0-1"
-        style={"box-shadow: 0px 0px 10px 2px #E2C7E8; text-shadow: 0px 0px 10px #E2C7E8;"}
-        class="font-italiana mt-10 rounded-full border-[2px] border-white bg-transparent px-12 py-3.5 text-2xl text-white transition-all duration-300 hover:scale-110 active:scale-105"
-      >
-        Start Journey
-      </a>
-    </div>
-    <div class="font-judson flex flex-col items-center justify-center gap-2.5">
-      <a
-        href="https://www.instagram.com/gearfestival.official/"
-        class="text-judson flex gap-1.5 text-white"
-        ><Instagram width={25} height={25} />gearfestival.official</a
-      >
-      <a
-        href="https://www.tiktok.com/@gearfestival_official"
-        class="text-judson flex gap-1.5 text-white"
-        ><Tiktok width={24} height={27.5} />gearfestival.official</a
-      >
-    </div>
-    <div class="mb-4 flex flex-col items-center">
-      <p
-        style={"text-shadow: 0px 0px 4px #FFFFFF;"}
-        class="font-judson text-[#F7DEFC]"
-      >
-        What is Gear Festival?
-      </p>
-      <ArrowDown width={36} height={36} />
-    </div>
-  </div>
+  <LandingPage client:load />
 </ImagePageLayout>
