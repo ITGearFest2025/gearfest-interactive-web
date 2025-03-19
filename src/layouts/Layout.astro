@@ -1,19 +1,69 @@
 ---
-import { ClientRouter } from "astro:transitions";
+import { ClientRouter, ViewTransitions } from "astro:transitions";
 import "@/styles/global.css";
+import { SEO } from "astro-seo";
 import BGM from "@/components/Music/BGM";
+
 interface Props {
   title?: string;
+  preloadImages?: ImageMetadata[];
 }
-const { title = "Gear Festival 2025" } = Astro.props;
+const { title = "GearFestival 2025", preloadImages } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" transition:animate="none">
   <head>
+    <SEO
+      title={title}
+      description="จากอดีตที่เรามี… สู่วันนี้ที่เราเป็น มาร่วมเก็บเกี่ยวความทรงจำในอดีต และมาเป็นดวงดาวอันแสนเปล่งประกายที่งานดนตรีการกุศล Gear Festival 2025 Ep.1 From Scars to Stars ในวันที่ 28 มีนาคม 2568 ณ สวนอุทยาน 100 ปี จุฬาลงกรณ์มหาวิทยาลัย ติดตาม IG: @gearfestival.official เพื่อที่จะได้ไม่พลาดข่าวสารใหม่ๆ"
+      titleDefault="GearFestival 2025 | from Scars to Star !"
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          title: title,
+          type: "website",
+          image: "/logo.png",
+        },
+        image: {
+          type: "image/jpeg",
+          secureUrl: "https://www.gearfestival2025.com/logo.png",
+          alt: "Gear Festival 2025 TU X CU",
+          width: 1080,
+          height: 1350,
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.png", type: "image/svg+xml" }],
+        meta: [
+          {
+            httpEquiv: "X-UA-Compatible",
+            content: "IE=edge",
+          },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          {
+            name: "generator",
+            content: Astro.generator,
+          },
+          {
+            name: "theme-color",
+            content: "#0a1542",
+          },
+        ],
+      }}
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <ClientRouter />
+    {
+      preloadImages &&
+        preloadImages.map((img) => (
+          <link rel="preload" as="image" href={img.src} />
+        ))
+    }
     <title>{title}</title>
   </head>
   <body>
