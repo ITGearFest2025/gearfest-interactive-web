@@ -10,6 +10,7 @@ interface Props {
   image: ImageMetadata;
   imageLowRes?: ImageMetadata;
   backgroundColor?: string;
+  preloadImages?: ImageMetadata[];
 }
 
 const {
@@ -19,10 +20,11 @@ const {
   image,
   imageLowRes,
   backgroundColor = "#000",
+  preloadImages,
 } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} preloadImages={preloadImages}>
   <div
     class="absolute z-10 h-full w-full bg-cover bg-center bg-repeat"
     style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}

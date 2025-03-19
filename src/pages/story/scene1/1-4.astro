@@ -3,13 +3,15 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
 import Image from "@/assets/story/scene1/1bartender_hd.webp";
 import ImageLowRes from "@/assets/story/scene1/1bartender_LowRes.webp";
+import PreloadImage from "@/assets/story/scene1/2-1WayBackHome_LowRes.webp";
 import TextBox from "@/components/StoryText/StoryText";
 ---
 
 <ImagePageLayout
-  title="from Scar to Star"
+  title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[PreloadImage]}
 >
   <TextBox type="bottom" word="ได้เวลากลับบ้านแล้วล่ะ" />
   <ContinueButton

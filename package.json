@@ -19,6 +19,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "astro": "^5.2.5",
+    "astro-seo": "^0.8.4",
     "framer-motion": "^12.4.3",
     "howler": "^2.2.4",
     "nanostores": "^0.11.3",

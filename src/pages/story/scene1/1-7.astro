@@ -1,14 +1,17 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene1/2_2OneShot.webp";
-import ImageLowRes from "@/assets/story/scene1/2_2OneShot_LowRes.webp";
+import ImageLowRes from "@/assets/story/scene1/2-1WayBackHome_LowRes.webp";
 import AnswerComponent from "@/components/Inputs/AnswerComponent";
+import PreloadImage from "@/assets/story/scene1/3-1shootingstar_LowRes.webp";
+import PreloadImage2 from "@/assets/story/scene1/3-2shootingstar_LowRes.webp";
 ---
 
 <ImagePageLayout
-  title="from Scar to Star"
+  title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[PreloadImage, PreloadImage2]}
 >
   <AnswerComponent
     question="ดูเหมือนจะมีฝนดาวตกเกิดขึ้นนะ คุณจะ...?"
