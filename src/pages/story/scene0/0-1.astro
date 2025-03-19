@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
 import Sound from "@/assets/story/scene0/sound.svg";
+import ResetScore from "@/components/ResetScore";
 ---
 
 <Layout title="from Scar to Star">
@@ -18,5 +19,6 @@ import Sound from "@/assets/story/scene0/sound.svg";
     position="right"
     client:load
   />
+  <ResetScore client:load />
   <div class="fixed inset-0 -z-50 bg-black"></div>
 </Layout>
