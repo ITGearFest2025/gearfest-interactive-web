@@ -1,14 +1,17 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene1/2_2OneShot.webp";
-import ImageLowRes from "@/assets/story/scene1/2_2OneShot_LowRes.webp";
+import ImageLowRes from "@/assets/story/scene1/2-1WayBackHome_LowRes.webp";
 import AnswerComponent from "@/components/Inputs/AnswerComponent";
+import PreloadImage from "@/assets/story/scene1/3-1shootingstar_LowRes.webp";
+import PreloadImage2 from "@/assets/story/scene1/3-2shootingstar_LowRes.webp";
 ---
 
 <ImagePageLayout
-  title="from Scar to Star"
+  title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[PreloadImage, PreloadImage2]}
 >
   <AnswerComponent
     question="ดูเหมือนจะมีฝนดาวตกเกิดขึ้นนะ คุณจะ...?"
@@ -16,16 +19,19 @@ import AnswerComponent from "@/components/Inputs/AnswerComponent";
     answers={[
       {
         text: "ยืนมองเงียบๆ ชื่นชมความงามและคิดถึงความหมายที่อยู่เบื้องหลัง",
-        attribute: "",
+        attribute: [3, 1, 1, 3, 2, 2, 1, 1, 3],
       },
       {
         text: "หยิบโทรศัพท์ขึ้นมาถ่ายรูป บันทึกภาพเผื่อนำไปค้นหาเพิ่มเติม",
-        attribute: "",
+        attribute: [1, 0, 3, 1, 3, 1, 2, 1, 1],
       },
-      { text: "รีบทักหาคนที่คุณรักเพื่อแบ่งปันช่วงเวลานี้", attribute: "" },
+      {
+        text: "รีบทักหาคนที่คุณรักเพื่อแบ่งปันช่วงเวลานี้",
+        attribute: [2, 3, 2, 2, 1, 3, 3, 2, 2],
+      },
       {
         text: "เดินผ่านไปโดยไม่ได้สนใจอะไรมาก",
-        attribute: "",
+        attribute: [1, 0, 0, 1, 2, 1, 0, 0, 3],
         redirectUrl: "/story/scene1/1-8-2",
       },
     ]}

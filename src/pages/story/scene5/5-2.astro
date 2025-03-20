@@ -1,0 +1,21 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene5/1ร้านสูท_hd.webp";
+import ImageLowRes from "@/assets/story/scene5/1ร้านสูท_Image_LowRes.webp";
+import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import TextBox from "@/components/TextBox/TextBox";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <TextBox type="low-bottom" word="ร้านสูท?" theme="dark" />
+  <ContinueButton
+    delay={0.5}
+    redirectUrl="/story/scene5/5-3"
+    position="right"
+    client:load
+  />
+</ImagePageLayout>

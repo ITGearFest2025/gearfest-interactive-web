@@ -2,12 +2,12 @@
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene4/5_hd.webp";
 import ImageLowRes from "@/assets/story/scene4/5_Image_LowRes.webp";
-import PickOne from "@/components/StoryText/PickOne";
+import PickOne from "@/components/TextBox/PickOne";
 import ArrowDown from "@/assets/story/scene3/arrowdown.svg";
 ---
 
 <ImagePageLayout
-  title="from Scar to Star"
+  title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
 >
@@ -16,7 +16,7 @@ import ArrowDown from "@/assets/story/scene3/arrowdown.svg";
     <ArrowDown width={77} height={120} />
   </div>
   <a
-    href="4-8-1"
+    href="/story/scene4/4-8-1"
     class="absolute top-0 h-screen w-full -translate-y-1/2"
     aria-label="pick top"></a>
   <div
@@ -25,7 +25,7 @@ import ArrowDown from "@/assets/story/scene3/arrowdown.svg";
     <ArrowDown width={77} height={120} />
   </div>
   <a
-    href="4-8-2"
+    href="/story/scene4/4-8-2"
     class="absolute bottom-0 h-screen w-full translate-y-1/2"
     aria-label="pick down"></a>
 </ImagePageLayout>

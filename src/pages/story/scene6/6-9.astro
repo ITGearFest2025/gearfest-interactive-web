@@ -1,0 +1,20 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene2/0.BGfor234_gif_loop_hd.webp";
+import ImageLowRes from "@/assets/story/scene2/0.BGfor234_gif_LowRes.webp";
+import Jigsaw from "@/components/jigsaw/Jigsaw";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <p
+    class="font-italiana absolute top-[8%] left-1/2 w-full -translate-x-1/2 text-center text-4xl text-white"
+    style={"text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);"}
+  >
+    Combine the Star
+  </p>
+  <Jigsaw client:load />
+</ImagePageLayout>

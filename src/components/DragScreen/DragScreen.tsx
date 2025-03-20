@@ -34,7 +34,7 @@ const DragScreen: React.FC<DragScreenProps> = ({
   }, [isInViewport]);
 
   return (
-    <div ref={targetRef} className="relative h-screen w-[860px]">
+    <div ref={targetRef} className="relative z-10 h-screen w-[860px]">
       {children ? children : null}
       <div className="absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 text-white"></div>
       <div

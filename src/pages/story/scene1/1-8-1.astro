@@ -3,12 +3,14 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene1/3-1shootingstar.webp";
 import ImageLowRes from "@/assets/story/scene1/3-1shootingstar_LowRes.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import PreloadImage from "@/assets/story/scene1/star_LowRes.webp";
 ---
 
 <ImagePageLayout
-  title="from Scar to Star"
+  title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[PreloadImage]}
 >
   <ContinueButton
     delay={2}

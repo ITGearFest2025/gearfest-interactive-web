@@ -1,0 +1,92 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/result/AchieverBG_hd.webp";
+import ImageLowRes from "@/assets/result/AchieverBG_Image_LowRes.webp";
+import Orb from "@/assets/result/Achiever.png";
+import GearFest from "@/assets/landing/gearfest.svg";
+import ESC from "@/assets/landing/esc.svg";
+import KNEng from "@/assets/landing/kneng.svg";
+import { Image } from "astro:assets";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+>
+  <div
+    class="absolute top-0 right-0 left-0 flex flex-col items-center"
+    style={{ backgroundImage: `url(${ImageHd.src})` }}
+  >
+    <a class="cursor-pointer" href="/">
+      <GearFest width={100} height={100} />
+    </a>
+    <Image src={Orb} alt="Achiever Orb" />
+    <div class="font-petit max-w-[366px] text-center text-sm text-white">
+      <p class="mb-5 text-[13px]">
+        “ Don't ever confuse the two—your life and your work.
+        <br />The second is only part of the first." - Anna Quindlen
+      </p>
+      <div
+        style={{
+          textShadow: "0px 4px 4px rgba(0, 0, 0, 0.35)",
+          background: "rgba(255, 255, 255, 0.1)",
+        }}
+        class="font-taviraj relative mb-6 flex h-[313px] w-[366px] flex-col items-center justify-center gap-[14px] rounded-xl bg-white text-[12px] font-medium text-white"
+      >
+        <p class="italic">
+          คุณได้รับโหลดาวที่ถูกบรรจุด้วยถ้วยรางวัลแห่งความสำเร็จ<br />
+          บันไดที่ถูกทอดยาวขึ้นไปสู่ถ้วยรางวัลสีทองอันเปล่งประกาย<br />
+          สัญลักษณ์แห่งความพากเพียรและความสำเร็จ<br />
+          จากอุปสรรคที่คุณได้เผชิญและเอาชนะมา
+        </p>
+        <p>
+          ตัวตนของคุณเปรียบเสมือนถ้วยรางวัลนี้ คุณเป็นคนที่มุ่งมั่น<br />
+          และมีเป้าหมายในใจของตัวเองที่อยากทำให้สำเร็จ<br />
+          คุณมีความสุขเมื่องานของคุณมีความสำคัญและเป็นที่จดจำ<br />
+          จนบางครั้งคุณอาจจะเผลอผูกติดคุณค่าของตัวเองกับงานที่คุณทำ<br />
+          จนหลงลืมสิ่งสำคัญอื่นๆ ในชีวิตไป
+        </p>
+        <p>
+          ดวงดาวดวงนี้จึงอยากจะฝากข้อความถึงคุณว่า<br />
+          ความสำเร็จไม่ได้เป็นสิ่งเดียวที่กำหนดคุณค่าในตัวคุณ คุณยังมีเรื่องราว<br
+          />
+          ในชีวิตอีกมากมายที่พิสูจน์ว่าคุณเป็นคนที่น่ารักและน่าชื่นชม<br />
+          <span class="font-semibold"
+            >ดังนั้นลองใช้ชีวิตให้ช้าลง ให้โอกาสตัวเองได้พักผ่อน<br />
+            และมีความสุขไปกับจังหวะต่างๆ ในชีวิตมากขึ้นนะ</span
+          >
+        </p>
+      </div>
+      <div class="font-baskervville mb-6 flex w-full max-w-[366px] gap-2">
+        <a
+          download
+          href="/src/assets/result_save/Achiever.png"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#faf8f5] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#807E8E",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 0px 24px -4px rgba(255, 255, 255, 0.48)",
+            borderRadius: "8px",
+          }}
+          >Save picture
+        </a>
+        <a
+          href="/starboard"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#17153b] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#FAF8F5",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 16px 32px -4px rgba(12, 12, 13, 0.1)",
+            borderRadius: "8px",
+          }}>Visit Star Board</a
+        >
+      </div>
+      <p class="font-baskervville mb-3 text-base">gearfest2025.com</p>
+      <div class="flex w-full items-center justify-center gap-2">
+        <ESC width={37} height={44} />
+        <KNEng width={37} height={37} />
+      </div>
+    </div>
+  </div>
+</ImagePageLayout>

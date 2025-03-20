@@ -8,14 +8,17 @@ const AnswerButton = ({
   theme = "light",
 }: {
   text: string;
-  attribute: string;
+  attribute: number[];
   redirectUrl: string;
   theme?: "light" | "dark";
 }) => {
   const handleClick = () => {
-    const currentScoreStr = userAnswer.get()[attribute] || "0";
-    const currentScore = parseInt(currentScoreStr, 10);
-    userAnswer.setKey(attribute, (currentScore + 1).toString());
+    attribute.map((item, index) => {
+      const typeName = "type" + (index + 1).toString();
+      const currentScoreStr = userAnswer.get()[typeName] || "0";
+      const currentScore = parseInt(currentScoreStr, 10);
+      userAnswer.setKey(typeName, (currentScore + item).toString());
+    });
 
     setTimeout(() => {
       navigate(redirectUrl);

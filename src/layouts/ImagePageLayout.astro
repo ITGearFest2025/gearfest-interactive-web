@@ -12,6 +12,7 @@ interface Props {
   backgroundColor?: string;
   class?: string;
   containerClass?: string;
+  preloadImages?: ImageMetadata[];
 }
 
 const {
@@ -23,12 +24,13 @@ const {
   backgroundColor = "#000",
   class: className = "",
   containerClass = "h-full",
+  preloadImages,
 } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} preloadImages={preloadImages}>
   <div
-  class={`absolute z-10 w-full bg-cover bg-center ${className} ${containerClass}`}
+  class={`absolute z-10 w-full bg-cover bg-center bg-repeat ${className} ${containerClass}`}
     style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
   >
     <Image src={image} alt="background" class="h-full w-full object-cover" />

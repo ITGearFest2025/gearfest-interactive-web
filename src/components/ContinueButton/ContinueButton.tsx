@@ -7,6 +7,7 @@ interface ContinueButtonProps {
   position?: "right" | "bottom" | "center";
   color?: "black" | "white";
   className?: string;
+  onClick?: () => void; // Added onClick property
 }
 
 const ContinueButton: React.FC<ContinueButtonProps> = ({
@@ -15,6 +16,7 @@ const ContinueButton: React.FC<ContinueButtonProps> = ({
   position = "right",
   color = "white",
   className = "",
+  onClick, // Destructure onClick
 }) => {
   const [showTap, setShowTap] = useState<boolean>(false);
   const [showAnimate, setShowAnimate] = useState<boolean>(false);

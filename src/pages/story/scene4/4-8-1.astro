@@ -3,15 +3,15 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene4/4_hd.webp";
 import ImageLowRes from "@/assets/story/scene4/4_Image_LowRes.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
-import TextBox from "@/components/StoryText/StoryText";
+import TextBox from "@/components/TextBox/TextBox";
 ---
 
 <ImagePageLayout
-  title="from Scar to Star"
+  title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
 >
-  <TextBox type="bottom" word="เธอมานั่งที่นี่คนเดียวเหรอ" theme="dark" />
+  <TextBox type="low-bottom" word="เธอมานั่งที่นี่คนเดียวเหรอ" theme="dark" />
   <ContinueButton
     delay={0.5}
     redirectUrl="/story/scene4/4-9-1"

@@ -1,0 +1,25 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene4_5/4ประตูใหม่_hd.webp";
+import ImageLowRes from "@/assets/story/scene4_5/4ประตูใหม่_Image_LowRes.webp";
+import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import TextBox from "@/components/TextBox/TextBox";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <TextBox
+    type="low-bottom"
+    word="จะเป็นบานสุดท้ายแล้วหรือยังนะ"
+    theme="dark"
+  />
+  <ContinueButton
+    delay={0.5}
+    redirectUrl="/story/scene4_5/4_5-7"
+    position="right"
+    client:load
+  />
+</ImagePageLayout>

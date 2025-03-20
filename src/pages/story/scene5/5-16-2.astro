@@ -1,0 +1,37 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import Image from "@/assets/story/scene5/7_hd.webp";
+import ImageLowRes from "@/assets/story/scene5/7_Image_LowRes.webp";
+import AnswerComponent from "@/components/Inputs/AnswerComponent";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={Image}
+  imageLowRes={ImageLowRes}
+>
+  <AnswerComponent
+    question="เธอดูหมดไฟกับการหางาน คุณจะพูดปลอบเธออย่างไร?"
+    redirectUrl="/story/scene5/5-17-2"
+    theme="light"
+    answers={[
+      {
+        text: "ถึงไม่ได้ที่นี่ ก็ไม่ได้แปลว่าจะไม่มีที่ไหนติดต่อมาอีกแล้วสักหน่อย ยังเร็วเกินไปที่จะยอมแพ้นะ!",
+        attribute: [3, 1, 0, 2, 1, 1, 2, 3, 0],
+      },
+      {
+        text: "ลองยื่นสมัครงานในสายงานที่ใกล้เคียง เพิ่มดูไหม บางทีเธออาจจะเจอสิ่งที่ชอบมากกว่าก็ได้นะ",
+        attribute: [2, 3, 2, 1, 2, 3, 3, 2, 1],
+      },
+      {
+        text: "ใจเย็นๆ ค่อยๆ เป็นค่อยๆ ไปก็ได้ แต่ละคนมีจังหวะชีวิตไม่เหมือนกัน เดินไปตามจังหวะชีวิตของตัวเองก็พอ",
+        attribute: [1, 1, 3, 2, 2, 1, 1, 1, 2],
+      },
+      {
+        text: "ลองเตรียมตัว ลองหาข้อมูลให้เต็มที่ที่สุดไปก่อน ถ้าไม่ได้ที่นี่จริงๆ อย่างน้อยก็ถือว่าได้ประสบการณ์นะ",
+        attribute: [0, 2, 1, 3, 3, 2, 1, 2, 2],
+      },
+    ]}
+    client:load
+  />
+</ImagePageLayout>

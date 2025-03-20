@@ -1,0 +1,89 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/result/IndividualistBG_hd.webp";
+import ImageLowRes from "@/assets/result/IndividualistBG_Image_LowRes.webp";
+import Orb from "@/assets/result/Individualist.png";
+import GearFest from "@/assets/landing/gearfest.svg";
+import ESC from "@/assets/landing/esc.svg";
+import KNEng from "@/assets/landing/kneng.svg";
+import { Image } from "astro:assets";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+>
+  <div
+    class="absolute top-0 right-0 left-0 flex flex-col items-center"
+    style={{ backgroundImage: `url(${ImageHd.src})` }}
+  >
+    <a class="cursor-pointer" href="/">
+      <GearFest width={100} height={100} /></a
+    >
+    <Image src={Orb} alt="Achiever Orb" />
+    <div class="font-petit max-w-[366px] text-center text-sm text-white">
+      <p class="mb-5">
+        " Be yourself; everyone else is already taken."<br /> - Oscar Wilde
+      </p>
+      <div
+        style={{
+          textShadow: "0px 4px 4px rgba(0, 0, 0, 0.35)",
+          background: "rgba(255, 255, 255, 0.1)",
+        }}
+        class="font-taviraj relative mb-6 flex h-[313px] w-[366px] flex-col items-center justify-center gap-[14px] rounded-xl bg-white text-[12px] font-medium text-white"
+      >
+        <p class="italic">
+          คุณได้รับโหลดาวที่ถูกบรรจุด้วยปราสาทแห่งจินตนาการ <br
+          />ปราสาทอันงดงามราวกับหลุดออกมาจากเทพนิยาย<br /> ตั้งตระหง่านอยู่ท่ามกลางแสงจันทร์ในยามค่ำคืน
+          <br />กลายเป็นความโดดเด่นที่ชวนให้น่าหลงใหลและสะกดตาผู้คน
+        </p>
+        <p>
+          ตัวตนของคุณเปรียบเสมือนปราสาทหลังนี้<br />
+          คุณเป็นคนช่างฝันและรักในการสร้างสรรค์จินตนาการ คุณมีมุมมองที่<br />
+          ลึกซึ้งและรู้สึกถึงและความงามที่แฝงอยู่ในทุกสิ่งรอบตัว<br />
+          ในบางครั้งที่คุณออกตามหาความแตกต่าง คุณอาจเผลอเปรียบเทียบ<br />
+          ตัวเองกับผู้อื่น จนมองข้ามตัวตนที่แท้จริงของคุณไป
+        </p>
+        <p>
+          ดวงดาวดวงนี้จึงอยากจะฝากข้อความถึงคุณว่า<br />
+          คุณไม่จำเป็นต้องไขว่คว้าหาความพิเศษใดเพิ่มเติม เพราะคุณพิเศษ<br />
+          อยู่แล้วในแบบของคุณเอง คุณไม่จำเป็นต้องเป็นเหมือนใคร <br
+          />หรือแตกต่างจากใคร<span class="font-semibold">
+            คุณมีคุณค่าในตัวตนของคุณเอง<br />
+            และมีคนที่พร้อมจะโอบกอดตัวตนที่แท้จริงของคุณอย่างแน่นอน</span
+          >
+        </p>
+      </div>
+      <div class="font-baskervville mb-6 flex w-full max-w-[366px] gap-2">
+        <a
+          download
+          href="/src/assets/result_save/Individualist.png"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#faf8f5] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#807E8E",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 0px 24px -4px rgba(255, 255, 255, 0.48)",
+            borderRadius: "8px",
+          }}
+          >Save picture
+        </a>
+        <a
+          href="/starboard"
+          class="w-full cursor-pointer px-3 py-2.5 text-[#17153b] transition-all duration-300 hover:scale-110 active:scale-105"
+          style={{
+            background: "#FAF8F5",
+            boxShadow:
+              "0px 0px 12px rgba(255, 255, 255, 0.48), inset 0px 16px 32px -4px rgba(12, 12, 13, 0.1)",
+            borderRadius: "8px",
+          }}>Visit Star Board</a
+        >
+      </div>
+      <p class="font-baskervville mb-3 text-base">gearfest2025.com</p>
+      <div class="flex w-full items-center justify-center gap-2">
+        <ESC width={37} height={44} />
+        <KNEng width={37} height={37} />
+      </div>
+    </div>
+  </div>
+</ImagePageLayout>
