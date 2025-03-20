@@ -14,13 +14,12 @@
 }
 
 .mercy-font {
-  font-family: 'Mercy Christole', serif !important;
+  font-family: "Mercy Christole", serif !important;
 }
 
 .taviraj-font {
-  font-family: 'Taviraj', serif !important;
+  font-family: "Taviraj", serif !important;
 }
-
 
 @theme {
   --font-judson: "Judson", serif;
@@ -45,9 +44,22 @@
   }
 }
 
+@theme {
+  --animate-fadeOut: fadeOut 3s ease-in-out forwards;
+  @keyframes fadeOut {
+    0% {
+      opacity: 100;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
 @font-face {
-  font-family: 'Mercy Christole';
-  src: url('/font/MercyChristole.ttf') format('truetype');
+  font-family: "Mercy Christole";
+  src: url("/font/MercyChristole.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
