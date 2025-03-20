@@ -53,10 +53,13 @@ const Navbar = ({ className = "" }) => {
       className={`relative flex w-full items-center justify-between px-6 py-4 ${className}`}
     >
       <div>
-      <button onClick={toggleNavbar} className="p-2 focus:outline-none flex items-center space-x-2">
-        <MenuIcon className="h-8 w-8 scale-75" />
-        <img src={gearfest.src} alt="Gear Festival" className="" />
-      </button>
+        <button
+          onClick={toggleNavbar}
+          className="flex items-center space-x-2 p-2 focus:outline-none"
+        >
+          <MenuIcon className="h-8 w-8 scale-75" />
+          <img src={gearfest.src} alt="Gear Festival" className="" />
+        </button>
       </div>
 
       {/* Right side with icons */}
@@ -69,22 +72,27 @@ const Navbar = ({ className = "" }) => {
       {isNavbarVisible && (
         <div
           id="menu-overlay"
-          className="absolute top-0 left-0 w-full bg-cover py-13"
-          style={{ backgroundImage: `url(${navbar.src})` }}
+          className="absolute top-0 left-0 min-h-[430px] w-full max-w-[430px] min-w-[430px] bg-contain bg-no-repeat"
+          style={{
+            backgroundImage: `url(${navbar.src})`,
+            backgroundSize: "100%", // หรือใช้ '100%' หรือกำหนดขนาดเฉพาะเช่น '430px'
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
         >
           <div className="relative flex h-full w-full flex-col items-center justify-center">
             <button
               onClick={toggleNavbar}
-              className="absolute top-[-50px] right-5 text-5xl text-white"
+              className="absolute top-0 right-5 text-5xl text-white"
             >
               ×
             </button>
-            <nav className="text-xl text-white">
-              <ul className="flex flex-col items-center gap-4">
-                <li>
+            <nav className="flex h-full items-center text-xl text-white">
+              <ul className="flex h-full flex-col items-center justify-center ">
+                <li className="flex flex-col items-center justify-center pb-3 pt-15 gap-4">
                   <a
                     href="/"
-                    className={getLinkClassName("/")}
+                    className={`${getLinkClassName("/")} `}
                     onClick={toggleNavbar}
                   >
                     Home
@@ -95,7 +103,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <li>
+ <li className="flex flex-col items-center justify-center py-3 gap-4">
                   <a
                     href="/what-is-gearfest"
                     className={getLinkClassName("/what-is-gearfest")}
@@ -109,7 +117,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <li>
+ <li className="flex flex-col items-center justify-center py-3 gap-4">
                   <a
                     href="/exhibition"
                     className={getLinkClassName("/exhibition")}
@@ -123,7 +131,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <li>
+ <li className="flex flex-col items-center justify-center py-3 gap-4">
                   <a
                     href="/story"
                     className={getLinkClassName("/story")}
@@ -136,6 +144,26 @@ const Navbar = ({ className = "" }) => {
                   src={getLineImage("/story")}
                   alt="Divider"
                   className="w-full opacity-90"
+                />
+                <img
+                  src={getLineImage("/story")}
+                  alt="Divider"
+                  className="w-full opacity-0"
+                />
+                <img
+                  src={getLineImage("/story")}
+                  alt="Divider"
+                  className="w-full opacity-0"
+                />
+                <img
+                  src={getLineImage("/story")}
+                  alt="Divider"
+                  className="w-full opacity-0"
+                />
+                <img
+                  src={getLineImage("/story")}
+                  alt="Divider"
+                  className="w-full opacity-0"
                 />
                 <img
                   src={getLineImage("/story")}
