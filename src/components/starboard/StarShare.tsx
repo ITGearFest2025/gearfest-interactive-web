@@ -95,7 +95,7 @@ const StarImage: React.FC<StarImageProps> = ({
     src={`/src/assets/starboard/${star === "" ? "reformer" : star}_Star.svg`}
     alt="Star"
     className={`absolute animate-pulse transition-transform ${
-      isHighlighted ? "z-[60]" : "z-0"
+      isHighlighted ? "z-[50]" : "z-0"
     }`}
     style={{
       top: `${position.top}px`,
@@ -145,7 +145,7 @@ const StarShare: React.FC<StarShareProps> = ({ message }) => {
 
           <div
             onClick={closeMessage}
-            className="fixed inset-0 z-50 flex cursor-pointer flex-col items-center justify-center bg-black/50"
+            className="fixed inset-0 z-40 flex cursor-pointer flex-col items-center justify-center bg-black/50"
           >
             <div
               style={{

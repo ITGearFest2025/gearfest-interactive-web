@@ -1,0 +1,153 @@
+---
+import glowgear from "@/assets/whatisgearfest/glowgearfest.svg";
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import whatisbg from "@/assets/whatisgearfest/bgwhatis_hd.webp";
+import whatisbgLowRes from "@/assets/whatisgearfest/bgwhatis_Image_LowRes.webp";
+import Navbar from "@/components/Navbar/Navbar";
+import ArrowDown from "@/assets/landing/arrowdown.svg";
+import ESC from "@/assets/landing/esc.svg";
+import GearFest from "@/assets/landing/gearfest.svg";
+import KNEng from "@/assets/landing/kneng.svg";
+import { Image } from "astro:assets";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<ImagePageLayout
+  title="What is Gear Festival?"
+  imageLowRes={whatisbgLowRes}
+  image={whatisbg}
+  backgroundColor="#fff"
+  containerClass="h-auto"
+>
+  <div
+    class="absolute inset-0 flex flex-col items-center justify-between"
+    style={"background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%);"}
+  >
+    <Navbar client:load />
+    <div class="flex w-auto items-center justify-center gap-1.5">
+      <Image src={ESC} width={53} height={69} alt="ESC" />
+      <Image src={GearFest} width={136} height={136} alt="GearFest" />
+      <Image src={KNEng} width={53} height={53} alt="KNEng" />
+    </div>
+    <div class="mt-20 flex h-full w-full flex-col">
+      <h1
+        class="mercy-font text-center text-2xl text-white"
+        style="text-shadow: 0 0 5px #fff, 0 0 10px #fff;"
+      >
+        What is gear festival?
+      </h1>
+      <p class="taviraj-font p-5 text-center text-sm text-white">
+        Gear Festival เป็นงานเทศกาลดนตรีเพื่อการกุศล <br
+        />ที่จัดโดยคณะวิศวกรรมศาสตร์<span class="text-[#FFDFE9]"
+          >จุฬาลงกรณ์มหาวิทยาลัย</span
+        >
+        <br />และ
+        <span class="text-[#FFDFE9]">มหาวิทยาลัยธรรมศาสตร์</span>
+      </p>
+      <p class="taviraj-font px-5 text-center text-sm text-white">
+        ในงานของเราจะมี<span class="text-[#FFDFE9]"
+          >บูธกิจกรรม โซนจัดแสดง ร้านค้ามากมาย<br />
+          และคอนเสิร์ตสุดพิเศษ</span
+        >ที่ตั้งใจเตรียมมาเพื่องานนี้โดยเฉพาะ
+      </p>
+      <h2
+        class="mercy-font absolute top-[32%] left-[1.5rem] text-2xl text-white"
+        style="text-shadow: 0 0 5px #fff, 0 0 10px #fff; "
+      >
+        What We Get?
+      </h2>
+      <h3
+        class="taviraj-font absolute top-[36.9%] right-[8rem] text-base font-semibold text-[#7065A4]"
+      >
+        ได้เป็นผู้รับ
+      </h3>
+      <p
+        class="taviraj-font absolute top-[39%] right-[2.5rem] w-fit text-center text-sm text-[#666666]"
+      >
+        ผ่านการชมงานดนตรีและศิลปะ <br />ทั้งจากนิสิต นักศึกษา และศิลปินสุดพิเศษ
+      </p>
+      <h3
+        class="taviraj-font absolute top-[44%] left-[9rem] text-base font-semibold text-[#7065A4]"
+      >
+        ได้เป็นผู้ให้
+      </h3>
+      <p
+        class="taviraj-font absolute top-[46%] left-[2rem] w-fit text-center text-sm text-[#666666]"
+      >
+        ร่วมแบ่งปันความสุข<br />และรอยยิ้มให้กับผู้อื่นภายในงานการกุศล<br />
+        กำไรทั้งหมดที่ได้รับจากงานนี้ จะถูกนำไปบริจาคให้กับ<br />
+        โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่
+      </p>
+      <h3
+        class="taviraj-font absolute top-[54%] right-[6rem] font-semibold text-[#7065A4]"
+      >
+        ได้ออกเดินทาง
+      </h3>
+      <p
+        class="taviraj-font absolute top-[56%] right-[2.5rem] w-fit text-center text-sm text-[#666666]"
+      >
+        ค้นหา และเก็บเกี่ยวตัวตนที่หล่นหายไป <br />ผ่านการเล่นกิจกรรมต่าง ๆ
+        ภายในงาน
+      </p>
+      <h3
+        class="taviraj-font absolute top-[61%] left-[11rem] font-semibold text-[#7065A4]"
+      >
+        ได้ค้นพบ
+      </h3>
+      <p
+        class="taviraj-font absolute top-[63%] left-[6.5rem] w-fit text-center text-sm text-[#666666]"
+      >
+        ทำความรู้จัก พบปะ <br /> แลกเปลี่ยนประสบการณ์และความรู้สึก <br
+        />กับผู้ร่วมงานคนอื่น
+      </p>
+
+      <p
+        class="taviraj-font font-s absolute top-[73%] w-full text-center text-lg text-white"
+        style={{ textShadow: "0px 0px 10px #FBE79D" }}
+      >
+        วันที่ 28 มีนาคม 2568
+      </p>
+      <p
+        class="taviraj-font absolute top-[75%] w-full px-5 text-center text-sm text-white"
+        style={{ textShadow: "0 0 5px #fff, 0 0 10px #fff" }}
+      >
+        ณ สวนอุทยาน 100 ปี <br />จุฬาลงกรณ์มหาวิทยาลัย
+      </p>
+    </div>
+    <Image src={glowgear} alt="glow gear" class="absolute bottom-15" />
+    <div
+      class="absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between"
+    >
+      <div
+        class="font-judson absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between text-xl"
+      >
+        <a
+          href="/starboard"
+          class="font-judson flex cursor-pointer items-center p-3 font-bold text-[#433D8B] transition-colors hover:text-[#5D56BA]"
+        >
+          <Image
+            src={ArrowDown}
+            width={36}
+            height={36}
+            class="rotate-90"
+            alt="ArrowLeft"
+          />
+          {"Starboard"}
+        </a>
+        <a
+          href="/donation"
+          class="font-judson flex cursor-pointer items-center p-3 font-bold text-[#433D8B] transition-colors hover:text-[#5D56BA]"
+        >
+          {"Donation"}<Image
+            src={ArrowDown}
+            width={36}
+            height={36}
+            class="rotate-270"
+            alt="ArrowRight"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</ImagePageLayout>
