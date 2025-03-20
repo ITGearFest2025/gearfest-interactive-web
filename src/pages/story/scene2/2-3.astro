@@ -2,9 +2,10 @@
 import DragScreen from "@/components/DragScreen/DragScreen";
 import ImageHd from "@/assets/story/scene2/1กาแลกซี่หาดาว_gif_loop_hd.webp";
 import Layout from "@/layouts/Layout.astro";
+import Preload from "@/assets/story/scene2/2เจอดาว_LowRes.webp";
 ---
 
-<Layout>
+<Layout preloadImages={[Preload]}>
   <div class="scrollbar-none absolute inset-0 overflow-auto">
     <DragScreen redirectUrl="/story/scene2/2-4" ImageHd={ImageHd} client:load>
       {/* TODO: add content here */}
