@@ -59,7 +59,7 @@ const StarPlane = () => {
               width={36}
               height={36}
               className="rotate-270"
-              alt="ArrowLeft"
+              alt="ArrowRight"
             />
           </a>
         </div>
