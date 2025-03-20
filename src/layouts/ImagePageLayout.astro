@@ -30,13 +30,13 @@ const {
 
 <Layout title={title} preloadImages={preloadImages}>
   <div
-    class={`absolute z-10  w-full bg-cover bg-center bg-repeat ${className} ${containerClass}`}
+    class={`absolute inset-0  z-10 w-full bg-cover bg-center bg-repeat overflow-y-auto  ${className} ${containerClass}`}
     style={{
       backgroundImage: `url(${imageLowRes ? imageLowRes.src : image.src})`,
     }}
   >
-    <Image src={image} alt="background" class="h-full w-full object-cover" />
     <slot />
+    <Image src={image} alt="background" class="h-full w-full object-cover" />
   </div>
   {
     imageLowRes && (
