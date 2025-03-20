@@ -1,4 +1,4 @@
-import star from "@/assets/starboard/star1.webp";
+import star from "@/assets/starboard/Star1.webp";
 import { useState, forwardRef, type ForwardedRef } from "react";
 import LongTextInput from "@/components/Inputs/LongTextInput";
 import { userStar } from "@/stores/userStar";
