@@ -1,10 +1,8 @@
 ---
 import BGstar from "@/assets/landing/bg.webp";
-import BGstarAnimated from "@/assets/landing/bg-animate.webp";
+import glowgear from "@/assets/whatisgearfest/glowgearfest.svg";
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import whatisbg from "@/assets/whatisgearfest/bgwhatis.svg";
-import whatisgearfest from "@/assets/whatisgearfest/whatisgearfest.svg";
-import topbg from "@/assets/whatisgearfest/topbg.svg";
 import Navbar from "../../components/Navbar/Navbar";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -69,27 +67,44 @@ import Navbar from "../../components/Navbar/Navbar";
         ได้เป็นผู้ให้
       </div>
       <div
-      class="taviraj-font absolute top-[56%] right-[2.5rem] w-48 text-center text-xs text-[#7065A4]"
-    >
-    ค้นหา และเก็บเกี่ยวตัวตนที่หล่นหายไป ผ่านการเล่นกิจกรรมต่าง ๆ ภายในงาน
-    </div>
-    <div class="taviraj-font absolute top-[62%] left-[11rem] text-[#7065A4]">
-      ได้ค้นพบ
-    </div>
-    <div
-    class="taviraj-font absolute top-[64%] left-[6.5rem] w-48 text-center text-xs text-[#7065A4]"
-  >
-  ค้นหา และเก็บเกี่ยวตัวตนที่หล่นหายไป ผ่านการเล่นกิจกรรมต่าง ๆ ภายในงาน
-  </div>
-    </div>
+        class="taviraj-font absolute top-[56%] right-[2.5rem] w-48 text-center text-xs text-[#7065A4]"
+      >
+        ค้นหา และเก็บเกี่ยวตัวตนที่หล่นหายไป ผ่านการเล่นกิจกรรมต่าง ๆ ภายในงาน
+      </div>
+      <div class="taviraj-font absolute top-[62%] left-[11rem] text-[#7065A4]">
+        ได้ค้นพบ
+      </div>
+      <div
+        class="taviraj-font absolute top-[64%] left-[6.5rem] w-48 text-center text-xs text-[#7065A4]"
+      >
+        ค้นหา และเก็บเกี่ยวตัวตนที่หล่นหายไป ผ่านการเล่นกิจกรรมต่าง ๆ ภายในงาน
+      </div>
 
+      <div
+        class="taviraj-font absolute top-[73%] w-full text-center text-lg text-white"
+        style="text-shadow: 0 0 5px #fff, 0 0 10px #fff; "
+      >
+        วันที่ 28 มีนาคม 2568
+      </div>
+      <div
+      class="taviraj-font absolute top-[75%] w-full px-5 text-sm text-center  text-white"
+      style="text-shadow: 0 0 5px #fff, 0 0 10px #fff; "
+    >
+    ณ สวนอุทยาน 100 ปี จุฬาลงกรณ์มหาวิทยาลัย
+    </div>
+    </div>
+<img src={glowgear.src} alt="glow gear" class="absolute bottom-15"/>
     <div
       class="absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between"
     >
-      <div class="font-mercy p-3 font-bold text-[#433D8B]">
+    <div class="absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between">
+      <a href="/starboard" class="font-mercy p-3 font-bold text-[#433D8B] hover:text-[#5D56BA] transition-colors cursor-pointer">
         {"<< Starboard"}
-      </div>
-      <div class="p-3 font-bold text-[#433D8B]">{"Donation >>"}</div>
+      </a>
+      <a href="/donation" class="p-3 font-bold text-[#433D8B] hover:text-[#5D56BA] transition-colors cursor-pointer">
+        {"Donation >>"}
+      </a>
+    </div>
     </div>
   </div>
 </ImagePageLayout>
