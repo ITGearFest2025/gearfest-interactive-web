@@ -4,6 +4,10 @@ import BGstarAnimated from "@/assets/landing/bg-animate.webp";
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import LandingPage from "@/components/Landing/LandingPage";
 import Navbar from "@/components/Navbar/Navbar";
+import navbar from "@/assets/navbar/navbar.svg";
+import X from "@/assets/navbar/x.svg";
+import line from "@/assets/navbar/line.svg";
+import linewhite from "@/assets/navbar/linewhite.svg";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -13,6 +17,7 @@ import Navbar from "@/components/Navbar/Navbar";
   imageLowRes={BGstar}
   image={BGstarAnimated}
   backgroundColor="#fff"
+  preloadImages={[navbar, X, line, linewhite]}
 >
   <Navbar client:load />
   <LandingPage client:load />
