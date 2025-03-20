@@ -1,15 +1,24 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import Image from "@/assets/story/scene4_5/3ทางเดิน_oneshot_hd.webp";
+import ImageHd from "@/assets/story/scene4_5/3ทางเดิน_oneshot_hd.webp";
 import ImageLowRes from "@/assets/story/scene4_5/3ทางเดิน_LowRes.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import Fadeout from "@/assets/story/scene4_5/2เจอจิ๊กซอว์_hd.webp";
+import { Image } from "astro:assets";
+import Preload from "@/assets/story/scene4_5/4ประตูใหม่_Image_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
-  image={Image}
+  image={ImageHd}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
+  <Image
+    src={Fadeout}
+    class="animate-shortFadeOut absolute h-full w-full object-cover"
+    alt="fade image"
+  />
   <ContinueButton
     delay={0.5}
     redirectUrl="/story/scene4_5/4_5-5"
