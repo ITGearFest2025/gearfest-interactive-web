@@ -3,17 +3,20 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene3/2Zoom_hd.webp";
 import ImageLowRes from "@/assets/story/scene3/2Zoom_LowRes.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import Preload from "@/assets/story/scene3/2ZoomSelect_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <ContinueButton
     delay={0.5}
     redirectUrl="/story/scene3/3-6"
     position="right"
+    color="black"
     client:load
   />
 </ImagePageLayout>
