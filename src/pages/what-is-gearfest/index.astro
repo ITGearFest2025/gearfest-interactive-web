@@ -5,6 +5,9 @@ import whatisbg from "@/assets/whatisgearfest/bgwhatis_hd.webp";
 import whatisbgLowRes from "@/assets/whatisgearfest/bgwhatis_Image_LowRes.webp";
 import Navbar from "@/components/Navbar/Navbar";
 import ArrowDown from "@/assets/landing/arrowdown.svg";
+import ESC from "@/assets/landing/esc.svg";
+import GearFest from "@/assets/landing/gearfest.svg";
+import KNEng from "@/assets/landing/kneng.svg";
 import { Image } from "astro:assets";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -22,9 +25,14 @@ import { Image } from "astro:assets";
     style={"background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%);"}
   >
     <Navbar client:load />
+    <div class="flex w-auto items-center justify-center gap-1.5">
+      <Image src={ESC} width={53} height={69} alt="ESC" />
+      <Image src={GearFest} width={136} height={136} alt="GearFest" />
+      <Image src={KNEng} width={53} height={53} alt="KNEng" />
+    </div>
     <div class="mt-20 flex h-full w-full flex-col">
       <h1
-        class="mercy-font text-center text-lg text-white"
+        class="mercy-font text-center text-2xl text-white"
         style="text-shadow: 0 0 5px #fff, 0 0 10px #fff;"
       >
         What is gear festival?
@@ -44,7 +52,7 @@ import { Image } from "astro:assets";
         >ที่ตั้งใจเตรียมมาเพื่องานนี้โดยเฉพาะ
       </p>
       <h2
-        class="mercy-font absolute top-[32%] left-[2rem] text-lg text-white"
+        class="mercy-font absolute top-[32%] left-[1.5rem] text-2xl text-white"
         style="text-shadow: 0 0 5px #fff, 0 0 10px #fff; "
       >
         What We Get?
@@ -107,7 +115,7 @@ import { Image } from "astro:assets";
         ณ สวนอุทยาน 100 ปี <br />จุฬาลงกรณ์มหาวิทยาลัย
       </p>
     </div>
-    <img src={glowgear.src} alt="glow gear" class="absolute bottom-15" />
+    <Image src={glowgear} alt="glow gear" class="absolute bottom-15" />
     <div
       class="absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between"
     >

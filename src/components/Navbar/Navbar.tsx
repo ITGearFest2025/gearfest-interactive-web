@@ -48,43 +48,32 @@ const Navbar = ({ className = "" }) => {
 
   return (
     <nav
-      className={`relative flex w-full items-center justify-between ${className}`}
+      className={`fixed top-0 mx-auto flex w-full max-w-[430px] items-center justify-between ${className}`}
     >
-      <div>
-        <button
-          onClick={toggleNavbar}
-          className="fixed top-4 left-4 z-[100] flex items-center space-x-2 p-2 focus:outline-none"
-        >
-          <MenuIcon className="h-8 w-8 scale-75" />
-        </button>
-      </div>
+      <button
+        onClick={toggleNavbar}
+        className="absolute top-4 left-4 z-[100] flex items-center space-x-2 p-2"
+      >
+        <MenuIcon className="h-8 w-8 scale-75" />
+      </button>
 
       {/* Fullscreen Navbar Overlay */}
       {isNavbarVisible && (
         <div
           id="menu-overlay"
-          className="fixed top-0 left-0 z-[100] min-h-[430px] w-full max-w-[430px] bg-contain bg-no-repeat"
+          className="absolute top-0 left-0 z-[100] min-h-[430px] w-full max-w-[430px] bg-contain bg-no-repeat"
         >
-          <img
-            src={navbar.src}
-            className="absolute top-0 right-0 left-0"
-            alt="navbar bg"
-          />
-          <div className="relative flex h-full w-full flex-col items-center justify-center">
+          <div className="relative z-10 flex h-full w-full flex-col items-center justify-center">
             <button
               onClick={toggleNavbar}
               className="absolute top-6 right-6 text-5xl text-white"
             >
               <img src={X.src} width={24} height={24} alt="close button" />
             </button>
-            <nav className="flex h-full items-center text-xl text-white">
-              <ul className="flex h-full flex-col items-center justify-center">
+            <div className="flex h-full items-center text-xl text-white">
+              <ul className="z-20 flex h-full flex-col items-center justify-center">
                 <li className="flex flex-col items-center justify-center gap-4 pt-15 pb-3">
-                  <a
-                    href="/"
-                    className={`${getLinkClassName("/")} `}
-                    onClick={toggleNavbar}
-                  >
+                  <a href="/" className={`${getLinkClassName("/")} `}>
                     Home
                   </a>
                 </li>
@@ -97,7 +86,6 @@ const Navbar = ({ className = "" }) => {
                   <a
                     href="/what-is-gearfest"
                     className={getLinkClassName("/what-is-gearfest")}
-                    onClick={toggleNavbar}
                   >
                     What is Gear Festival?
                   </a>
@@ -108,61 +96,37 @@ const Navbar = ({ className = "" }) => {
                   className="w-full opacity-90"
                 />
                 <li className="flex flex-col items-center justify-center gap-4 py-3">
-                  <a
-                    href="/exhibition"
-                    className={getLinkClassName("/exhibition")}
-                    onClick={toggleNavbar}
-                  >
+                  <a href="/donation" className={getLinkClassName("/donation")}>
                     Donation
                   </a>
                 </li>
                 <img
-                  src={getLineImage("/exhibition")}
+                  src={getLineImage("/donation")}
                   alt="Divider"
                   className="w-full opacity-90"
                 />
                 <li className="flex flex-col items-center justify-center gap-4 py-3">
                   <a
-                    href="/story"
-                    className={getLinkClassName("/story")}
-                    onClick={toggleNavbar}
+                    href="/starboard"
+                    className={getLinkClassName("/starboard")}
                   >
                     Star Board
                   </a>
                 </li>
                 <img
-                  src={getLineImage("/story")}
+                  src={getLineImage("/starboard")}
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <img
-                  src={getLineImage("/story")}
-                  alt="Divider"
-                  className="w-full opacity-0"
-                />
-                <img
-                  src={getLineImage("/story")}
-                  alt="Divider"
-                  className="w-full opacity-0"
-                />
-                <img
-                  src={getLineImage("/story")}
-                  alt="Divider"
-                  className="w-full opacity-0"
-                />
-                <img
-                  src={getLineImage("/story")}
-                  alt="Divider"
-                  className="w-full opacity-0"
-                />
-                <img
-                  src={getLineImage("/story")}
-                  alt="Divider"
-                  className="w-full opacity-0"
-                />
               </ul>
-            </nav>
+            </div>
           </div>
+          <img
+            src={navbar.src}
+            className="absolute top-0 right-0 left-0"
+            alt="navbar bg"
+          />
+          <div onClick={toggleNavbar} className="fixed inset-0 z-0"></div>
         </div>
       )}
     </nav>
