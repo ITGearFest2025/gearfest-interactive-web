@@ -50,11 +50,13 @@ const LandingPage = () => {
             <img src={KNEng.src} width={53} height={53} alt="KNEng" />
           </div>
           <div className="flex flex-col items-center justify-center">
-            <img
-              src={Logo.src}
-              alt="from Scars to Star logo"
-              className="h-full min-h-[100px] w-full max-w-[404px] min-w-[200px] px-6"
-            />
+            <div className="h-[180px] w-full">
+              <img
+                src={Logo.src}
+                alt="from Scars to Star logo"
+                className="h-full min-h-[100px] w-full max-w-[404px] min-w-[200px] object-cover"
+              />
+            </div>
             <a
               href={`/result/${result}`}
               className="relative -translate-y-1/8 cursor-pointer"
@@ -125,19 +127,21 @@ const LandingPage = () => {
             <img src={GearFest.src} width={136} height={136} alt="GearFest" />
             <img src={KNEng.src} width={53} height={53} alt="KNEng" />
           </div>
-          <div className="flex flex-col items-center justify-center">
-            <img
-              src={Logo.src}
-              alt="from Scars to Star logo"
-              className="h-full min-h-[100px] w-full max-w-[404px] min-w-[200px] px-6"
-            />
+          <div className="-mt-[50px] flex flex-col items-center justify-center">
+            <div className="h-[280px] w-full">
+              <img
+                src={Logo.src}
+                alt="from Scars to Star logo"
+                className="h-full min-h-[100px] w-full max-w-[404px] min-w-[200px] object-cover"
+              />
+            </div>
             <a
               href="/story/scene0/0-1"
               style={{
                 boxShadow: "0px 0px 10px 2px #E2C7E8",
                 textShadow: "0px 0px 10px #E2C7E8",
               }}
-              className="font-italiana mt-10 rounded-full border-[2px] border-white bg-transparent px-12 py-3.5 text-2xl text-white transition-all duration-300 hover:scale-110 active:scale-105"
+              className="font-italiana rounded-full border-[2px] border-white bg-transparent px-12 py-3.5 text-2xl text-white transition-all duration-300 hover:scale-110 active:scale-105"
             >
               Start Journey
             </a>
@@ -158,7 +162,10 @@ const LandingPage = () => {
               gearfestival.official
             </a>
           </div>
-          <div className="mb-4 flex flex-col items-center">
+          <a
+            href="/what-is-gearfest"
+            className="mb-4 flex w-full cursor-pointer flex-col items-center"
+          >
             <p
               style={{ textShadow: "0px 0px 4px #FFFFFF" }}
               className="font-judson text-[#F7DEFC]"
@@ -166,7 +173,7 @@ const LandingPage = () => {
               What is Gear Festival?
             </p>
             <img src={ArrowDown.src} width={36} height={36} alt="ArrowDown" />
-          </div>
+          </a>
         </>
       )}
     </div>
