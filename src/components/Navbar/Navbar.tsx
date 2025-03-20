@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import gearfest from "../../assets/navbar/gearfest.svg";
-import esc from "../../assets/navbar/esc.svg";
-import idk from "../../assets/navbar/idk.svg";
-import navbar from "../../assets/navbar/navbar.png";
-import line from "../../assets/navbar/line.svg";
-import linewhite from "../../assets/navbar/linewhite.svg";
+import navbar from "@/assets/navbar/navbar.svg";
+import X from "@/assets/navbar/x.svg";
+import line from "@/assets/navbar/line.svg";
+import linewhite from "@/assets/navbar/linewhite.svg";
 
 const MenuIcon = ({ className }: { className: string }) => (
   <svg
@@ -50,42 +48,34 @@ const Navbar = ({ className = "" }) => {
 
   return (
     <nav
-      className={`relative flex w-full items-center justify-between px-6 py-4 ${className}`}
+      className={`relative flex w-full items-center justify-between ${className}`}
     >
       <div>
         <button
           onClick={toggleNavbar}
-          className="flex items-center space-x-2 p-2 focus:outline-none"
+          className="fixed top-4 left-4 z-[100] flex items-center space-x-2 p-2 focus:outline-none"
         >
           <MenuIcon className="h-8 w-8 scale-75" />
-          <img src={gearfest.src} alt="Gear Festival" className="" />
         </button>
-      </div>
-
-      {/* Right side with icons */}
-      <div className="flex items-center space-x-4">
-        <img src={esc.src} alt="ESC" className="" />
-        <img src={idk.src} alt="IDK" className="" />
       </div>
 
       {/* Fullscreen Navbar Overlay */}
       {isNavbarVisible && (
         <div
           id="menu-overlay"
-          className="absolute top-0 left-0 min-h-[430px] w-full max-w-[430px] min-w-[430px] bg-contain bg-no-repeat"
-          style={{
-            backgroundImage: `url(${navbar.src})`,
-            backgroundSize: "100%", // หรือใช้ '100%' หรือกำหนดขนาดเฉพาะเช่น '430px'
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
+          className="fixed top-0 left-0 z-[100] min-h-[430px] w-full max-w-[430px] bg-contain bg-no-repeat"
         >
+          <img
+            src={navbar.src}
+            className="absolute top-0 right-0 left-0"
+            alt="navbar bg"
+          />
           <div className="relative flex h-full w-full flex-col items-center justify-center">
             <button
               onClick={toggleNavbar}
-              className="absolute top-0 right-5 text-5xl text-white"
+              className="absolute top-6 right-6 text-5xl text-white"
             >
-              ×
+              <img src={X.src} width={24} height={24} alt="close button" />
             </button>
             <nav className="flex h-full items-center text-xl text-white">
               <ul className="flex h-full flex-col items-center justify-center">
