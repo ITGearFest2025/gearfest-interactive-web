@@ -3,12 +3,14 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene5/7_hd.webp";
 import ImageLowRes from "@/assets/story/scene5/7_Image_LowRes.webp";
 import AnswerComponent from "@/components/Inputs/AnswerComponent";
+import Preload from "@/assets/story/scene5/8_Image_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <AnswerComponent
     question="เธอดูหมดไฟกับการหางาน คุณจะพูดปลอบเธออย่างไร?"

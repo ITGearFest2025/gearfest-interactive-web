@@ -2,6 +2,7 @@
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene5/8_hd.webp";
 import ImageLowRes from "@/assets/story/scene5/8_Image_LowRes.webp";
+import Preload from "@/assets/story/scene5/9_Image_LowRes.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
 import TextBox from "@/components/TextBox/TextBox";
 ---
@@ -10,6 +11,7 @@ import TextBox from "@/components/TextBox/TextBox";
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <TextBox
     type="low-bottom"
