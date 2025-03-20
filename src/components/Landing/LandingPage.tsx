@@ -36,7 +36,7 @@ const LandingPage = () => {
 
   return (
     <div
-      className="absolute inset-0 flex flex-col items-center justify-between"
+      className="absolute inset-0 flex h-screen flex-col items-center justify-between overflow-y-auto"
       style={{
         background:
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%)",
