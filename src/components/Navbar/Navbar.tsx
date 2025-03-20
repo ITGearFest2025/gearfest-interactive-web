@@ -88,8 +88,8 @@ const Navbar = ({ className = "" }) => {
               ×
             </button>
             <nav className="flex h-full items-center text-xl text-white">
-              <ul className="flex h-full flex-col items-center justify-center ">
-                <li className="flex flex-col items-center justify-center pb-3 pt-15 gap-4">
+              <ul className="flex h-full flex-col items-center justify-center">
+                <li className="flex flex-col items-center justify-center gap-4 pt-15 pb-3">
                   <a
                     href="/"
                     className={`${getLinkClassName("/")} `}
@@ -103,7 +103,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
- <li className="flex flex-col items-center justify-center py-3 gap-4">
+                <li className="flex flex-col items-center justify-center gap-4 py-3">
                   <a
                     href="/what-is-gearfest"
                     className={getLinkClassName("/what-is-gearfest")}
@@ -117,7 +117,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
- <li className="flex flex-col items-center justify-center py-3 gap-4">
+                <li className="flex flex-col items-center justify-center gap-4 py-3">
                   <a
                     href="/exhibition"
                     className={getLinkClassName("/exhibition")}
@@ -131,7 +131,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
- <li className="flex flex-col items-center justify-center py-3 gap-4">
+                <li className="flex flex-col items-center justify-center gap-4 py-3">
                   <a
                     href="/story"
                     className={getLinkClassName("/story")}

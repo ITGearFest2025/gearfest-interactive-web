@@ -13,6 +13,7 @@ import Navbar from "../../components/Navbar/Navbar";
   imageLowRes={BGstar}
   image={whatisgearfest}
   backgroundColor="#fff"
+  containerClass="h-auto"
 >
   <div
     class="absolute inset-0 flex flex-col items-center justify-between"
@@ -20,5 +21,10 @@ import Navbar from "../../components/Navbar/Navbar";
   >
 
     <Navbar className="" client:load/>
+
+    <div class=" absolute bottom-0 h-10 w-full mb-5 flex items-center justify-between">
+      <div class="text-[#433D8B] font-bold p-3 ">{"<< Starboard"}</div>
+      <div class="text-[#433D8B] font-bold p-3 ">{"Donation >>"}</div>
+    </div>
    </div>
 </ImagePageLayout>

@@ -10,6 +10,8 @@ interface Props {
   image: ImageMetadata;
   imageLowRes?: ImageMetadata;
   backgroundColor?: string;
+  class?: string;
+  containerClass?: string;
 }
 
 const {
@@ -19,12 +21,14 @@ const {
   image,
   imageLowRes,
   backgroundColor = "#000",
+  class: className = "",
+  containerClass = "h-full",
 } = Astro.props;
 ---
 
 <Layout title={title}>
   <div
-    class="absolute z-10 h-auto w-full bg-cover bg-center"
+  class={`absolute z-10 w-full bg-cover bg-center ${className} ${containerClass}`}
     style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
   >
     <Image src={image} alt="background" class="h-full w-full object-cover" />
