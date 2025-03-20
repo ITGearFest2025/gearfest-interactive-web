@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&family=Judson:ital,wght@0,400;0,700;1,400&family=Mitr:wght@200;300;400;500;600;700&display=swap");
+
 @import "tailwindcss";
 
 /* Hide scrollbar  */
@@ -11,6 +12,11 @@
   overflow-y: hidden;
   /* scrollbar-width: none; */
 }
+
+.mercy-font {
+  font-family: 'Mercy Christole', serif !important;
+}
+
 @theme {
   --font-judson: "Judson", serif;
   --font-mitr: "Mitr", serif;
@@ -28,4 +34,12 @@
       transform: none;
     }
   }
+}
+
+@font-face {
+  font-family: 'Mercy Christole';
+  src: url('/font/MercyChristole.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

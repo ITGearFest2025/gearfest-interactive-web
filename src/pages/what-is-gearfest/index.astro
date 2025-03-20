@@ -2,7 +2,9 @@
 import BGstar from "@/assets/landing/bg.webp";
 import BGstarAnimated from "@/assets/landing/bg-animate.webp";
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import whatisbg from "@/assets/whatisgearfest/bgwhatis.svg";
 import whatisgearfest from "@/assets/whatisgearfest/whatisgearfest.svg";
+import topbg from "@/assets/whatisgearfest/topbg.svg";
 import Navbar from "../../components/Navbar/Navbar";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,7 +13,7 @@ import Navbar from "../../components/Navbar/Navbar";
 <ImagePageLayout
   title="What is Gear Festival?"
   imageLowRes={BGstar}
-  image={whatisgearfest}
+  image={whatisbg}
   backgroundColor="#fff"
   containerClass="h-auto"
 >
@@ -19,11 +21,10 @@ import Navbar from "../../components/Navbar/Navbar";
     class="absolute inset-0 flex flex-col items-center justify-between"
     style={"background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%);"}
   >
-
     <Navbar className="" client:load/>
 
     <div class=" absolute bottom-0 h-10 w-full mb-5 flex items-center justify-between">
-      <div class="text-[#433D8B] font-bold p-3 ">{"<< Starboard"}</div>
+      <div class="text-[#433D8B] p-3 font-bold font-mercy">{"<< Starboard"}</div>
       <div class="text-[#433D8B] font-bold p-3 ">{"Donation >>"}</div>
     </div>
    </div>
