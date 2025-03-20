@@ -48,7 +48,7 @@ const Navbar = ({ className = "" }) => {
 
   return (
     <nav
-      className={`fixed top-0 mx-auto flex w-full max-w-[430px] items-center justify-between ${className}`}
+      className={`fixed top-0 z-[40] mx-auto flex w-full max-w-[430px] items-center justify-between ${className}`}
     >
       <button
         onClick={toggleNavbar}

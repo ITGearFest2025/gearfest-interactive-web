@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import StarShare from "./StarShare";
 import AddYour from "./AddYour";
 import ArrowDown from "@/assets/landing/arrowdown.svg";
+import Navbar from "../Navbar/Navbar";
 
 const StarPlane = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -25,6 +26,7 @@ const StarPlane = () => {
       }}
     >
       <div className="relative h-[1864px] w-[860px]">
+        <Navbar />
         <img
           src={ImageHd.src}
           alt="background"
