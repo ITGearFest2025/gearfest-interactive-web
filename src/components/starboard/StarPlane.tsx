@@ -52,7 +52,7 @@ const StarPlane = () => {
           </a>
         </div>
         <div className="flex cursor-pointer items-center">
-          <a href="/whatisfestival" className="flex items-center gap-1">
+          <a href="/what-is-festival" className="flex items-center gap-1">
             Gear Festival
             <img
               src={ArrowDown.src}
