@@ -4,12 +4,14 @@ import Image from "@/assets/story/scene4/4_hd.webp";
 import ImageLowRes from "@/assets/story/scene4/4_Image_LowRes.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
 import TextBox from "@/components/TextBox/TextBox";
+import Preload from "@/assets/story/scene4/6_Image_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <TextBox type="low-bottom" word="เธอมานั่งที่นี่คนเดียวเหรอ" theme="dark" />
   <ContinueButton
