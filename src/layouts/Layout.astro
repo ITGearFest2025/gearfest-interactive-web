@@ -65,6 +65,22 @@ const { title = "GearFestival 2025", preloadImages } = Astro.props;
         ))
     }
     <title>{title}</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGM82KECLJ"
+    ></script>
+    <script>
+      // @ts-expect-error google tag
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        // @ts-expect-error google tag
+        dataLayer.push(arguments);
+      }
+      // @ts-expect-error google tag
+      gtag("js", new Date());
+      // @ts-expect-error google tag
+      gtag("config", "G-EGM82KECLJ");
+    </script>
   </head>
   <body>
     <main
