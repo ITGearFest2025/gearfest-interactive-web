@@ -1,0 +1,99 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/donation/bgdonate_hd.webp";
+import ImageLowRes from "@/assets/donation/bgdonate_Image_LowRes.webp";
+import Image1 from "@/assets/donation/1_hd.webp";
+import Image2 from "@/assets/donation/2_hd.webp";
+import Image3 from "@/assets/donation/3_hd.webp";
+import Image4 from "@/assets/donation/4_hd.webp";
+import Line from "@/assets/donation/line.svg";
+import Continue from "@/assets/donation/continue.svg";
+
+import { Image } from "astro:assets";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<ImagePageLayout image={ImageHd} imageLowRes={ImageLowRes}>
+  <div
+    class="absolute inset-0 flex h-screen flex-col items-center justify-evenly overflow-x-hidden overflow-y-auto"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%)",
+    }}
+  >
+    <div class="flex flex-col items-center justify-center gap-4">
+      <Image src={Line} alt="line" />
+      <h1 class="font-mitr text-center text-[26px] font-normal text-[#faf8f5]">
+        ร่วมสมทบทุนโรงเรียนบ้านต้นผึ้ง <br /> อำเภอแม่ริม จังหวัดเชียงใหม่
+      </h1>
+      <Image src={Line} alt="line" />
+    </div>
+    <div>
+      <div class="z-10 flex items-center justify-center">
+        <Image
+          src={Image1}
+          width={170}
+          height={130}
+          alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
+        />
+        <Image
+          class="-ml-[5px]"
+          src={Image2}
+          width={170}
+          height={130}
+          alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
+        />
+      </div>
+      <div class="z-0 -mt-[15px] flex items-center justify-center">
+        <Image
+          class="z-10"
+          src={Image3}
+          width={170}
+          height={130}
+          alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
+        />
+        <Image
+          class="-ml-[15px]"
+          src={Image4}
+          width={170}
+          height={130}
+          alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
+        />
+      </div>
+    </div>
+    <div class="font-taviraj flex flex-col gap-3 text-center text-[#faf8f5]">
+      <p class="text-[15px]">
+        ร่วมสมทบทุนโรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่ <br />
+        ในการสนับสนุนงบประมาณดำเนินการซ่อมแชม
+        <br />
+        และปรับปรุงอาคารเรียนอนุบาล พร้อมทั้งพัฒนาสนามเด็กเล่น
+        <br />
+        เพื่อเสริมสร้างพัฒนาการเด็กประถมวัย
+      </p>
+      <p>
+        <span class="text-[15px] underline underline-offset-2">
+          *หมายเหตุ
+        </span>{" "}
+        สามารถลดหย่อนภาษีได้ 2 เท่า
+      </p>
+    </div>
+    <div
+      class="relative flex h-fit w-full items-center justify-center transition-transform duration-300 hover:scale-105 active:scale-100"
+    >
+      <p
+        class="font-italina w-full px-7 py-6 text-center text-xl text-[#faf8f5]"
+        style={{
+          textShadow: "0px 0px 4px #FFFFFF",
+        }}
+      >
+        ไปที่หน้า Donation เพื่อร่วมสมทบทุน
+      </p>
+      <Image
+        src={Continue}
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        alt="continue button"
+      />
+    </div>
+  </div>
+</ImagePageLayout>

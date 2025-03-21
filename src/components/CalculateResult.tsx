@@ -79,14 +79,21 @@ const CalculateResult = () => {
   );
   const resultType = findMaxType(scores);
   userResult.setKey("result", mapType[resultType - 1]);
+
   const redirectUrl1 = `/story/scene7/credits`;
   setTimeout(() => {
     navigate(redirectUrl1);
-  }, 3000);
-  const redirectUrl2 = `/result/${userResult.get()["result"]}`;
+  }, 2000);
+
+  const redirectUrl2 = `/story/scene7/donate`;
   setTimeout(() => {
     navigate(redirectUrl2);
-  }, 7300);
+  }, 5500);
+
+  const redirectUrl3 = `/result/${userResult.get()["result"]}`;
+  setTimeout(() => {
+    navigate(redirectUrl3);
+  }, 9000);
 };
 
 export default CalculateResult;

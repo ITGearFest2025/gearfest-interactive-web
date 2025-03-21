@@ -1,9 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import CalculateResult from "@/components/CalculateResult";
+import ImageLowRes from "@/assets/donation/bgdonate_Image_LowRes.webp";
+import Image1 from "@/assets/donation/1_hd.webp";
+import Image2 from "@/assets/donation/2_hd.webp";
+import Image3 from "@/assets/donation/3_hd.webp";
+import Image4 from "@/assets/donation/4_hd.webp";
 ---
 
-<Layout title="Gear Festival 2025">
+<Layout
+  title="Gear Festival 2025"
+  preloadImages={[ImageLowRes, Image1, Image2, Image3, Image4]}
+>
   <div
     class="font-mitr flex w-full flex-col items-center justify-center gap-6 text-center text-lg text-white"
   >

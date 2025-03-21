@@ -1,6 +1,5 @@
 // src/components/Donation.jsx
 
-import React from "react";
 import ESC from "@/assets/landing/esc_hd.webp";
 import GearFest from "@/assets/landing/gearfest_hd.webp";
 import KNEng from "@/assets/landing/tueng_hd.webp";
