@@ -8,6 +8,7 @@ import ESC from "@/assets/landing/esc.svg";
 import KNEng from "@/assets/landing/kneng.svg";
 import { Image } from "astro:assets";
 import Download from "@/assets/result_save/Investigator.png";
+import Navbar from "@/components/Navbar/Navbar";
 ---
 
 <ImagePageLayout
@@ -16,6 +17,7 @@ import Download from "@/assets/result_save/Investigator.png";
   imageLowRes={ImageLowRes}
   class="hide-scrollbar"
 >
+  <Navbar client:load />
   <div
     class="absolute top-0 right-0 left-0 flex flex-col items-center"
     style={{ backgroundImage: `url(${ImageHd.src})` }}
