@@ -10,6 +10,7 @@ import GearFest from "@/assets/landing/gearfest.svg";
 import KNEng from "@/assets/landing/kneng.svg";
 import { Image } from "astro:assets";
 import CheckResult from "@/components/CheckResult";
+import PullToRedirect from "@/components/Landing/PullToRedirect";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -26,6 +27,7 @@ import CheckResult from "@/components/CheckResult";
     style={"background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%);"}
   >
     <Navbar client:load />
+    <PullToRedirect redirectUrl="/" type="down" client:load />
     <div class="flex w-auto items-center justify-center gap-1.5">
       <Image src={ESC} width={53} height={69} alt="ESC" />
       <Image src={GearFest} width={136} height={136} alt="GearFest" />

@@ -1,7 +1,15 @@
 // PullToRedirect.jsx
 import React, { useState, useEffect } from "react";
 
-const PullToRedirect = () => {
+interface PullToRedirectProps {
+  type: "up" | "down";
+  redirectUrl: string;
+}
+
+const PullToRedirect: React.FC<PullToRedirectProps> = ({
+  type,
+  redirectUrl,
+}) => {
   const [startY, setStartY] = useState(0);
   const [pullDistance, setPullDistance] = useState(0);
 
@@ -16,11 +24,17 @@ const PullToRedirect = () => {
     };
 
     const handleTouchEnd = () => {
-      if (pullDistance > 100) {
+      const threshold = 100;
+      if (type === "down" && pullDistance < -threshold) {
         setTimeout(() => {
-          window.location.href = "/what-is-gearfest";
+          window.location.href = redirectUrl;
+        }, 1500);
+      } else if (type === "up" && pullDistance > threshold) {
+        setTimeout(() => {
+          window.location.href = redirectUrl;
         }, 1500);
       }
+
       setPullDistance(0);
     };
 
@@ -33,9 +47,7 @@ const PullToRedirect = () => {
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [startY, pullDistance]);
-
-  const progress = Math.min((pullDistance / 100) * 100, 100);
+  }, [startY, pullDistance, type, redirectUrl]);
 
   return (
     <div
