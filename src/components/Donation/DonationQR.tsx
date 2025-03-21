@@ -8,11 +8,12 @@ import Line from "@/assets/donation/line.svg";
 import DonationQR from "@/assets/donation/QR_hd.webp";
 import PullToRedirect from "@/components/Landing/PullToRedirect";
 import { CheckResultDonation } from "@/components/CheckResult";
+import Continue from "@/assets/donation/continue.svg";
 
 const Donation = () => {
   return (
     <div
-      className="absolute inset-0 flex h-screen flex-col items-center justify-evenly overflow-x-hidden overflow-y-auto"
+      className="overflow-y-h absolute inset-0 flex h-screen flex-col items-center justify-evenly overflow-x-hidden"
       style={{
         background:
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%)",
@@ -30,35 +31,28 @@ const Donation = () => {
       </div>
       <img
         src={DonationQR.src}
-        width={220}
-        height={270}
+        className="w-full px-16 py-6"
         alt="QR code donate for gear festival 2025"
       />
-      <div className="font-taviraj flex flex-col gap-3 text-center text-[#faf8f5]">
-        <p className="text-[15px]">
-          ร่วมสมทบทุนโรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่ <br />
-          ในการสนับสนุนงบประมาณดำเนินการซ่อมแชม
-          <br />
-          และปรับปรุงอาคารเรียนอนุบาล พร้อมทั้งพัฒนาสนามเด็กเล่น
-          <br />
-          เพื่อเสริมสร้างพัฒนาการเด็กประถมวัย
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdgE8kO0EU7MxFbD_lF8Rc7f0M6oOLMJn2MBsEqkli73hk6Yw/viewform"
+        target="_blank"
+        className="relative flex h-fit w-full items-center justify-center transition-transform duration-300 hover:scale-105 active:scale-100"
+      >
+        <p
+          className="font-taviraj w-full px-7 py-6 text-center text-xl text-[#faf8f5]"
+          style={{
+            textShadow: "0px 0px 4px #FFFFFF",
+          }}
+        >
+          ลดหย่อนภาษี
         </p>
-        <a
-          href="https://drive.google.com/file/d/18kJLxOB-NkQyJQWABp93SqEq4mUf6j6n/view?usp=sharing"
-          className="text-[14px] italic underline underline-offset-2"
-          target="_blank"
-        >
-          คลิ๊กเพื่ออ่านรายละเอียดเพิ่มเติม
-        </a>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdgE8kO0EU7MxFbD_lF8Rc7f0M6oOLMJn2MBsEqkli73hk6Yw/viewform"
-          target="_blank"
-        >
-          <span className="text-[16px] underline underline-offset-2">
-            คลิ๊กเพื่อกรอกฟอร์มสำหรับรับใบเสร็จลดหย่อนภาษี
-          </span>{" "}
-        </a>
-      </div>
+        <img
+          src={Continue.src}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          alt="continue button"
+        />
+      </a>
       <div className="w-full">
         <CheckResultDonation />
       </div>
