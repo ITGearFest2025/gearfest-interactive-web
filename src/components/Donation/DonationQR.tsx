@@ -46,15 +46,18 @@ const Donation = () => {
         <a
           href="https://drive.google.com/file/d/18kJLxOB-NkQyJQWABp93SqEq4mUf6j6n/view?usp=sharing"
           className="text-[14px] italic underline underline-offset-2"
+          target="_blank"
         >
           คลิ๊กเพื่ออ่านรายละเอียดเพิ่มเติม
         </a>
-        <p>
-          <span className="text-[15px] underline underline-offset-2">
-            *หมายเหตุ
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdgE8kO0EU7MxFbD_lF8Rc7f0M6oOLMJn2MBsEqkli73hk6Yw/viewform"
+          target="_blank"
+        >
+          <span className="text-[16px] underline underline-offset-2">
+            คลิ๊กเพื่อกรอกฟอร์มสำหรับรับใบเสร็จลดหย่อนภาษี
           </span>{" "}
-          สามารถลดหย่อนภาษีได้ 2 เท่า
-        </p>
+        </a>
       </div>
       <div className="w-full">
         <CheckResultDonation />

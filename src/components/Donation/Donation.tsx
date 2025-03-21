@@ -75,6 +75,7 @@ const Donation = () => {
         <a
           href="https://drive.google.com/file/d/18kJLxOB-NkQyJQWABp93SqEq4mUf6j6n/view?usp=sharing"
           className="text-[14px] italic underline underline-offset-2"
+          target="_blank"
         >
           คลิ๊กเพื่ออ่านรายละเอียดเพิ่มเติม
         </a>
