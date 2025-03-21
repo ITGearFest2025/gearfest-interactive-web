@@ -35,8 +35,8 @@ const Tutorial = () => {
       </div>
       <div className="absolute bottom-[10%] left-1/2 w-full -translate-x-1/2">
         <p className="font-mitr w-full text-center text-base font-light text-white">
-          หมายเหตุ: สำหรับ iOS ที่ไม่สามารถลากชิ้นส่วนได้ <br /> ให้ลอง refresh
-          หน้าจอ 1 ที
+          หมายเหตุ: ให้ Refresh หน้าเพจ <br />
+          หากไม่สามารถลากชิ้นส่วนได้
         </p>
       </div>
     </div>
