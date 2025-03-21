@@ -1,9 +1,9 @@
 // src/components/Donation.jsx
 
 import React from "react";
-import ESC from "@/assets/landing/esc.svg";
-import GearFest from "@/assets/landing/gearfest.svg";
-import KNEng from "@/assets/landing/kneng.svg";
+import ESC from "@/assets/landing/esc_hd.webp";
+import GearFest from "@/assets/landing/gearfest_hd.webp";
+import KNEng from "@/assets/landing/tueng_hd.webp";
 import Line from "@/assets/donation/line.svg";
 import Image1 from "@/assets/donation/1_hd.webp";
 import Image2 from "@/assets/donation/2_hd.webp";
