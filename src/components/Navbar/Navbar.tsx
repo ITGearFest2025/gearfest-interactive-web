@@ -97,7 +97,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <li className="flex flex-col items-center justify-center gap-4 py-3">
+                {/* <li className="flex flex-col items-center justify-center gap-4 py-3">
                   <a href="/donation" className={getLinkClassName("/donation")}>
                     Donation
                   </a>
@@ -106,7 +106,7 @@ const Navbar = ({ className = "" }) => {
                   src={getLineImage("/donation")}
                   alt="Divider"
                   className="w-full opacity-90"
-                />
+                /> */}
                 {temp !== "" && (
                   <>
                     <li className="flex flex-col items-center justify-center gap-4 py-3">

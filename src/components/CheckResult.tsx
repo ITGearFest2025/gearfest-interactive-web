@@ -19,7 +19,7 @@ const CheckResult = () => {
             />
             {"Starboard"}
           </a>
-          <a
+          {/* <a
             href="/donation"
             className="font-judson flex cursor-pointer items-center p-3 font-bold text-white"
           >
@@ -31,10 +31,10 @@ const CheckResult = () => {
               className="rotate-270"
               alt="ArrowRight"
             />
-          </a>
+          </a> */}
         </>
       )}
-      {temp === "" && (
+      {/* {temp === "" && (
         <a
           href="/donation"
           className="font-judson flex cursor-pointer items-center p-3 font-bold text-white"
@@ -48,7 +48,7 @@ const CheckResult = () => {
           />
           {"Donation"}
         </a>
-      )}
+      )} */}
     </>
   );
 };

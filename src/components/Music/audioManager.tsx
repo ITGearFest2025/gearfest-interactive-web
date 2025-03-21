@@ -47,7 +47,7 @@ class AudioManager {
       trackToPlay !== null &&
       this.sounds[trackToPlay].playing()
     ) {
-      console.log(`Already playing track ${trackToPlay}, continuing...`);
+      // console.log(`Already playing track ${trackToPlay}, continuing...`);
       return;
     }
 
@@ -63,7 +63,7 @@ class AudioManager {
       // If this is a different track than what was playing, start it
       if (!this.sounds[trackToPlay].playing()) {
         this.sounds[trackToPlay].play();
-        console.log(`Started playing track ${trackToPlay} for path: ${path}`);
+        // console.log(`Started playing track ${trackToPlay} for path: ${path}`);
       }
       this.currentTrack = trackToPlay;
     } else {
