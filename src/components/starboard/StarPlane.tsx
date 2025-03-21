@@ -42,7 +42,7 @@ const StarPlane = () => {
         style={{ textShadow: "0px 0px 4px #FFFFFF" }}
       >
         <div className="flex cursor-pointer items-center">
-          {/* <a href="/donation" className="flex items-center gap-1">
+          <a href="/donation" className="flex items-center gap-1">
             <img
               src={ArrowDown.src}
               width={36}
@@ -51,7 +51,7 @@ const StarPlane = () => {
               alt="ArrowLeft"
             />
             Donation
-          </a> */}
+          </a>
         </div>
         <div className="flex cursor-pointer items-center">
           <a href="/what-is-gearfest" className="flex items-center gap-1">
