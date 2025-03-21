@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import { Draggable } from "./Draggable";
 import { Droppable } from "./Droppable";
@@ -9,6 +9,7 @@ import Image3 from "@/assets/story/scene6/puzzle_0002_Layer-1_hd.webp";
 export default function Jigsaw() {
   const [droppedItems, setDroppedItems] = useState<number>(0);
   const [draggedItems, setDraggedItems] = useState<Set<string>>(new Set());
+  const [status, setStatus] = useState(false);
 
   const handleDragEnd = ({ over, active }: { over: any; active: any }) => {
     if (over && over.id === "droppable") {
@@ -16,7 +17,12 @@ export default function Jigsaw() {
       setDraggedItems((prev) => new Set(prev.add(active.id))); // Mark the item as dropped
     }
   };
-  return (
+
+  useEffect(() => {
+    setStatus(true);
+  }, []);
+
+  return status ? (
     <div>
       <DndContext onDragEnd={handleDragEnd}>
         <div>
@@ -76,5 +82,7 @@ export default function Jigsaw() {
         </Droppable>
       </DndContext>
     </div>
+  ) : (
+    <></>
   );
 }
