@@ -4,14 +4,16 @@ import ContinueButton from "@/components/ContinueButton/ContinueButton";
 import Image from "@/assets/story/scene2/0.BGfor234_gif_loop_hd.webp";
 import ImageLowRes from "@/assets/story/scene2/0.BGfor234_gif_LowRes.webp";
 import TextBox from "@/components/TextBox/TextBox";
+import ImageHd from "@/assets/story/scene2/1กาแลกซี่หาดาว_gif_loop_hd.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[ImageHd]}
 >
-  <TextBox type="center" word="น่าจะเหนื่อยน่าดู" theme="dark" />
+  <TextBox type="center" word="ที่นี่ที่ไหน" theme="dark" />
   <ContinueButton
     delay={0.5}
     redirectUrl="/story/scene2/2-3"

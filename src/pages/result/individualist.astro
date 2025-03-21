@@ -13,15 +13,16 @@ import { Image } from "astro:assets";
   title="Gear Festival 2025"
   image={ImageHd}
   imageLowRes={ImageLowRes}
+  class="hide-scrollbar"
 >
   <div
     class="absolute top-0 right-0 left-0 flex flex-col items-center"
     style={{ backgroundImage: `url(${ImageHd.src})` }}
   >
     <a class="cursor-pointer" href="/">
-      <GearFest width={100} height={100} /></a
-    >
-    <Image src={Orb} alt="Achiever Orb" />
+      <GearFest width={100} height={100} />
+    </a>
+    <Image src={Orb} alt="Individualist Orb" class="-mt-[30px]" />
     <div class="font-petit max-w-[366px] text-center text-sm text-white">
       <p class="mb-5">
         " Be yourself; everyone else is already taken."<br /> - Oscar Wilde

@@ -3,12 +3,14 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene2/5ทางเดิน_hd.webp";
 import ImageLowRes from "@/assets/story/scene2/5ทางเดิน_LowRes.webp";
 import AnswerComponent from "@/components/Inputs/AnswerComponent";
+import Preload from "@/assets/story/scene2/6เจอประตู_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <AnswerComponent
     question="คุณเจอทางเดินปริศนา เหมือนมันจะเกี่ยวข้องกับการช่วยเหลือดาวดวงนั้น คุณจะ..."

@@ -4,12 +4,14 @@ import Image from "@/assets/story/scene2/3หยิบดาว_loop_hd.webp";
 import ImageLowRes from "@/assets/story/scene2/3หยิบดาว_LowRes.webp";
 import TextBox from "@/components/TextBox/TextBox";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import Preload from "@/assets/story/scene2/4ดาวตาย_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <TextBox type="high-top" word="ขอบคุณมาก" theme="light" />
   <ContinueButton

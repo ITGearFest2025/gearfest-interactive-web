@@ -1,7 +1,8 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import Image from "@/assets/story/scene2/3หยิบดาว_loop_hd.webp";
-import ImageLowRes from "@/assets/story/scene2/3หยิบดาว_LowRes.webp";
+import Image from "@/assets/story/scene2/4ดาวตาย_hd.webp";
+import ImageLowRes from "@/assets/story/scene2/4ดาวตาย_LowRes.webp";
+import Preload from "@/assets/story/scene2/5เจอทางเดิน_LowRes.webp";
 import TextBox from "@/components/TextBox/TextBox";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
 ---
@@ -10,6 +11,7 @@ import ContinueButton from "@/components/ContinueButton/ContinueButton";
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <TextBox type="high-top" word="..." theme="light" />
   <ContinueButton

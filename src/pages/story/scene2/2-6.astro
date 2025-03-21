@@ -3,16 +3,18 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene2/2เจอดาว_loop_hd.webp";
 import ImageLowRes from "@/assets/story/scene2/2เจอดาว_LowRes.webp";
 import AnswerComponent from "@/components/Inputs/AnswerComponent";
+import Preload from "@/assets/story/scene2/3หยิบดาว_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <AnswerComponent
     question="คุณได้พบกับดวงดาวที่แตกสลาย เขาขอความช่วยเหลือจากคุณ คุณจะ..."
-    redirectUrl="/story/scene2/2-7"
+    redirectUrl="/story/scene2/2-7-1"
     answers={[
       {
         text: "รีบเข้าไปช่วยเหลือโดยไม่ลังเล",

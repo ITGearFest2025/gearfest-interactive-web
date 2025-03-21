@@ -34,7 +34,7 @@ const StarPlane = () => {
         />
         <AddYour ref={targetRef} />
         {Array.from({ length: 50 }).map((_, i) => (
-          <StarShare key={i} />
+          <StarShare indexNum={i} key={i} />
         ))}
       </div>
       <div
@@ -42,7 +42,7 @@ const StarPlane = () => {
         style={{ textShadow: "0px 0px 4px #FFFFFF" }}
       >
         <div className="flex cursor-pointer items-center">
-          <a href="/donation" className="flex items-center gap-1">
+          {/* <a href="/donation" className="flex items-center gap-1">
             <img
               src={ArrowDown.src}
               width={36}
@@ -51,10 +51,10 @@ const StarPlane = () => {
               alt="ArrowLeft"
             />
             Donation
-          </a>
+          </a> */}
         </div>
         <div className="flex cursor-pointer items-center">
-          <a href="/what-is-festival" className="flex items-center gap-1">
+          <a href="/what-is-gearfest" className="flex items-center gap-1">
             Gear Festival
             <img
               src={ArrowDown.src}

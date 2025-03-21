@@ -3,13 +3,18 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene2/0.BGfor234_gif_loop_hd.webp";
 import ImageLowRes from "@/assets/story/scene2/0.BGfor234_gif_LowRes.webp";
 import Jigsaw from "@/components/jigsaw/Jigsaw";
+import Tutorial from "@/components/jigsaw/Tutorial";
+import Preload from "@/assets/story/scene6/4(1)_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  class="overflow-x-hidden overflow-y-hidden"
+  preloadImages={[Preload]}
 >
+  <Tutorial client:load />
   <p
     class="font-italiana absolute top-[8%] left-1/2 w-full -translate-x-1/2 text-center text-4xl text-white"
     style={"text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);"}

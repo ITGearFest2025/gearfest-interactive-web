@@ -3,12 +3,14 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene4/1_hd.webp";
 import ImageLowRes from "@/assets/story/scene4/1_Image_LowRes.webp";
 import AnswerComponent from "@/components/Inputs/AnswerComponent";
+import Preload from "@/assets/story/scene4/2_Image_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <AnswerComponent
     question="คุณเห็นเธอนั่งเงียบๆ อยู่เพียงคนเดียว คุณจึง..."

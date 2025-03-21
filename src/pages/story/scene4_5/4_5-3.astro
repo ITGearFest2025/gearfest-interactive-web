@@ -4,12 +4,14 @@ import Image from "@/assets/story/scene4_5/2เจอจิ๊กซอว์_hd
 import ImageLowRes from "@/assets/story/scene4_5/2เจอจิ๊กซอว์_Image_LowRes.webp";
 import ContinueButton from "@/components/ContinueButton/ContinueButton";
 import TextBox from "@/components/TextBox/TextBox";
+import Preload from "@/assets/story/scene4_5/3ทางเดิน_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
   <TextBox type="low-bottom" word="ได้มาอีกแล้ว" theme="dark" />
   <ContinueButton

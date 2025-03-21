@@ -9,6 +9,7 @@ import ESC from "@/assets/landing/esc.svg";
 import GearFest from "@/assets/landing/gearfest.svg";
 import KNEng from "@/assets/landing/kneng.svg";
 import { Image } from "astro:assets";
+import CheckResult from "@/components/CheckResult";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -18,7 +19,7 @@ import { Image } from "astro:assets";
   imageLowRes={whatisbgLowRes}
   image={whatisbg}
   backgroundColor="#fff"
-  containerClass="h-auto"
+  containerClass="h-[1645px]"
 >
   <div
     class="absolute inset-0 flex flex-col items-center justify-between"
@@ -117,36 +118,12 @@ import { Image } from "astro:assets";
     </div>
     <Image src={glowgear} alt="glow gear" class="absolute bottom-15" />
     <div
-      class="absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between"
+      class="absolute bottom-0 mb-3 flex h-10 w-full items-center justify-between"
     >
       <div
         class="font-judson absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between text-xl"
       >
-        <a
-          href="/starboard"
-          class="font-judson flex cursor-pointer items-center p-3 font-bold text-[#433D8B] transition-colors hover:text-[#5D56BA]"
-        >
-          <Image
-            src={ArrowDown}
-            width={36}
-            height={36}
-            class="rotate-90"
-            alt="ArrowLeft"
-          />
-          {"Starboard"}
-        </a>
-        <a
-          href="/donation"
-          class="font-judson flex cursor-pointer items-center p-3 font-bold text-[#433D8B] transition-colors hover:text-[#5D56BA]"
-        >
-          {"Donation"}<Image
-            src={ArrowDown}
-            width={36}
-            height={36}
-            class="rotate-270"
-            alt="ArrowRight"
-          />
-        </a>
+        <CheckResult client:load />
       </div>
     </div>
   </div>

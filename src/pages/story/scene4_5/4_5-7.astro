@@ -2,19 +2,15 @@
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Image from "@/assets/story/scene4_5/5ประตูเปิด_oneshot_hd.webp";
 import ImageLowRes from "@/assets/story/scene4_5/5ประตูเปิด_LowRes.webp";
-import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import TimingRedirect from "@/components/TimingRedirect";
+import Preload from "@/assets/story/scene5/0Intro_LowRes.webp";
 ---
 
 <ImagePageLayout
   title="Gear Festival 2025"
   image={Image}
   imageLowRes={ImageLowRes}
+  preloadImages={[Preload]}
 >
-  <ContinueButton
-    delay={4}
-    color="black"
-    redirectUrl="/story/scene5/5-1"
-    position="right"
-    client:load
-  />
+  <TimingRedirect delay={4} redirectUrl="/story/scene5/5-1" client:load />
 </ImagePageLayout>

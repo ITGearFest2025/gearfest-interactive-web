@@ -10,10 +10,13 @@ import ContinueButton from "@/components/ContinueButton/ContinueButton";
   image={Image}
   imageLowRes={ImageLowRes}
 >
+  <div class="animate-fadeOut absolute h-full w-full bg-white object-cover">
+  </div>
   <ContinueButton
     delay={0.5}
     redirectUrl="/story/scene3/3-2"
     position="right"
+    color="black"
     client:load
   />
 </ImagePageLayout>
