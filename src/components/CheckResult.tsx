@@ -1,10 +1,13 @@
 import ArrowDown from "@/assets/landing/arrowdown.svg";
 import { userResult } from "@/stores/userResult";
+import { useState } from "react";
+
 const CheckResult = () => {
-  const temp = userResult.get()["result"] || "";
+  const [temp] = useState(userResult.get()["result"] || "");
+  console.log("temp", temp);
   return (
     <>
-      {temp && temp !== "" && (
+      {temp !== "" ? (
         <>
           <a
             href="/starboard"
@@ -33,8 +36,9 @@ const CheckResult = () => {
             />
           </a> */}
         </>
-      )}
-      {/* {temp === "" && (
+      ) : (
+        {
+          /* {temp === "" && (
         <a
           href="/donation"
           className="font-judson flex cursor-pointer items-center p-3 font-bold text-white"
@@ -48,7 +52,9 @@ const CheckResult = () => {
           />
           {"Donation"}
         </a>
-      )} */}
+      )} */
+        }
+      )}
     </>
   );
 };
