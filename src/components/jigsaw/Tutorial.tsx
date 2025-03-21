@@ -12,7 +12,7 @@ const Tutorial = () => {
       const hid = setTimeout(() => {
         setHidden(true);
       }, 750);
-    }, 4000); // 2000ms = 2 seconds
+    }, 7000); // 2000ms = 2 seconds
 
     // Clean up the timer if the component unmounts
     return () => clearTimeout(timer);
@@ -26,7 +26,17 @@ const Tutorial = () => {
       <div className="abosolute h-full w-full bg-black opacity-70"></div>
       <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
         <p className="w-full text-center text-2xl font-semibold text-white">
-          Drag the jigsaws into the star
+          Drag the jigsaws into the star <br />
+          <span className="font-mitr mt-4 text-base font-light">
+            {" "}
+            ลองประกอบชิ้นส่วนดวงดาวดูสิ!
+          </span>
+        </p>
+      </div>
+      <div className="absolute bottom-[10%] left-1/2 w-full -translate-x-1/2">
+        <p className="font-mitr w-full text-center text-base font-light text-white">
+          หมายเหตุ: สำหรับ iOS ที่ไม่สามารถลากชิ้นส่วนได้ <br /> ให้ลอง refresh
+          หน้าจอ 1 ที
         </p>
       </div>
     </div>

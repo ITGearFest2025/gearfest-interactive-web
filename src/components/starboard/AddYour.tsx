@@ -62,6 +62,7 @@ const StarButton: React.FC<StarButtonProps> = ({ ref, onClick }) => (
   >
     <YourStar size={36} />
     <p className="font-bethellen text-3xl text-white">Your Star</p>
+    <p className="font-mitr text-center text-white">( ลองกดที่ดาวสิ! )</p>
   </div>
 );
 

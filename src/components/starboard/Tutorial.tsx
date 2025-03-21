@@ -25,9 +25,10 @@ const Tutorial = () => {
     >
       <div className="abosolute h-full w-full bg-black opacity-70"></div>
       <div className="absolute bottom-[20%] left-1/2 -translate-x-1/2">
-        <p className="text-center text-2xl text-white">Click your star</p>
-        <p className="text-center text-2xl text-white">-</p>
         <p className="text-center text-2xl text-white">Drag to see more</p>
+        <p className="font-mitr mb-8 text-center text-base font-light text-white">
+          เลื่อนหน้าจอดูสิ!
+        </p>
         <div className="animate-pulse">
           <Arrow />
         </div>
