@@ -15,11 +15,12 @@ export function Draggable({ id, className, children }: DraggableProps) {
     transform: transform
       ? `translate3d(${transform.x}px, ${transform.y}px, 0)`
       : "",
+    touchAction: "none",
   };
 
   return (
     <button
-      className={className + "draggable cursor-pointer"}
+      className={className}
       ref={setNodeRef}
       style={style}
       {...listeners}

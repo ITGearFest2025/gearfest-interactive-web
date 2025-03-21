@@ -6,12 +6,12 @@
 /* .scrollbar-none::-webkit-scrollbar {
   display: none;
 } */
-
+/* 
 .draggable {
   -webkit-user-drag: element;
   user-select: none;
   touch-action: none;
-}
+} */
 
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
