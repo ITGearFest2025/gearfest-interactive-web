@@ -73,17 +73,20 @@ const mapType = [
   "peacemaker",
 ];
 
-const calculateResult = () => {
+const CalculateResult = () => {
   const scores = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) =>
     parseInt(userAnswer.get()["type" + item.toString()], 10),
   );
   const resultType = findMaxType(scores);
   userResult.setKey("result", mapType[resultType - 1]);
-
-  const redirectUrl = `/result/${userResult.get()["result"]}`;
+  const redirectUrl1 = `/story/scene7/credits`;
   setTimeout(() => {
-    navigate(redirectUrl);
-  }, 300);
+    navigate(redirectUrl1);
+  }, 3000);
+  const redirectUrl2 = `/result/${userResult.get()["result"]}`;
+  setTimeout(() => {
+    navigate(redirectUrl2);
+  }, 7300);
 };
 
-export default calculateResult;
+export default CalculateResult;
