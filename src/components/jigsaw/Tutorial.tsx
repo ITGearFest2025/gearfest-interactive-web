@@ -12,7 +12,7 @@ const Tutorial = () => {
       const hid = setTimeout(() => {
         setHidden(true);
       }, 750);
-    }, 7000); // 2000ms = 2 seconds
+    }, 4500); // 2000ms = 2 seconds
 
     // Clean up the timer if the component unmounts
     return () => clearTimeout(timer);
