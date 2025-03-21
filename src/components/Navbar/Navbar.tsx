@@ -68,11 +68,11 @@ const Navbar = ({ className = "" }) => {
           <div className="relative z-10 flex h-full w-full flex-col items-center justify-center">
             <button
               onClick={toggleNavbar}
-              className="absolute top-3 right-3 h-[48px] w-[48px] p-3 text-5xl text-white"
+              className="absolute top-3 right-3 z-10 h-[48px] w-[48px] p-3 text-5xl text-white"
             >
               <img src={X.src} width={24} height={24} alt="close button" />
             </button>
-            <div className="flex h-full items-center text-xl text-white">
+            <div className="z-0 flex h-full items-center text-xl text-white">
               <ul className="z-20 flex h-full flex-col items-center justify-center">
                 <li className="flex flex-col items-center justify-center gap-4 pt-15 pb-3">
                   <a href="/" className={`${getLinkClassName("/")} `}>
