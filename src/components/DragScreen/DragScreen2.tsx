@@ -46,7 +46,7 @@ const DragScreen2: React.FC<DragScreenProps> = ({
         ref={ref}
         className="absolute top-40 left-20 size-2 text-white"
       ></div>
-      <div className="fixed bottom-[20%] left-1/2 -translate-x-1/2 space-y-2 text-2xl text-white">
+      <div className="pointer-events-none fixed bottom-[20%] left-1/2 -translate-x-1/2 space-y-2 text-2xl text-white">
         <p>Drag to find more</p>
         <p className="font-mitr mb-8 text-center text-base font-light">
           เลื่อนหน้าจอดูสิ!

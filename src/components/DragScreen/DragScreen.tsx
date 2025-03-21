@@ -41,7 +41,7 @@ const DragScreen: React.FC<DragScreenProps> = ({
         ref={ref}
         className="absolute top-40 right-20 size-2 text-white"
       ></div>
-      <div className="fixed bottom-[20%] left-1/2 -translate-x-1/2 space-y-2 text-2xl text-white">
+      <div className="pointer-events-none fixed bottom-[20%] left-1/2 -translate-x-1/2 space-y-2 text-2xl text-white">
         <p className="text-center">
           Drag to find more <br />
         </p>
