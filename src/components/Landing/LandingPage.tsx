@@ -42,7 +42,7 @@ const LandingPage = () => {
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%)",
       }}
     >
-      {result !== "" ? (
+      {result !== "" && !userResult.get() ? (
         <>
           <div className="mt-6 flex w-auto items-center justify-center gap-1.5">
             <img src={ESC.src} width={53} height={69} alt="ESC" />
