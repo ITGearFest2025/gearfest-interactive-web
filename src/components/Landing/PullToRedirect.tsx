@@ -32,7 +32,7 @@ const PullToRedirect: React.FC<PullToRedirectProps> = ({
       const threshold = 100;
 
       // Check swipe direction and distance to trigger redirect
-      if (type === "down" && pullDistanceY > threshold) {
+      if (type === "down" && pullDistanceY > threshold + 100) {
         setTimeout(() => {
           window.location.href = redirectUrl;
         }, 1500);
