@@ -18,6 +18,7 @@ import Individualist from "@/assets/result/Individualist.png";
 import Investigator from "@/assets/result/Investigator.png";
 import Peacemaker from "@/assets/result/Peacemaker.png";
 import Loyalist from "@/assets/result/Loyalist.png";
+import { useEffect, useState } from "react";
 
 const ImageSrc: { [index: string]: ImageMetadata } = {
   achiever: Achiever,
@@ -32,7 +33,14 @@ const ImageSrc: { [index: string]: ImageMetadata } = {
 };
 
 const LandingPage = () => {
-  const result = userResult.get()["result"] || "";
+  const [result, setResult] = useState("");
+  const [status, setStatus] = useState(false);
+
+  useEffect(() => {
+    setResult(userResult.get()["result"] || "");
+    // console.log("result", result);
+    setStatus(true);
+  }, []);
 
   return (
     <div
@@ -42,7 +50,7 @@ const LandingPage = () => {
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%)",
       }}
     >
-      {result !== "" ? (
+      {result !== "" && status ? (
         <>
           <div className="mt-6 flex w-auto items-center justify-center gap-1.5">
             <img src={ESC.src} width={53} height={69} alt="ESC" />

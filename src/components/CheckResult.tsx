@@ -1,12 +1,19 @@
 // CheckResult.tsx
 import ArrowDown from "@/assets/landing/arrowdown.svg";
 import { userResult } from "@/stores/userResult";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const CheckResult = () => {
-  const [temp] = useState(userResult.get()["result"] || "");
+  const [result, setResult] = useState("");
+  const [status, setStatus] = useState(false);
+
+  useEffect(() => {
+    setResult(userResult.get()["result"] || "");
+    // console.log("result", result);
+    setStatus(true);
+  }, []);
   return (
     <>
-      {temp !== "" ? (
+      {result !== "" && status ? (
         <>
           <a
             href="/starboard"
