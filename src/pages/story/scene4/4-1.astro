@@ -1,21 +1,15 @@
 ---
-import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import Image from "@/assets/story/scene4/S4_3sec_oneshot_hd.webp";
-import ImageLowRes from "@/assets/story/scene4/S4_3sec_LowRes.webp";
-import ContinueButton from "@/components/ContinueButton/ContinueButton";
+import DragScreen2 from "@/components/DragScreen/DragScreen2";
+import ImageHd from "@/assets/story/scene4/drag2_hd.webp";
+import Layout from "@/layouts/Layout.astro";
 import Preload from "@/assets/story/scene4/1_Image_LowRes.webp";
 ---
 
-<ImagePageLayout
-  title="Gear Festival 2025"
-  image={Image}
-  imageLowRes={ImageLowRes}
-  preloadImages={[Preload]}
->
-  <ContinueButton
-    delay={5}
-    redirectUrl="/story/scene4/4-2"
-    position="right"
-    client:load
-  />
-</ImagePageLayout>
+<Layout preloadImages={[Preload]}>
+  <div class="scrollbar-none absolute inset-0 overflow-auto">
+    <DragScreen2 redirectUrl="/story/scene4/4-2" ImageHd={ImageHd} client:load>
+      {/* TODO: add content here */}
+    </DragScreen2>
+  </div>
+  <div class="fixed inset-0 -z-50 bg-black"></div>
+</Layout>
