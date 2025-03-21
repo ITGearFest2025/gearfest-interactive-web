@@ -42,7 +42,7 @@ const LandingPage = () => {
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%)",
       }}
     >
-      {result !== "" && !userResult.get() ? (
+      {result !== "" ? (
         <>
           <div className="mt-6 flex w-auto items-center justify-center gap-1.5">
             <img src={ESC.src} width={53} height={69} alt="ESC" />
@@ -110,7 +110,10 @@ const LandingPage = () => {
               gearfestival.official
             </a>
           </div>
-          <div className="mb-4 flex flex-col items-center">
+          <a
+            href="/what-is-gearfest"
+            className="mb-4 flex w-full cursor-pointer flex-col items-center"
+          >
             <p
               style={{ textShadow: "0px 0px 4px #FFFFFF" }}
               className="font-judson text-[#F7DEFC]"
@@ -118,7 +121,7 @@ const LandingPage = () => {
               What is Gear Festival?
             </p>
             <img src={ArrowDown.src} width={36} height={36} alt="ArrowDown" />
-          </div>
+          </a>
         </>
       ) : (
         <>
