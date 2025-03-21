@@ -3,6 +3,7 @@ import navbar from "@/assets/navbar/navbar.svg";
 import X from "@/assets/navbar/x.svg";
 import line from "@/assets/navbar/line.svg";
 import linewhite from "@/assets/navbar/linewhite.svg";
+import { userResult } from "@/stores/userResult";
 
 const MenuIcon = ({ className }: { className: string }) => (
   <svg
@@ -25,6 +26,7 @@ const MenuIcon = ({ className }: { className: string }) => (
 const Navbar = ({ className = "" }) => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
+  const temp = userResult.get()["result"] || "";
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
@@ -105,19 +107,23 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <li className="flex flex-col items-center justify-center gap-4 py-3">
-                  <a
-                    href="/starboard"
-                    className={getLinkClassName("/starboard")}
-                  >
-                    Star Board
-                  </a>
-                </li>
-                <img
-                  src={getLineImage("/starboard")}
-                  alt="Divider"
-                  className="w-full opacity-90"
-                />
+                {temp !== "" && (
+                  <>
+                    <li className="flex flex-col items-center justify-center gap-4 py-3">
+                      <a
+                        href="/starboard"
+                        className={getLinkClassName("/starboard")}
+                      >
+                        Star Board
+                      </a>
+                    </li>
+                    <img
+                      src={getLineImage("/starboard")}
+                      alt="Divider"
+                      className="w-full opacity-90"
+                    />
+                  </>
+                )}
               </ul>
             </div>
           </div>
