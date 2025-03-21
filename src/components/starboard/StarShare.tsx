@@ -1,4 +1,13 @@
 import { useState } from "react";
+import Reformer from "@/assets/starboard/reformer_Star.svg";
+import Achiever from "@/assets/starboard/achiever_Star.svg";
+import Helper from "@/assets/starboard/helper_Star.svg";
+import Individualist from "@/assets/starboard/individualist_Star.svg";
+import Investigator from "@/assets/starboard/investigator_Star.svg";
+import Peacemaker from "@/assets/starboard/peacemaker_Star.svg";
+import Challenger from "@/assets/starboard/challenger_Star.svg";
+import Enthusiast from "@/assets/starboard/enthusiast_Star.svg";
+import Loyalist from "@/assets/starboard/loyalist_Star.svg";
 
 interface StarProperties {
   top: number;
@@ -10,7 +19,7 @@ interface StarProperties {
 
 interface StarImageProps {
   position: StarProperties;
-  star: string;
+  star: ImageMetadata;
   onClick?: () => void;
   isHighlighted?: boolean;
 }
@@ -101,15 +110,15 @@ const getRandomMessage = ({ index }: { index: number }) => {
 
 const getRandomStarImage = () => {
   const starImages = [
-    "reformer",
-    "helper",
-    "achiever",
-    "individualist",
-    "investigator",
-    "loyalist",
-    "enthusiast",
-    "challenger",
-    "peacemaker",
+    Reformer,
+    Helper,
+    Achiever,
+    Individualist,
+    Investigator,
+    Loyalist,
+    Enthusiast,
+    Challenger,
+    Peacemaker,
   ];
   return starImages[Math.floor(Math.random() * starImages.length)];
 };
@@ -121,7 +130,7 @@ const StarImage: React.FC<StarImageProps> = ({
   isHighlighted,
 }) => (
   <img
-    src={`/src/assets/starboard/${star === "" ? "reformer" : star}_Star.svg`}
+    src={star ? star.src : Achiever.src}
     alt="Star"
     className={`absolute animate-pulse transition-transform ${
       isHighlighted ? "z-[50]" : "z-0"
@@ -143,7 +152,7 @@ const StarShare: React.FC<StarShareProps> = ({ message, indexNum }) => {
   const [showMessage, setShowMessage] = useState<boolean>(false);
   const [selectedStar, setSelectedStar] = useState<{
     position: StarProperties;
-    star: string;
+    star: ImageMetadata;
   } | null>(null);
 
   const [star] = useState(getRandomStarImage);

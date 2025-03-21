@@ -3,15 +3,41 @@ import { userLongAnswer } from "@/stores/userLongAnswer";
 import { useStore } from "@nanostores/react";
 import { userResult } from "@/stores/userResult";
 
+import Reformer from "@/assets/starboard/reformer_Star.svg";
+import Achiever from "@/assets/starboard/achiever_Star.svg";
+import Helper from "@/assets/starboard/helper_Star.svg";
+import Individualist from "@/assets/starboard/individualist_Star.svg";
+import Investigator from "@/assets/starboard/investigator_Star.svg";
+import Peacemaker from "@/assets/starboard/peacemaker_Star.svg";
+import Challenger from "@/assets/starboard/challenger_Star.svg";
+import Enthusiast from "@/assets/starboard/enthusiast_Star.svg";
+import Loyalist from "@/assets/starboard/loyalist_Star.svg";
+
 interface YourStarProps {
   size: number;
 }
+
+const mapType = {
+  reformer: Reformer,
+  achiever: Achiever,
+  helper: Helper,
+  individualist: Individualist,
+  investigator: Investigator,
+  peacemaker: Peacemaker,
+  challenger: Challenger,
+  enthusiast: Enthusiast,
+  loyalist: Loyalist,
+};
 
 const YourStar: React.FC<YourStarProps> = ({ size }) => {
   const userStar = userResult.get()["result"] || "";
   return (
     <img
-      src={`/src/assets/starboard/${userStar === "" ? "reformer" : userStar}_Star.svg`}
+      src={
+        userStar in mapType
+          ? mapType[userStar as keyof typeof mapType].src
+          : Reformer.src
+      }
       alt="Your Star"
       style={{
         width: `${size * 4}px`,
