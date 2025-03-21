@@ -68,7 +68,7 @@ const Navbar = ({ className = "" }) => {
           <div className="relative z-10 flex h-full w-full flex-col items-center justify-center">
             <button
               onClick={toggleNavbar}
-              className="absolute top-6 right-6 text-5xl text-white"
+              className="absolute top-3 right-3 h-[48px] w-[48px] p-3 text-5xl text-white"
             >
               <img src={X.src} width={24} height={24} alt="close button" />
             </button>
