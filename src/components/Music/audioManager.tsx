@@ -25,7 +25,7 @@ class AudioManager {
     ];
 
     this.regexs = [
-      /^\/story\/scene(1|2|3_5|4_5|6|7)\/.*/,
+      /^\/story\/scene(0|1|2|3_5|4_5|6|7)\/.*/,
       /^\/story\/scene(3|4|5)\/.*/,
     ];
   }
