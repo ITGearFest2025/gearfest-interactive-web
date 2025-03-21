@@ -7,6 +7,7 @@ import GearFest from "@/assets/landing/gearfest.svg";
 import ESC from "@/assets/landing/esc.svg";
 import KNEng from "@/assets/landing/kneng.svg";
 import { Image } from "astro:assets";
+import Download from "@/assets/result_save/Peacemaker.png";
 ---
 
 <ImagePageLayout
@@ -60,7 +61,7 @@ import { Image } from "astro:assets";
       <div class="font-baskervville mb-6 flex w-full max-w-[366px] gap-2">
         <a
           download
-          href="/src/assets/result_save/Peacemaker.png"
+          href={Download.src}
           class="w-full cursor-pointer px-3 py-2.5 text-[#faf8f5] transition-all duration-300 hover:scale-110 active:scale-105"
           style={{
             background: "#807E8E",
