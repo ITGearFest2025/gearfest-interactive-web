@@ -34,7 +34,7 @@ const StarPlane = () => {
         />
         <AddYour ref={targetRef} />
         {Array.from({ length: 50 }).map((_, i) => (
-          <StarShare key={i} />
+          <StarShare indexNum={i} key={i} />
         ))}
       </div>
       <div
