@@ -123,12 +123,11 @@ import PullToRedirect from "@/components/Landing/PullToRedirect";
       </p>
     </div>
     <Image src={glowgear} alt="glow gear" class="absolute bottom-15" />
+
     <div
-      class="absolute bottom-0 mb-3 flex h-10 w-full items-center justify-between"
+      class="font-judson fixed bottom-5 flex h-10 w-full max-w-[430px] text-xl"
     >
-      <div class="font-judson absolute bottom-0 mb-5 flex h-10 w-full text-xl">
-        <CheckResult client:load />
-      </div>
+      <CheckResult client:load />
     </div>
     <PullToRedirect type="right" redirectUrl="/donation" client:load />
     <PullToRedirect type="left" redirectUrl="/starboard" client:load />
