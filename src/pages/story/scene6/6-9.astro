@@ -5,6 +5,9 @@ import ImageLowRes from "@/assets/story/scene2/0.BGfor234_gif_LowRes.webp";
 import Jigsaw from "@/components/jigsaw/Jigsaw";
 import Tutorial from "@/components/jigsaw/Tutorial";
 import Preload from "@/assets/story/scene6/4(1)_LowRes.webp";
+import Star1 from "@/assets/story/scene6/star1_hd.webp";
+import Star2 from "@/assets/story/scene6/star2_hd.webp";
+import Star3 from "@/assets/story/scene6/star3_hd.webp";
 ---
 
 <ImagePageLayout
@@ -12,7 +15,7 @@ import Preload from "@/assets/story/scene6/4(1)_LowRes.webp";
   image={Image}
   imageLowRes={ImageLowRes}
   class="overflow-x-hidden overflow-y-hidden"
-  preloadImages={[Preload]}
+  preloadImages={[Star1, Star2, Star3, Preload]}
 >
   <Tutorial client:load />
   <p
