@@ -17,7 +17,9 @@ const PullToRedirect = () => {
 
     const handleTouchEnd = () => {
       if (pullDistance > 100) {
-        window.location.href = "/what-is-gearfest";
+        setTimeout(() => {
+          window.location.href = "/what-is-gearfest";
+        }, 1500);
       }
       setPullDistance(0);
     };
