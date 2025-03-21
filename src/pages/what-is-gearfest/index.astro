@@ -27,7 +27,7 @@ import PullToRedirect from "@/components/Landing/PullToRedirect";
     style={"background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%);"}
   >
     <Navbar client:load />
-    <PullToRedirect redirectUrl="/" type="down" client:load />
+    <PullToRedirect redirectUrl="/" type="up" client:load />
     <div class="flex w-auto items-center justify-center gap-1.5">
       <Image src={ESC} width={53} height={69} alt="ESC" />
       <Image src={GearFest} width={136} height={136} alt="GearFest" />
@@ -126,11 +126,11 @@ import PullToRedirect from "@/components/Landing/PullToRedirect";
     <div
       class="absolute bottom-0 mb-3 flex h-10 w-full items-center justify-between"
     >
-      <div
-        class="font-judson absolute bottom-0 mb-5 flex h-10 w-full items-center justify-between text-xl"
-      >
+      <div class="font-judson absolute bottom-0 mb-5 flex h-10 w-full text-xl">
         <CheckResult client:load />
       </div>
     </div>
+    <PullToRedirect type="right" redirectUrl="/donation" client:load />
+    <PullToRedirect type="left" redirectUrl="/starboard" client:load />
   </div>
 </ImagePageLayout>
