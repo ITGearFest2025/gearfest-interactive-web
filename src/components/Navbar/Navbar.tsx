@@ -141,7 +141,7 @@ const Navbar = ({ className = "" }) => {
               />
               <img
                 src={LoveIs.src}
-                className="h-[77px] w-[73px]"
+                className="h-[70px] w-[70px] object-cover"
                 alt="Love is Entertainment logo"
               />
               <img
