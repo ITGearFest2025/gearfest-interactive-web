@@ -11,6 +11,9 @@ import KNEng from "@/assets/landing/tueng_hd.webp";
 import { Image } from "astro:assets";
 import CheckResult from "@/components/CheckResult";
 import PullToRedirect from "@/components/Landing/PullToRedirect";
+import PMCU from "@/assets/whatisgearfest/pmcu_hd.webp";
+import CCMC from "@/assets/whatisgearfest/ccmc_hd.webp";
+import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -29,9 +32,9 @@ import PullToRedirect from "@/components/Landing/PullToRedirect";
     <Navbar client:load />
     <PullToRedirect redirectUrl="/" type="up" client:load />
     <div class="flex w-auto items-center justify-center gap-1.5">
-      <Image src={ESC} width={53} height={69} alt="ESC" />
-      <Image src={GearFest} width={136} height={136} alt="GearFest" />
-      <Image src={KNEng} width={53} height={53} alt="KNEng" />
+      <Image src={ESC} alt="ESC" class="h-[69px] w-[53px]" />
+      <Image src={GearFest} alt="GearFest" class="h-[136px] w-[136px]" />
+      <Image src={KNEng} alt="KNEng" class="h-[53px] w-[53px]" />
     </div>
     <div class="mt-20 flex h-full w-full flex-col">
       <h1
@@ -55,28 +58,28 @@ import PullToRedirect from "@/components/Landing/PullToRedirect";
         >ที่ตั้งใจเตรียมมาเพื่องานนี้โดยเฉพาะ
       </p>
       <h2
-        class="mercy-font absolute top-[32%] left-[1.5rem] text-2xl text-white"
+        class="mercy-font absolute top-[27%] left-[1.5rem] text-2xl text-white"
         style="text-shadow: 0 0 5px #fff, 0 0 10px #fff; "
       >
         What We Get?
       </h2>
       <h3
-        class="taviraj-font absolute top-[36.9%] right-[8rem] text-base font-semibold text-[#7065A4]"
+        class="taviraj-font absolute top-[31.9%] right-[8rem] text-base font-semibold text-[#7065A4]"
       >
         ได้เป็นผู้รับ
       </h3>
       <p
-        class="taviraj-font absolute top-[39%] right-[2.5rem] w-fit text-center text-sm text-[#666666]"
+        class="taviraj-font absolute top-[34%] right-[2.5rem] w-fit text-center text-sm text-[#666666]"
       >
         ผ่านการชมงานดนตรีและศิลปะ <br />ทั้งจากนิสิต นักศึกษา และศิลปินสุดพิเศษ
       </p>
       <h3
-        class="taviraj-font absolute top-[44%] left-[9rem] text-base font-semibold text-[#7065A4]"
+        class="taviraj-font absolute top-[39%] left-[9rem] text-base font-semibold text-[#7065A4]"
       >
         ได้เป็นผู้ให้
       </h3>
       <p
-        class="taviraj-font absolute top-[46%] left-[2rem] w-fit text-center text-sm text-[#666666]"
+        class="taviraj-font absolute top-[41%] left-[2rem] w-fit text-center text-sm text-[#666666]"
       >
         ร่วมแบ่งปันความสุข<br />และรอยยิ้มให้กับผู้อื่นภายในงานการกุศล<br />
         กำไรทั้งหมดที่ได้รับจากงานนี้ จะถูกนำไปบริจาคให้กับ<br />
@@ -87,42 +90,62 @@ import PullToRedirect from "@/components/Landing/PullToRedirect";
         >
       </p>
       <h3
-        class="taviraj-font absolute top-[54%] right-[6rem] font-semibold text-[#7065A4]"
+        class="taviraj-font absolute top-[49%] right-[6rem] font-semibold text-[#7065A4]"
       >
         ได้ออกเดินทาง
       </h3>
       <p
-        class="taviraj-font absolute top-[56%] right-[2.5rem] w-fit text-center text-sm text-[#666666]"
+        class="taviraj-font absolute top-[51%] right-[2.5rem] w-fit text-center text-sm text-[#666666]"
       >
         ค้นหา และเก็บเกี่ยวตัวตนที่หล่นหายไป <br />ผ่านการเล่นกิจกรรมต่าง ๆ
         ภายในงาน
       </p>
       <h3
-        class="taviraj-font absolute top-[61%] left-[11rem] font-semibold text-[#7065A4]"
+        class="taviraj-font absolute top-[56%] left-[11rem] font-semibold text-[#7065A4]"
       >
         ได้ค้นพบ
       </h3>
       <p
-        class="taviraj-font absolute top-[63%] left-[6.5rem] w-fit text-center text-sm text-[#666666]"
+        class="taviraj-font absolute top-[58%] left-[6.5rem] w-fit text-center text-sm text-[#666666]"
       >
         ทำความรู้จัก พบปะ <br /> แลกเปลี่ยนประสบการณ์และความรู้สึก <br
         />กับผู้ร่วมงานคนอื่น
       </p>
 
       <p
-        class="taviraj-font font-s absolute top-[73%] w-full text-center text-lg text-white"
+        class="taviraj-font font-s absolute top-[65%] w-full text-center text-lg text-white"
         style={{ textShadow: "0px 0px 10px #FBE79D" }}
       >
         วันที่ 28 มีนาคม 2568
       </p>
       <p
-        class="taviraj-font absolute top-[75%] w-full px-5 text-center text-sm text-white"
+        class="taviraj-font absolute top-[67%] w-full px-5 text-center text-sm text-white"
         style={{ textShadow: "0 0 5px #fff, 0 0 10px #fff" }}
       >
         ณ สวนอุทยาน 100 ปี <br />จุฬาลงกรณ์มหาวิทยาลัย
       </p>
+      <Image
+        src={glowgear}
+        alt="glow gear"
+        class="absolute top-[65%] left-1/2 -translate-x-1/2"
+      />
+      <div class="pb-[100px absolute top-[90%] w-full">
+        <p
+          class="font-jusdon w-full text-center font-bold text-[#7065A4] italic"
+        >
+          Sponsored by
+        </p>
+        <div class="flex w-full items-center justify-center">
+          <Image src={CCMC} alt="Choco mucho logo" class="h-[50px] w-[49px]" />
+          <Image
+            src={LoveIs}
+            class="h-[77px] w-[73px]"
+            alt="Love is Entertainment logo"
+          />
+          <Image src={PMCU} class="h-[61px] w-[84px]" alt="PMCU logo" />
+        </div>
+      </div>
     </div>
-    <Image src={glowgear} alt="glow gear" class="absolute bottom-15" />
 
     <div
       class="font-judson fixed bottom-5 flex h-10 w-full max-w-[430px] text-xl"

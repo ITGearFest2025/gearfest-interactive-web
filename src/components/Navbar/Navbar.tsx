@@ -4,6 +4,9 @@ import X from "@/assets/navbar/x.svg";
 import line from "@/assets/navbar/line.svg";
 import linewhite from "@/assets/navbar/linewhite.svg";
 import { userResult } from "@/stores/userResult";
+import PMCU from "@/assets/whatisgearfest/pmcu-white_hd.webp";
+import CCMC from "@/assets/whatisgearfest/ccmc_hd.webp";
+import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
 
 const MenuIcon = ({ className }: { className: string }) => (
   <svg
@@ -129,7 +132,26 @@ const Navbar = ({ className = "" }) => {
                 )}
               </ul>
             </div>
+
+            <div className="absolute -bottom-[40%] flex w-full items-center justify-center">
+              <img
+                src={CCMC.src}
+                alt="Choco mucho logo"
+                className="h-[50px] w-[50px]"
+              />
+              <img
+                src={LoveIs.src}
+                className="h-[77px] w-[73px]"
+                alt="Love is Entertainment logo"
+              />
+              <img
+                src={PMCU.src}
+                className="h-[61px] w-[84px]"
+                alt="PMCU logo"
+              />
+            </div>
           </div>
+
           <img
             src={navbar.src}
             className="absolute top-0 right-0 left-0"

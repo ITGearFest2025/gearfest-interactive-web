@@ -5,49 +5,64 @@ import Image1 from "@/assets/donation/1_hd.webp";
 import Image2 from "@/assets/donation/2_hd.webp";
 import Image3 from "@/assets/donation/3_hd.webp";
 import Image4 from "@/assets/donation/4_hd.webp";
+import PMCU from "@/assets/whatisgearfest/pmcu-white_hd.webp";
+import CCMC from "@/assets/whatisgearfest/ccmc_hd.webp";
+import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
+import { Image } from "astro:assets";
 ---
 
 <Layout
   title="Gear Festival 2025"
   preloadImages={[ImageLowRes, Image1, Image2, Image3, Image4]}
 >
-  <div
-    class="font-mitr flex w-full flex-col items-center justify-center gap-6 text-center text-lg text-white"
-  >
-    <h1 class="text-4xl">Credits</h1>
-    <h2>Created By:</h2>
-    <div>
-      <h3 class="text-white">Project Manager</h3>
-      <p class="text-base font-light">Nene WassaP</p>
-    </div>
-    <div>
-      <h3 class="text-white">Story</h3>
-      <p class="text-base font-light">Content Gear Festival</p>
-    </div>
-    <div>
-      <h3 class="text-white">Art & Animation</h3>
-      <p class="text-base font-light">Nene WassaP, MemeeP, gift</p>
-    </div>
-    <div>
-      <h3 class="text-white">UX/UI</h3>
-      <p class="text-base font-light">poxsitaa, @nair, Yiwah, gincole</p>
-    </div>
-    <div>
-      <h3 class="text-white">Developer</h3>
-      <p class="text-base font-light">
-        ต้นน้ำนอนน้อย , ปันปัน , อันอัน , โอห์มเทพซ่า
-      </p>
-    </div>
-    <div>
-      <h3 class="text-white">Music</h3>
-      <p class="text-base font-light">tent achita, JChet</p>
-    </div>
-    <div>
-      <h3 class="text-white">Project Consultant</h3>
-      <p class="text-base font-light">yyangg , ploy_warit</p>
-    </div>
+  <div class="flex w-full flex-col items-center justify-evenly">
+    <div
+      class="font-mitr flex w-full flex-col items-center justify-center gap-4 text-center text-lg text-white"
+    >
+      <h1 class="text-4xl">Credits</h1>
+      <h2>Created By:</h2>
+      <div>
+        <h3 class="text-white">Project Manager</h3>
+        <p class="text-base font-light">Nene WassaP</p>
+      </div>
+      <div>
+        <h3 class="text-white">Story</h3>
+        <p class="text-base font-light">Content Gear Festival</p>
+      </div>
+      <div>
+        <h3 class="text-white">Art & Animation</h3>
+        <p class="text-base font-light">Nene WassaP, MemeeP, gift</p>
+      </div>
+      <div>
+        <h3 class="text-white">UX/UI</h3>
+        <p class="text-base font-light">poxsitaa, @nair, Yiwah, gincole</p>
+      </div>
+      <div>
+        <h3 class="text-white">Developer</h3>
+        <p class="text-base font-light">
+          ต้นน้ำนอนน้อย , ปันปัน , อันอัน , โอห์มเทพซ่า
+        </p>
+      </div>
+      <div>
+        <h3 class="text-white">Music</h3>
+        <p class="text-base font-light">tent achita, JChet</p>
+      </div>
+      <div>
+        <h3 class="text-white">Project Consultant</h3>
+        <p class="text-base font-light">yyangg , ploy_warit</p>
+      </div>
 
-    <p>And Gear Festival Family</p>
+      <p>And Gear Festival Family</p>
+    </div>
+    <div class="flex w-full items-center justify-center">
+      <Image src={CCMC} alt="Choco mucho logo" class="h-[50px] w-[49px]" />
+      <Image
+        src={LoveIs}
+        class="h-[77px] w-[73px]"
+        alt="Love is Entertainment logo"
+      />
+      <Image src={PMCU} class="h-[61px] w-[84px]" alt="PMCU logo" />
+    </div>
   </div>
 </Layout>
 <div class="fixed inset-0 -z-50 bg-black"></div>
