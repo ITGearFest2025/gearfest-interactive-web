@@ -20,28 +20,28 @@ const Donation = () => {
       }}
     >
       <div className="flex w-auto items-center justify-center gap-1.5">
-        <img src={ESC.src} width={53} height={69} alt="ESC" />
-        <img src={GearFest.src} width={136} height={136} alt="GearFest" />
-        <img src={KNEng.src} width={53} height={53} alt="KNEng" />
+        <img src={ESC.src} width={43} height={59} alt="ESC" />
+        <img src={GearFest.src} width={126} height={126} alt="GearFest" />
+        <img src={KNEng.src} width={43} height={43} alt="KNEng" />
       </div>
-      <div className="flex flex-col items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center gap-2">
         <img src={Line.src} alt="line" />
-        <h1 className="text-3xl text-[#faf8f5]">Donation</h1>
+        <h1 className="text-2xl text-[#faf8f5]">Donation</h1>
         <img src={Line.src} alt="line" />
       </div>
       <div>
         <div className="z-10 flex items-center justify-center">
           <img
             src={Image1.src}
-            width={170}
-            height={130}
+            width={160}
+            height={120}
             alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
           />
           <img
             className="-ml-[5px]"
             src={Image2.src}
-            width={170}
-            height={130}
+            width={160}
+            height={120}
             alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
           />
         </div>
@@ -49,28 +49,28 @@ const Donation = () => {
           <img
             className="z-10"
             src={Image3.src}
-            width={170}
-            height={130}
+            width={160}
+            height={120}
             alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
           />
           <img
             className="-ml-[15px]"
             src={Image4.src}
-            width={170}
-            height={130}
+            width={160}
+            height={120}
             alt="image of โรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่"
           />
         </div>
       </div>
-      <div className="font-taviraj flex flex-col gap-3 text-center text-[#faf8f5]">
-        <p className="text-[15px]">
+      <div className="font-taviraj flex flex-col p p-2 gap-3 text-center text-xs text-[#faf8f5]">
+        <div className="text-[15px]">
           ร่วมสมทบทุนโรงเรียนบ้านต้นผึ้งอำเภอแม่ริม จังหวัดเชียงใหม่ <br />
           ในการสนับสนุนงบประมาณดำเนินการซ่อมแชม
           <br />
           และปรับปรุงอาคารเรียนอนุบาล พร้อมทั้งพัฒนาสนามเด็กเล่น
           <br />
           เพื่อเสริมสร้างพัฒนาการเด็กประถมวัย
-        </p>
+        </div>
         <a
           href="https://drive.google.com/file/d/18kJLxOB-NkQyJQWABp93SqEq4mUf6j6n/view?usp=sharing"
           className="text-[14px] italic underline underline-offset-2"
@@ -78,11 +78,13 @@ const Donation = () => {
         >
           คลิ๊กเพื่ออ่านรายละเอียดเพิ่มเติม
         </a>
-        <p>
+        <p className="text-[15px]">
           <span className="text-[15px] underline underline-offset-2">
             *หมายเหตุ
           </span>{" "}
           สามารถลดหย่อนภาษีได้ 2 เท่า
+          <br />       <br />
+          ทางโครงการจะส่งใบเสร็จและใบ E-Donation ให้ภายหลังจบโครงการผ่าน E-mail ที่ได้ทำการกรอกมา
         </p>
       </div>
       <a
