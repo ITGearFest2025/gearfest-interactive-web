@@ -5,7 +5,7 @@ import ESC from "@/assets/landing/esc_hd.webp";
 import GearFest from "@/assets/landing/gearfest_hd.webp";
 import KNEng from "@/assets/landing/tueng_hd.webp";
 import Line from "@/assets/donation/line.svg";
-import DonationQR from "@/assets/donation/QR.png";
+import DonationQR from "@/assets/donation/QR.webp";
 import PullToRedirect from "@/components/Landing/PullToRedirect";
 import { CheckResultDonation } from "@/components/CheckResult";
 import Continue from "@/assets/donation/continue.svg";
