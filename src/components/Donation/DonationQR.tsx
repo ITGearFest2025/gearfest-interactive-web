@@ -5,7 +5,7 @@ import ESC from "@/assets/landing/esc_hd.webp";
 import GearFest from "@/assets/landing/gearfest_hd.webp";
 import KNEng from "@/assets/landing/tueng_hd.webp";
 import Line from "@/assets/donation/line.svg";
-import DonationQR from "@/assets/donation/QR_hd.webp";
+import DonationQR from "@/assets/donation/QR.png";
 import PullToRedirect from "@/components/Landing/PullToRedirect";
 import { CheckResultDonation } from "@/components/CheckResult";
 import Continue from "@/assets/donation/continue.svg";
@@ -34,6 +34,11 @@ const Donation = () => {
         className="w-full px-16 py-6"
         alt="QR code donate for gear festival 2025"
       />
+      <div className="font-taviraj text-white text-xs p-2 text-center">
+      น.ส. วริศรา จันทเดช และ นาย พงษ์บุริศร์ ว่องไชยกุล
+      <br />
+      ธนาคารกสิกรไทย เลขที่บัญชี 205-8-64768-6
+      </div>
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdgE8kO0EU7MxFbD_lF8Rc7f0M6oOLMJn2MBsEqkli73hk6Yw/viewform"
         target="_blank"
