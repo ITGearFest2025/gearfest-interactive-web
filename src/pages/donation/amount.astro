@@ -1,0 +1,14 @@
+---
+import DonationAmount from "@/components/Donation/DonationAmount";
+import Navbar from "@/components/Navbar/Navbar";
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/story/scene2/0.BGfor234_gif_loop_hd.webp";
+import ImageLowRes from "@/assets/story/scene2/0.BGfor234_gif_LowRes.webp";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<ImagePageLayout image={ImageHd} imageLowRes={ImageLowRes}>
+  <Navbar client:load />
+  <DonationAmount client:only="react" />
+</ImagePageLayout>
