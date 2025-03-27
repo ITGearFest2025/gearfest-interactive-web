@@ -29,7 +29,7 @@ const CheckResult = () => {
             {"Starboard"}
           </a>
           <a
-            href="/donation"
+            href="/donation/amount"
             className="font-judson flex cursor-pointer items-center p-3 font-bold text-white"
           >
             {"Donation"}
@@ -46,7 +46,7 @@ const CheckResult = () => {
         // You can render something else or return null
         <div className="flex w-full items-center justify-end">
           <a
-            href="/donation"
+            href="/donation/amount"
             className="font-judson flex cursor-pointer items-center p-3 font-bold text-white"
           >
             {"Donation"}
