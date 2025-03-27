@@ -35,7 +35,7 @@ const Donation = () => {
         </p>
       </div>
       <a
-        href="/donation/payment"
+        href="/donation"
         className="font-taviraj mx-4 block rounded-[50px] p-4 px-10 text-center text-xl text-white no-underline"
         style={{
           background:
