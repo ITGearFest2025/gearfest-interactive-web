@@ -82,7 +82,7 @@ const ShowItem = () => {
 
 export default ShowItem;
 
-const validItems = [
+export const validItems = [
   "GiayIXyCl5QPXQ0", // 1
   "JQUEpHuuPtdlLvH", // 2
   "6FIg7YzPFm1zPBD", // 3
@@ -110,7 +110,7 @@ const validItems = [
   "afJ2I3cbRZWBBND", // 25
 ];
 
-const ImageSrc = [
+export const ImageSrc = [
   Pic1,
   Pic2,
   Pic3,
