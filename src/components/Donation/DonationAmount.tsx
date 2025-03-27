@@ -31,7 +31,7 @@ const Donation = () => {
           className="font-petit absolute bottom-[30%] text-center text-2xl font-bold text-white"
           style={{ textShadow: "0px 0px 4px #000000, 0px 0px 8px #000000" }}
         >
-          12345
+          12580
         </p>
       </div>
       <a
