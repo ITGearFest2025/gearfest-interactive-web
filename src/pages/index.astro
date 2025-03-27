@@ -1,29 +1,10 @@
 ---
-import BGstar from "@/assets/landing/bg.webp";
-import BGstarAnimated from "@/assets/landing/bg-animate.webp";
+import BGstar from "@/assets/starglobe/bgstarglobe.png";
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
-import LandingPage from "@/components/Landing/LandingPage";
-import Navbar from "@/components/Navbar/Navbar";
-import navbar from "@/assets/navbar/navbar.svg";
-import X from "@/assets/navbar/x.svg";
-import line from "@/assets/navbar/line.svg";
-import linewhite from "@/assets/navbar/linewhite.svg";
-import PullToRedirect from "@/components/Landing/PullToRedirect";
-import PMCU from "@/assets/whatisgearfest/pmcu-white_hd.webp";
-import CCMC from "@/assets/whatisgearfest/ccmc_hd.webp";
-import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Starglobe from "@/components/Starglobe/Starglobe"
 ---
 
-<ImagePageLayout
-  title="Gear Festival 2025"
-  imageLowRes={BGstar}
-  image={BGstarAnimated}
-  backgroundColor="#fff"
-  preloadImages={[navbar, X, line, linewhite, PMCU, CCMC, LoveIs]}
->
-  <Navbar client:load />
-  <LandingPage client:load />
-  <PullToRedirect redirectUrl="/what-is-gearfest" type="down" client:load />
+<ImagePageLayout image={BGstar}>
+  <!-- Your page content goes here -->
+  <Starglobe class="w-full h-auto" />
 </ImagePageLayout>

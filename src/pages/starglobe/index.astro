@@ -1,0 +1,47 @@
+---
+import BGstar from "@/assets/starglobe/bgstarglobe.png";
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import StarGlobeWrapper from "@/components/Starglobe/Starglobewrapper.tsx";
+import ESC from "@/assets/landing/esc_hd.webp";
+import GearFest from "@/assets/landing/gearfest_hd.webp";
+import KNEng from "@/assets/landing/tueng_hd.webp";
+import InventoryPopup from "@/components/Inventory/InvetoryPopup";
+import { Image } from "astro:assets";
+import CloudTop from "@/assets/starglobe/top_cloud.svg";
+---
+
+<ImagePageLayout image={BGstar}>
+  <div class="fixed inset-0 w-full h-full overflow-hidden flex flex-col items-center text-white px-4 py-6 z-10 ">
+    <div class="absolute top-0 left-0 w-full z-0 overflow-hidden pointer-events-none">
+        <img
+        src={CloudTop.src}
+        alt="Cloud Background"
+        class="w-full h-auto object-cover"
+        />
+    </div>
+    
+    <div class="absolute top-2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-1.5 z-20">
+        <Image src={ESC} alt="ESC" class="h-[41px] w-[65px]" />
+        <Image src={GearFest} alt="GearFest" class="h-[98px] w-[98px]" />
+        <Image src={KNEng} alt="KNEng" class="h-[55px] w-[55px]" />
+    </div>
+  
+
+    <div
+    class="absolute left-1/2 top-[168px] -translate-x-1/2 flex flex-col items-center"
+    style="width: 385px; height: 761px; gap: 37px;"
+    >
+      <div class="text-center">
+          <h1 class="text-[32px] mercy-font text-center">- Starry Playground -</h1>
+          <p class="text-sm italic mt-1 petit-font text-[#FFF2A9]">
+              Customize your own memory globe
+          </p>
+          </div>
+
+          <StarGlobeWrapper client:load />
+    
+          <InventoryPopup client:load />
+      </div>
+      
+  </div>
+</ImagePageLayout>
