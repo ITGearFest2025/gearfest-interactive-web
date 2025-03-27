@@ -39,7 +39,9 @@ const Navbar = ({ className = "" }) => {
   const getLinkClassName = (path: string) => {
     return `transition-colors duration-300 hover:text-[#FDB515] ${
       currentPath === path ||
-      (currentPath === "/donation/payment" && path === "/donation")
+      ((currentPath === "/donation/payment" ||
+        currentPath === "/daonation/amount") &&
+        path === "/donation")
         ? "text-[#FDB515]"
         : ""
     }`;
@@ -104,7 +106,10 @@ const Navbar = ({ className = "" }) => {
                   className="w-full opacity-90"
                 />
                 <li className="flex flex-col items-center justify-center gap-4 py-3">
-                  <a href="/donation" className={getLinkClassName("/donation")}>
+                  <a
+                    href="/donation/amount"
+                    className={getLinkClassName("/donation")}
+                  >
                     Donation
                   </a>
                 </li>
