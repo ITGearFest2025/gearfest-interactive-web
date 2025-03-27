@@ -16,7 +16,7 @@ const Donation = () => {
       <div className="flex flex-col items-center justify-center gap-4">
         <h1
           className="font-bethellen text-2xl text-[#faf8f5]"
-          style={{ textShadow: "0px 0px 4px #FFFFFF, 0px 0px 8px #FFFFFF" }}
+          style={{ textShadow: "0px 0px 0px #FFFFFF, 0px 0px 8px #FFFFFF" }}
         >
           Donation
         </h1>
@@ -28,10 +28,10 @@ const Donation = () => {
           alt="QR code donate for gear festival 2025"
         />
         <p
-          className="font-petit absolute bottom-[30%] text-center text-2xl font-bold text-white"
+          className="font-petit absolute bottom-[30%] text-center text-4xl font-bold text-white"
           style={{ textShadow: "0px 0px 4px #000000, 0px 0px 8px #000000" }}
         >
-          12580
+          12,580
         </p>
       </div>
       <a
@@ -50,9 +50,9 @@ const Donation = () => {
       <div className="flex flex-col items-center justify-center gap-4">
         <h1
           className="font-bethellen text-2xl text-[#faf8f5]"
-          style={{ textShadow: "0px 0px 4px #FFFFFF, 0px 0px 8px #FFFFFF" }}
+          style={{ textShadow: "0px 0px 0px #FFFFFF, 0px 0px 8px #FFFFFF" }}
         >
-          for charity
+          Donation Milestone
         </h1>
       </div>
       <div className="w-full">
