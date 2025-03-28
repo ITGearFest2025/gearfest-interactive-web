@@ -2,7 +2,7 @@ import KeepButton from "./KeepButton";
 import ScanMoreItem from "./ScanMoreItem";
 import BackToHome from "./BackToHome";
 import { useEffect, useState } from "react";
-
+import LoadingPic from "@/assets/onsite/LoadingPic.webp";
 import Pic1 from "@/assets/onsite/1_hd.webp";
 import Pic2 from "@/assets/onsite/2_hd.webp";
 import Pic3 from "@/assets/onsite/3_hd.webp";
@@ -30,6 +30,7 @@ import Pic24 from "@/assets/onsite/24_hd.webp";
 
 const ShowItem = () => {
   const [id, setId] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -42,6 +43,7 @@ const ShowItem = () => {
     } else {
       setId(1);
     }
+    setIsLoading(false);
   }, []);
 
   return (
@@ -56,8 +58,8 @@ const ShowItem = () => {
         {name[id - 1]}
       </h1>
       <img
-        src={ImageSrc[id - 1].src}
-        alt="Obj"
+        src={isLoading ? LoadingPic.src : ImageSrc[id - 1].src}
+        alt={isLoading ? "Loading" : "Obj"}
         className="mb-8 h-[189px] w-[226px] object-cover"
       />
       <div
@@ -69,11 +71,8 @@ const ShowItem = () => {
       >
         <p className="h-full w-full px-4 py-4">{description[id - 1]}</p>
       </div>
-      <div className="mb-2.5">
+      <div className="flex w-full flex-col items-center justify-center gap-1 gap-4 px-6">
         <KeepButton id={id.toString()} />
-      </div>
-      <div className="flex items-center justify-center gap-1">
-        <ScanMoreItem />
         <BackToHome />
       </div>
     </>
@@ -157,7 +156,7 @@ const name = [
   "กล่องดินสอสุดยิ่งใหญ่",
   "เครื่องเขียนคู่ใจ",
   "ลูกเสือ Starter Kit",
-  "สมุคสามเล่มติดกระเป๋านักเรียน",
+  "สมุดสามเล่มติดกระเป๋านักเรียน",
   "Lifetime Checkpoint",
   "กระดาษคำตอบแบบกา",
   "Your Star",

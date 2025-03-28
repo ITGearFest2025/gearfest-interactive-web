@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             className="h-[180px] w-[220px] object-cover"
             alt="gearfest logo"
           />
-          <p className="font-taviraj -mt-4 text-2xl text-white">
+          <p className="font-taviraj text-center -mt-4 text-2xl text-white">
             ณ อุทยาน 100 ปี จุฬาฯ
           </p>
           <a

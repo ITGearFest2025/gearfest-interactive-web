@@ -19,7 +19,7 @@ export default function KeepButton({ id = "0" }: KeepButtonProps) {
       style={{
         boxShadow: "0px 0px 10px 2px #E2C7E8",
       }}
-      className={`inline-flex h-[47px] w-[341px] cursor-pointer items-center justify-center rounded-full border-2 px-4 py-2 text-2xl text-white transition duration-300 ${
+      className={`inline-flex h-[47px] w-full cursor-pointer items-center justify-center rounded-full border-2 px-4 py-2 text-2xl text-white transition duration-300 ${
         isKeeped
           ? "border-[#EAA32F] bg-[#EAA32F40]" // Background: #EAA32F with 25% opacity & border color
           : "border-white bg-transparent" // Initial state: Transparent
