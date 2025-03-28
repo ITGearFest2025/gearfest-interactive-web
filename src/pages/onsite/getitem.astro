@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/onsite/bg-onsite_hd.webp";
+import ImageLowRes from "@/assets/onsite/bg-onsite_Image_LowRes.webp";
+
+import Navbar from "@/components/Navbar/Navbar";
+import ESC from "@/assets/landing/esc_hd.webp";
+import GearFest from "@/assets/landing/gearfest_hd.webp";
+import KNEng from "@/assets/landing/tueng_hd.webp";
+import ShowItem from "@/components/Onsite/ShowItem";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+  class="h-full min-h-[932px] overflow-y-auto"
+  title="Get Onsite Items | Gear Festival 2025"
+>
+  <Navbar client:load />
+
+  <div
+    class="absolute top-0 right-0 left-0 flex h-full flex-col items-center"
+    style={{ backgroundImage: `url(${ImageHd.src})` }}
+  >
+    <div class="flex w-auto items-center justify-center gap-1.5">
+      <Image src={ESC} alt="ESC" class="h-[69px] w-[53px] object-cover" />
+      <Image src={GearFest} alt="GearFest" class="h-[136px] w-[136px]" />
+      <Image src={KNEng} alt="KNEng" class="h-[53px] w-[53px]" />
+    </div>
+    <ShowItem client:load />
+  </div>
+</ImagePageLayout>

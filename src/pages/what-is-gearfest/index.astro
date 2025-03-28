@@ -36,14 +36,14 @@ import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
       <Image src={GearFest} alt="GearFest" class="h-[136px] w-[136px]" />
       <Image src={KNEng} alt="KNEng" class="h-[53px] w-[53px]" />
     </div>
-    <div class="mt-20 flex h-full w-full flex-col">
+    <div class="mt-10 flex h-full w-full flex-col">
       <h1
         class="mercy-font text-center text-2xl text-white"
         style="text-shadow: 0 0 5px #fff, 0 0 10px #fff;"
       >
         What is gear festival?
       </h1>
-      <p class="taviraj-font p-5 text-center text-sm text-white">
+      <p class="taviraj-font p-5 text-center text-xs text-white max-md:text-sm">
         Gear Festival เป็นงานเทศกาลดนตรีเพื่อการกุศล <br
         />ที่จัดโดยคณะวิศวกรรมศาสตร์<span class="text-[#FFDFE9]"
           >จุฬาลงกรณ์มหาวิทยาลัย</span
@@ -51,7 +51,9 @@ import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
         <br />และ
         <span class="text-[#FFDFE9]">มหาวิทยาลัยธรรมศาสตร์</span>
       </p>
-      <p class="taviraj-font px-5 text-center text-sm text-white">
+      <p
+        class="taviraj-font px-5 text-center text-xs text-white max-md:text-sm"
+      >
         ในงานของเราจะมี<span class="text-[#FFDFE9]"
           >บูธกิจกรรม โซนจัดแสดง ร้านค้ามากมาย<br />
           และคอนเสิร์ตสุดพิเศษ</span
@@ -113,13 +115,13 @@ import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
       </p>
 
       <p
-        class="taviraj-font font-s absolute top-[65%] w-full text-center text-lg text-white"
+        class="taviraj-font font-s absolute top-[67%] w-full text-center text-lg text-white"
         style={{ textShadow: "0px 0px 10px #FBE79D" }}
       >
         วันที่ 28 มีนาคม 2568
       </p>
       <p
-        class="taviraj-font absolute top-[67%] w-full px-5 text-center text-sm text-white"
+        class="taviraj-font absolute top-[69%] w-full px-5 text-center text-sm text-white"
         style={{ textShadow: "0 0 5px #fff, 0 0 10px #fff" }}
       >
         ณ สวนอุทยาน 100 ปี <br />จุฬาลงกรณ์มหาวิทยาลัย
@@ -127,7 +129,7 @@ import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
       <Image
         src={glowgear}
         alt="glow gear"
-        class="absolute top-[65%] left-1/2 -translate-x-1/2"
+        class="absolute top-[67%] left-1/2 -translate-x-1/2"
       />
       <div class="pb-[100px absolute top-[90%] w-full">
         <p
@@ -152,7 +154,7 @@ import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
     >
       <CheckResult client:load />
     </div>
-    <PullToRedirect type="right" redirectUrl="/donation" client:load />
+    <PullToRedirect type="right" redirectUrl="/donation/amount" client:load />
     <PullToRedirect type="left" redirectUrl="/starboard" client:load />
   </div>
 </ImagePageLayout>

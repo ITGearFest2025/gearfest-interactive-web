@@ -31,13 +31,13 @@ const Donation = () => {
       </div>
       <img
         src={DonationQR.src}
-        className="w-full px-16 py-6"
+        className="mx-16 my-6 w-full max-w-[336px]"
         alt="QR code donate for gear festival 2025"
       />
-      <div className="font-taviraj text-white text-xs p-2 text-center">
-      น.ส. วริศรา จันทเดช และ นาย พงษ์บุริศร์ ว่องไชยกุล
-      <br />
-      ธนาคารกสิกรไทย เลขที่บัญชี 205-8-64768-6
+      <div className="font-taviraj p-2 text-center text-xs text-white">
+        น.ส. วริศรา จันทเดช และ นาย พงษ์บุริศร์ ว่องไชยกุล
+        <br />
+        ธนาคารกสิกรไทย เลขที่บัญชี 205-8-64768-6
       </div>
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdgE8kO0EU7MxFbD_lF8Rc7f0M6oOLMJn2MBsEqkli73hk6Yw/viewform"
