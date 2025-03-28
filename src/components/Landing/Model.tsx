@@ -1,6 +1,6 @@
 import React from "react";
-import GearFest from "@/assets/landing/gearfest_hd.webp";
-
+import GearFest from "@/assets/onsite/gearfest.jpg";
+import GearFest2 from "@/assets/landing/gearfest_hd.webp";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -30,11 +30,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             สำหรับผู้เข้าร่วม
           </p>
           <img
-            src={GearFest.src}
+            src={GearFest2.src}
             className="h-[180px] w-[220px] object-cover"
             alt="gearfest logo"
           />
-          <p className="font-taviraj text-center -mt-4 text-2xl text-white">
+          <p className="font-taviraj -mt-4 text-center text-2xl text-white">
             ณ อุทยาน 100 ปี จุฬาฯ
           </p>
           <a
@@ -76,14 +76,18 @@ export const ModalForOnsite: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           >
             X
           </button>
-          <p className="font-taviraj text-2xl text-[#F7DEFC]">วิธีการหา Item</p>
+          <p className="mercy-font text-center text-2xl text-white underline">
+            How to Collect Memory?
+          </p>
           <img
             src={GearFest.src}
-            className="h-[180px] w-[220px] object-cover"
+            className="mt-4 h-[180px] w-[220px] object-cover"
             alt="gearfest logo"
           />
-          <p className="font-taviraj -mt-4 text-center text-xl text-white">
-            สามารถเดินหาและแสกน QR Code ได้ที่จุดต่างๆภายในงาน
+          <p className="font-taviraj mt-4 text-center text-[#F7DEFC]">
+            ตามหา และ Scan QRcode สิ่งของท
+            <br />
+            ทั้ถูกจัดวางอยู่รอบงาน Gear Festival <br /> เพื่อสะสมเทม!!
           </p>
         </div>
       </div>
