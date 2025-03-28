@@ -69,11 +69,8 @@ const ShowItem = () => {
       >
         <p className="h-full w-full px-4 py-4">{description[id - 1]}</p>
       </div>
-      <div className="mb-2.5">
-        <KeepButton id={id.toString()} />
-      </div>
-      <div className="flex items-center justify-center gap-1">
-        <ScanMoreItem />
+      <div className="flex flex-col gap-4  w-full px-6 items-center justify-center gap-1">
+      <KeepButton id={id.toString()} />
         <BackToHome />
       </div>
     </>
