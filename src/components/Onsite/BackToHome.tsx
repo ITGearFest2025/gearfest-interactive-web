@@ -1,6 +1,6 @@
 export default function ColorBox() {
   const handleClick = () => {
-    console.log("Back to homepage"); // Replace with your actual function
+    window.location.href = "/"; 
   };
 
   return (
