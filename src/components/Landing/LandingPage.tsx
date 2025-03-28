@@ -146,7 +146,7 @@ const LandingPage = () => {
               alt="Timeless logo"
             />
             <a
-              href=""
+              href="/onsite/starglobe"
               style={{
                 boxShadow: "0px 0px 10px 2px #E2C7E8",
                 textShadow: "0px 0px 10px #E2C7E8",

@@ -1,0 +1,45 @@
+---
+import ImageHd from "@/assets/onsite/bg-onsite_hd.webp";
+import ImageLowRes from "@/assets/onsite/bg-onsite_Image_LowRes.webp";
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import StarGlobeWrapper from "@/components/Starglobe/Starglobewrapper.tsx";
+import ESC from "@/assets/landing/esc_hd.webp";
+import GearFest from "@/assets/landing/gearfest_hd.webp";
+import KNEng from "@/assets/landing/tueng_hd.webp";
+import InventoryPopup from "@/components/Inventory/InvetoryPopup";
+import { Image } from "astro:assets";
+import Navbar from "@/components/Navbar/Navbar";
+---
+
+<ImagePageLayout
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+  title="Create StarGlobe | Gear Festival 2025"
+  class="hide-scrollbar h-full min-h-[932px] overflow-y-auto"
+>
+  <Navbar client:load />
+  <div class="absolute top-0 right-0 left-0 flex h-full flex-col items-center">
+    <div class="mt-4 flex w-auto items-center justify-center gap-1.5">
+      <Image src={ESC} alt="ESC" class="h-[65px] w-[41px] object-cover" />
+      <Image src={GearFest} alt="GearFest" class="h-[98px] w-[98px]" />
+      <Image src={KNEng} alt="KNEng" class="h-[55px] w-[55px]" />
+    </div>
+
+    <div
+      class="relative left-1/2 mt-12 flex h-full w-full -translate-x-1/2 flex-col items-center gap-9"
+    >
+      <div class="text-center">
+        <h1 class="mercy-font text-center text-[32px] text-white">
+          - Starry Playground -
+        </h1>
+        <p class="petit-font mt-1 text-sm text-[#FFF2A9] italic">
+          Customize your own memory globe
+        </p>
+      </div>
+
+      <StarGlobeWrapper client:load />
+
+      <InventoryPopup client:load />
+    </div>
+  </div>
+</ImagePageLayout>

@@ -30,7 +30,7 @@ export default function ColorSelector({ selectedColor, onSelect }: Props) {
   return (
     <div className="w-[334px]">
       <p
-        className="text-[24px] font-taviraj text-white mb-2"
+        className="font-taviraj mb-2 text-[24px] text-white"
         style={{
           textShadow: "0 0 4px #FFFFFF",
         }}
@@ -38,12 +38,12 @@ export default function ColorSelector({ selectedColor, onSelect }: Props) {
         Color
       </p>
 
-      <div className="flex gap-2 h-[30px]">
+      <div className="flex h-[30px] gap-2">
         {colors.map(({ name, color }) => (
           <button
             key={name}
             onClick={() => onSelect(name)}
-            className={`w-[30px] h-[30px] rounded border-2 ${
+            className={`h-[30px] w-[30px] cursor-pointer rounded border-2 ${
               selectedColor === name ? "border-white" : "border-transparent"
             }`}
             style={{ backgroundColor: color }}

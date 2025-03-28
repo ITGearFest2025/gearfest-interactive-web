@@ -1,6 +1,7 @@
 import { userCollection } from "@/stores/userCollection";
 import { useStore } from "@nanostores/react";
 import { ImageSrc, validItems } from "./ShowItem";
+import Inventory from "@/pages/onsite/inventory.astro";
 
 const MyInventory = () => {
   const tempItem = useStore(userCollection);
