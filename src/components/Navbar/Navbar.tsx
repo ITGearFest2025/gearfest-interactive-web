@@ -82,7 +82,7 @@ const Navbar = ({ className = "" }) => {
             </button>
             <div className="z-0 flex h-full items-center text-xl text-white">
               <ul className="z-20 flex h-full flex-col items-center justify-center">
-                <li className="flex flex-col items-center justify-center gap-4 pt-15 pb-3">
+                <li className="flex flex-col text-xs items-center justify-center gap-4 pt-15 pb-2">
                   <a href="/" className={`${getLinkClassName("/")} `}>
                     Home
                   </a>
@@ -92,7 +92,7 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <li className="flex flex-col items-center justify-center gap-4 py-3">
+                <li className="flex flex-col text-xs items-center justify-center gap-4 py-2">
                   <a
                     href="/what-is-gearfest"
                     className={getLinkClassName("/what-is-gearfest")}
@@ -105,12 +105,38 @@ const Navbar = ({ className = "" }) => {
                   alt="Divider"
                   className="w-full opacity-90"
                 />
-                <li className="flex flex-col items-center justify-center gap-4 py-3">
+                <li className="flex flex-col text-xs items-center justify-center gap-4 py-2">
                   <a
                     href="/donation/amount"
                     className={getLinkClassName("/donation")}
                   >
                     Donation
+                  </a>
+                </li>
+                <img
+                  src={getLineImage("/what-is-gearfest")}
+                  alt="Divider"
+                  className="w-full opacity-90"
+                />
+                <li className="flex flex-col text-xs items-center justify-center gap-4 py-2">
+                  <a
+                    href="/donation/amount"
+                    className={getLinkClassName("/donation")}
+                  >
+                    Inventory
+                  </a>
+                </li>
+                <img
+                  src={getLineImage("/what-is-gearfest")}
+                  alt="Divider"
+                  className="w-full opacity-90"
+                />
+                <li className="flex flex-col text-xs items-center justify-center gap-4 py-2">
+                  <a
+                    href="/donation/amount"
+                    className={getLinkClassName("/donation")}
+                  >
+                    StarGlobe
                   </a>
                 </li>
                 <img
@@ -120,7 +146,7 @@ const Navbar = ({ className = "" }) => {
                 />
                 {temp !== "" && (
                   <>
-                    <li className="flex flex-col items-center justify-center gap-4 py-3">
+                    <li className="flex flex-col text-xs items-center justify-center gap-4 py-3">
                       <a
                         href="/starboard"
                         className={getLinkClassName("/starboard")}
@@ -138,11 +164,11 @@ const Navbar = ({ className = "" }) => {
               </ul>
             </div>
 
-            <div className="absolute -bottom-[40%] flex w-full items-center justify-center">
+            <div className="absolute -bottom-[30%]  flex w-full items-center justify-center">
               <img
                 src={CCMC.src}
                 alt="Choco mucho logo"
-                className="h-[50px] w-[50px]"
+                className="h-[30px] w-[100px]"
               />
               <img
                 src={LoveIs.src}
