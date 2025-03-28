@@ -42,6 +42,12 @@
   box-shadow: 0px 0px 10px #fff2a9;
 }
 
+@layer base {
+  img {
+    @apply inline-block;
+  }
+}
+
 @theme {
   --font-judson: "Judson", serif;
   --font-mitr: "Mitr", serif;
