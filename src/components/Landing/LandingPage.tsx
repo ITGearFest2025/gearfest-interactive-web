@@ -22,7 +22,7 @@ import Star from "@/assets/landing/star.webp";
 
 import { userResult } from "@/stores/userResult";
 import { useEffect, useState } from "react";
-import Modal from "./Model";
+import Modal, { ModalForOnsite } from "./Model";
 import { userAds } from "@/stores/userAds";
 import { useStore } from "@nanostores/react";
 
@@ -51,11 +51,16 @@ const LandingPage = () => {
 
   const Ads = useStore(userAds);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isModalOnsiteOpen, setIsModalOnsiteOpen] = useState<boolean>(false);
 
   const handleOpenModal = (): void => setIsModalOpen(true);
   const handleCloseModal = (): void => {
     userAds.set({ register: "true" });
     setIsModalOpen(false);
+  };
+  const handleOpenModalOnsite = (): void => setIsModalOnsiteOpen(true);
+  const handleCloseModalOnsite = (): void => {
+    setIsModalOnsiteOpen(false);
   };
 
   const handleRight = (): void => setState((state) => (state + 1) % 3);
@@ -115,8 +120,8 @@ const LandingPage = () => {
               src={Timeless.src}
               alt="Timeless logo"
             />
-            <a
-              href=""
+            <button
+              onClick={handleOpenModalOnsite}
               key="Timeless"
               style={{
                 boxShadow: "0px 0px 10px 2px #E2C7E8",
@@ -125,7 +130,7 @@ const LandingPage = () => {
               className="font-italiana w-[300px] rounded-full border-[2px] border-white bg-transparent px-12 py-3.5 text-center text-2xl text-white transition-all duration-300 hover:scale-110 active:scale-105"
             >
               Collect Memory
-            </a>
+            </button>
             <a
               href="/onsite/inventory"
               style={{
@@ -257,6 +262,10 @@ const LandingPage = () => {
           <img src={ArrowDown.src} width={36} height={36} alt="ArrowDown" />
         </a>
       </div>
+      <ModalForOnsite
+        isOpen={isModalOnsiteOpen}
+        onClose={handleCloseModalOnsite}
+      />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
       {/* {result !== "" && status ? (
         <>

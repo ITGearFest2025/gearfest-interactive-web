@@ -55,3 +55,38 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 };
 
 export default Modal;
+
+export const ModalForOnsite: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <>
+      <div
+        className="bg-opacity-50 fixed inset-0 z-50 bg-black opacity-80"
+        onClick={onClose}
+      ></div>
+      <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div
+          className="relative flex h-[360px] w-[350px] flex-col items-center justify-center rounded-3xl border-[1px] border-white bg-[#0D023D] px-9 py-5"
+          style={{ boxShadow: "0px 0px 3.625px #FFFFFF" }}
+        >
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-5 size-[15px] cursor-pointer font-sans text-lg font-bold text-[#7065A4] focus:outline-none"
+          >
+            X
+          </button>
+          <p className="font-taviraj text-2xl text-[#F7DEFC]">วิธีการหา Item</p>
+          <img
+            src={GearFest.src}
+            className="h-[180px] w-[220px] object-cover"
+            alt="gearfest logo"
+          />
+          <p className="font-taviraj -mt-4 text-center text-xl text-white">
+            สามารถเดินหาและแสกน QR Code ได้ที่จุดต่างๆภายในงาน
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
