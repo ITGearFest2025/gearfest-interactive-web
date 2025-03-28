@@ -34,6 +34,13 @@
 .taviraj-font {
   font-family: "Taviraj", serif !important;
 }
+.eiei {
+  box-shadow: 0px 0px 4px rgba(247, 222, 252, 0.5);
+}
+
+.eiei:hover {
+  box-shadow: 0px 0px 10px #fff2a9;
+}
 
 @theme {
   --font-judson: "Judson", serif;

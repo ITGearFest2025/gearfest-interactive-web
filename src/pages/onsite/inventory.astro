@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import ImageHd from "@/assets/donation/bgdonate_hd.webp";
+import ImageLowRes from "@/assets/donation/bgdonate_Image_LowRes.webp";
+
+import Navbar from "@/components/Navbar/Navbar";
+import ESC from "@/assets/landing/esc_hd.webp";
+import GearFest from "@/assets/landing/gearfest_hd.webp";
+import KNEng from "@/assets/landing/tueng_hd.webp";
+import MyInventory from "@/components/Onsite/MyInventory";
+---
+
+<ImagePageLayout
+  title="Gear Festival 2025"
+  image={ImageHd}
+  imageLowRes={ImageLowRes}
+  class="h-full min-h-[932px] overflow-y-auto"
+  title="My Inventory | Gear Festival 2025"
+  class="h-screen"
+>
+  <Navbar client:load />
+
+  <div
+    class="absolute top-0 right-0 left-0 flex h-full flex-col items-center"
+    style={{ backgroundImage: `url(${ImageHd.src})` }}
+  >
+    <div class="mt-4 flex w-auto items-center justify-center gap-1.5">
+      <Image src={ESC} alt="ESC" class="h-[65px] w-[41px] object-cover" />
+      <Image src={GearFest} alt="GearFest" class="h-[98px] w-[98px]" />
+      <Image src={KNEng} alt="KNEng" class="h-[55px] w-[55px]" />
+    </div>
+    <div>
+      <h1
+        class="mercy-font mt-6 text-center text-3xl text-white"
+        style={{
+          textShadow:
+            "0px 0px 4px rgba(255, 255, 255, 0.7), 0px 0px 6px #000000",
+        }}
+      >
+        -My Inventory-
+      </h1>
+      <p
+        class="mt-2 text-center text-[#FFF2A9]"
+        style={{ textShadow: "0px 0px 3px rgba(255, 255, 255, 0.7)" }}
+      >
+        Timeless Memory
+      </p>
+    </div>
+    <MyInventory client:load />
+    <a
+      href="/"
+      class="mt-4 mb-12 w-full max-w-[340px] rounded-full border-2 border-white py-2 text-center text-3xl text-white"
+      style={{ boxShadow: " 0px 0px 10px 2px #E2C7E8" }}>Back</a
+    >
+  </div>
+</ImagePageLayout>
