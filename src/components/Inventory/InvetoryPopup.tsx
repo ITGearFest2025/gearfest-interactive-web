@@ -4,6 +4,49 @@ import tentIcon from "@/assets/starglobe/tent.png";
 import { useStore } from "@nanostores/react";
 import { ImageSrc, validItems } from "@/components/Onsite/ShowItem";
 import { userCollection } from "@/stores/userCollection";
+import Free1 from "@/assets/starglobe/freeItems/1.png";
+import Free2 from "@/assets/starglobe/freeItems/2.png";
+import Free3 from "@/assets/starglobe/freeItems/3.png";
+import Free4 from "@/assets/starglobe/freeItems/4.png";
+import Free5 from "@/assets/starglobe/freeItems/5.png";
+import Free6 from "@/assets/starglobe/freeItems/6.png";
+import Free7 from "@/assets/starglobe/freeItems/7.png";
+import Free8 from "@/assets/starglobe/freeItems/8.png";
+import Free9 from "@/assets/starglobe/freeItems/9.png";
+import Free10 from "@/assets/starglobe/freeItems/10.png";
+import Free11 from "@/assets/starglobe/freeItems/11.png";
+import Free12 from "@/assets/starglobe/freeItems/12.png";
+import Free13 from "@/assets/starglobe/freeItems/13.png";
+import Free14 from "@/assets/starglobe/freeItems/14.png";
+import Free15 from "@/assets/starglobe/freeItems/15.png";
+import Free16 from "@/assets/starglobe/freeItems/16.png";
+import Free17 from "@/assets/starglobe/freeItems/17.png";
+import Free18 from "@/assets/starglobe/freeItems/18.png";
+import Free19 from "@/assets/starglobe/freeItems/19.png";
+import Free20 from "@/assets/starglobe/freeItems/20.png";
+
+const FreeImageSrc = [
+  Free1,
+  Free2,
+  Free3,
+  Free4,
+  Free5,
+  Free6,
+  Free7,
+  Free8,
+  Free9,
+  Free10,
+  Free11,
+  Free12,
+  Free13,
+  Free14,
+  Free15,
+  Free16,
+  Free17,
+  Free18,
+  Free19,
+  Free20,
+];
 
 const inventoryItems = new Array(15).fill(null);
 inventoryItems[0] = tentIcon;
@@ -134,20 +177,30 @@ export default function InventoryPopup() {
             </h2>
 
             <div className="hide-scrollbar grid max-h-[560px] grid-cols-3 gap-[20px] overflow-y-auto">
-              {Array.from({ length: 25 }, (_, index) => index + 1).map(
+              {Array.from({ length: 55 }, (_, index) => index + 1).map(
                 (i, index) => {
                   return (
                     <button
                       key={index}
                       onClick={() =>
                         item &&
-                        handlePlaceItem(ImageSrc[parseInt(item[index]) - 1])
+                        handlePlaceItem(
+                          index <= item.length - 1
+                            ? ImageSrc[parseInt(item[index]) - 1]
+                            : FreeImageSrc[index - item.length],
+                        )
                       }
                       className="eiei flex h-[100px] w-[100px] items-center justify-center border-[1px] border-[#F7DEFC] bg-[#0D0232]"
                     >
                       {index <= item.length - 1 ? (
                         <img
                           src={ImageSrc[parseInt(item[index]) - 1].src}
+                          alt="items"
+                          className="h-[90px] w-[90px] object-cover"
+                        />
+                      ) : index <= item.length - 1 + 20 ? (
+                        <img
+                          src={FreeImageSrc[index - item.length].src}
                           alt="items"
                           className="h-[90px] w-[90px] object-cover"
                         />
