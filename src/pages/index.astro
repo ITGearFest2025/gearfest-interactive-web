@@ -12,6 +12,8 @@ import PullToRedirect from "@/components/Landing/PullToRedirect";
 import PMCU from "@/assets/whatisgearfest/pmcu-white_hd.webp";
 import CCMC from "@/assets/whatisgearfest/ccmc_hd.webp";
 import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
+import Timeless from "@/assets/landing/TimelessMemory_hd.webp";
+import Starry from "@/assets/landing/StarryPlayground_hd.webp";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -21,7 +23,17 @@ import LoveIs from "@/assets/whatisgearfest/loveis_hd.webp";
   imageLowRes={BGstar}
   image={BGstarAnimated}
   backgroundColor="#fff"
-  preloadImages={[navbar, X, line, linewhite, PMCU, CCMC, LoveIs]}
+  preloadImages={[
+    navbar,
+    X,
+    line,
+    linewhite,
+    PMCU,
+    CCMC,
+    LoveIs,
+    Timeless,
+    Starry,
+  ]}
 >
   <Navbar client:load />
   <LandingPage client:load />

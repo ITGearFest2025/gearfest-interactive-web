@@ -68,7 +68,7 @@ const LandingPage = () => {
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 64.4%, rgba(226, 199, 232, 0.18) 91%, rgba(239, 182, 200, 0.2) 96%)",
       }}
     >
-      <div className="mt-6 flex w-full items-center justify-between px-15">
+      <div className="mt-6 flex w-full items-center justify-between self-end px-15">
         <div className="flex items-center">
           <img
             src={GearFest.src}
@@ -88,7 +88,7 @@ const LandingPage = () => {
         </div>
         <button
           onClick={handleOpenModal}
-          className="font-taviraj cursor-pointer text-xl text-white underline"
+          className="font-taviraj translate-x-8 cursor-pointer text-xl text-white underline"
         >
           Register
         </button>
