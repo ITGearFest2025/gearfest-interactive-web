@@ -225,11 +225,11 @@ export default function InventoryPopup() {
 
       <div
         ref={dragZoneRef}
-        className="absolute left-1/2 -translate-x-1/2"
+        className="absolute left-1/2 -translate-x-1/2 overflow-hidden rounded-full"
         style={{
           top: "120px",
-          width: "297px",
-          height: "232px",
+          width: "258px",
+          height: "258px",
           border: "1px dashed white",
         }}
       >
